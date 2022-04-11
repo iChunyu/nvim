@@ -1,0 +1,119 @@
+global !p
+# check whether the cursor is inside a math zone
+def math():
+  return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+endglobal
+
+# ================= Fraction settings =================
+# Ref: https://castel.dev/post/lecture-notes-1/
+context "math()"
+snippet // "Fraction" iA
+\\frac{$1}{$2}$0
+endsnippet
+
+context "math()"
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
+\\frac{`!p snip.rv = match.group(1)`}{$1}$0
+endsnippet
+
+context "math()"
+snippet '^.*\)/' "() Fraction" wrA
+`!p
+stripped = match.string[:-1]
+depth = 0
+i = len(stripped) - 1
+while True:
+	if stripped[i] == ')': depth += 1
+	if stripped[i] == '(': depth -= 1
+	if depth == 0: break;
+	i -= 1
+snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
+`{$1}$0
+endsnippet
+# =====================================================
+
+context "math()"
+snippet dd "differentiator" wA
+\mathrm{d}
+endsnippet
+
+snippet '([A-Za-z]*)rm' "mathrm" ri
+`!p
+stripped = match.group(1)
+snip.rv = '\\mathrm{' + stripped + '}'
+`$0
+endsnippet
+
+snippet '([A-Za-z]*)bf' "mathbf" ri
+`!p
+stripped = match.group(1)
+snip.rv = '\\mathbf{' + stripped + '}'
+`$0
+endsnippet
+
+snippet '[A-Za-z]vec' "vec" ri
+`!p
+stripped = match.group(0)[0]
+snip.rv = '\\vec{' + stripped + '}'
+`$0
+endsnippet
+
+snippet '[A-Za-z]hat' "hat" ri
+`!p
+stripped = match.group(0)[0]
+snip.rv = '\\hat{' + stripped + '}'
+`$0
+endsnippet
+
+snippet '[A-Za-z]bre' "breve" ri
+`!p
+stripped = match.group(0)[0]
+snip.rv = '\\breve{' + stripped + '}'
+`$0
+endsnippet
+
+snippet exp "exp" 
+\mathrm{e}^{$1}
+endsnippet
+
+snippet '([A-Za-z])_([A-Za-z]{2,})' "subscript string" ri
+`!p
+g1 = match.group(1)
+g2 = match.group(2)
+results = g1 + '_\\mathrm{' + g2 + '}'
+snip.rv = results
+`$0
+endsnippet
+
+snippet '([A-Za-z])_(\d{2,})' "subscript number" ri
+`!p
+g1 = match.group(1)
+g2 = match.group(2)
+results = g1 + '_{' + g2 + '}'
+snip.rv = results
+`$0
+endsnippet
+
+snippet '([A-Za-z])\^([A-Za-z]{2,})' "superscript string" ri
+`!p
+g1 = match.group(1)
+g2 = match.group(2)
+results = g1 + '^\\mathrm{' + g2 + '}'
+snip.rv = results
+`$0
+endsnippet
+
+snippet '([A-Za-z])\^(\d{2,})' "superscript number" ri
+`!p
+g1 = match.group(1)
+g2 = match.group(2)
+results = g1 + '^{' + g2 + '}'
+snip.rv = results
+`$0
+endsnippet
+
+snippet env "begin an environment" bA
+\begin{$1}
+	$0
+\end{$1}
+endsnippet
