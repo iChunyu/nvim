@@ -1,8 +1,3 @@
-" Requirements
-" `xclip` to enable system clipboard (register +/*)
-" `vim-plug` to enable plug managements
-" `pynvim` package from `pip`
-
 syntax on
 set number
 set relativenumber
