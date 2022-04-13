@@ -7,13 +7,13 @@ endglobal
 # ================= Fraction settings =================
 # Ref: https://castel.dev/post/lecture-notes-1/
 context "math()"
-snippet // "Fraction" iA
-\\frac{$1}{$2}$0
+snippet ff "Fraction" iA
+\frac{$1}{$2}$0
 endsnippet
 
 context "math()"
 snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
-\\frac{`!p snip.rv = match.group(1)`}{$1}$0
+\frac{`!p snip.rv = match.group(1)`}{$1}$0
 endsnippet
 
 context "math()"
@@ -32,9 +32,12 @@ snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
 endsnippet
 # =====================================================
 
-context "math()"
-snippet dd "differentiator" wA
+snippet d "differentiator" w
 \mathrm{d}
+endsnippet
+
+snippet dd "differentiator" w
+\frac{\mathrm{d}}{\mathrm{d}$1} $0
 endsnippet
 
 snippet '([A-Za-z]*)rm' "mathrm" ri

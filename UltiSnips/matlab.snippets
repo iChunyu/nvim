@@ -1,45 +1,44 @@
 snippet func "Create function" bA
-function $1 = $2($3)
+function ${1:varargout} = $2(${3:varargin})
 	$0
 end
 endsnippet
 
 snippet ip "inputParser"
 p = inputParser;
-p.parse(varargin{:});
 $0
 endsnippet
 
 snippet re "addRequired" 
 p.addrequired('$1');
-$1 = p.Results.$1;
 $0
 endsnippet
 
 snippet op "Description"
 p.addOptional('$1',$2);
-$1 = p.Results.$1;
 $0
 endsnippet
 
 snippet pa "Description"
 p.addParameter('$1',$2);
-$1 = p.Results.$1;
 $0
 endsnippet
 
 # select inputParser commands and press: <tab> pp <tab>
-# To be optimized
 snippet pp "parse" 
+${VISUAL}
+
+p.parse(${1:varargin\{:\}})
 `!p
 cmds = snip.v.text.split('\n')[:-1]
 N = len(cmds)
-results = cmds[0] + '\n'
-for k in range(2,N,2):
-	results += cmds[k] + '\n'
-for k in range(3,N,2):
-	results += cmds[k] + '\n'
-results += cmds[1] + '\n'
+results = ''
+for k in range(N):
+	parName = re.match(".*'(\w+)'.*", cmds[k])
+	if parName == None:
+		continue
+	parName = parName.group(1)
+	results += parName + ' = p.Results.' + parName + ';\n'
 snip.rv = results
 `
 $0
