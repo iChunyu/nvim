@@ -44,3 +44,13 @@ Python 3 路径设置为 `/usr/bin/python`，应当不需要变更。如果使�
 ### AirLine
 
 安装字体即可。
+
+### VimTex
+
+安装 `zathura` 阅读器。
+
+```
+sudo pacman -S zathura zathura-pdf-poppler
+```
+
+

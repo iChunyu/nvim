@@ -6,13 +6,22 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set fileencodings=utf-8
+set encoding=utf-8
 set showmatch
 set hlsearch
-set scrolloff=5
+set scrolloff=7
 
-nnoremap j gj
-nnoremap k gk
+noremap j gj
+noremap k gk
+noremap 0 g0
+noremap $ g$
+noremap gj j
+noremap gk k
+noremap g0 0
+noremap g$ $
+
+" Use space as the leader key
+let mapleader = " "
 
 " Plugins
 call plug#begin()
@@ -32,11 +41,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="jk"
 let g:UltiSnipsJumpBackwardTrigger="kj"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']     " specify folder to save time
-
-" VimTex settings
-filetype plugin indent on
-syntax enable
-let g:vimtex_view_method = 'zathura'
 
 " Colorscheme
 colorscheme nordfox
@@ -72,3 +76,4 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+
