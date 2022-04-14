@@ -24,7 +24,7 @@ exec "nohlsearch"
 let mapleader = " "                                         " set <leader> key
 let g:python3_host_prog = '/usr/bin/python'                 " python3 location
 
-" Map some usefull keys
+" Movements
 noremap j gj
 noremap k gk
 noremap 0 g0
@@ -38,28 +38,30 @@ noremap K 5k
 noremap = nzz
 noremap - Nzz
 noremap <leader><CR> :nohlsearch<CR>
-
-map s <nop>
-map S :w<CR>
-map Q :q<CR>
-map R :source $MYVIMRC<CR>
-map sl :set splitright<CR>:vsplit<CR>
-map sh :set nosplitright<CR>:vsplit<CR>
-map sj :set splitbelow<CR>:split<CR> 
-map sk :set nosplitbelow<CR>:split<CR> 
-map <leader>l <c-w>l
-map <leader>h <c-w>h
-map <leader>j <c-w>j
-map <leader>k <c-w>k
-map <up> :res +5<CR>
-map <down> :res -5<CR>
-map <left> :vertical res -5<CR>
-map <right> :vertical res +5<CR>
-map sh <c-w>t<c-w>H
-map sv <c-w>t<c-w>K
-map ta :tabe<CR>
-map th :-tabnext<CR>
-map tl :+tabnext<CR>
+" Split the screen and resize
+noremap s <nop>
+noremap sl :set splitright<CR>:vsplit<CR>
+noremap sh :set nosplitright<CR>:vsplit<CR>
+noremap sj :set splitbelow<CR>:split<CR>
+noremap sk :set nosplitbelow<CR>:split<CR>
+noremap <leader>l <c-w>l
+noremap <leader>h <c-w>h
+noremap <leader>j <c-w>j
+noremap <leader>k <c-w>k
+noremap <leader>L <c-w>L
+noremap <leader>H <c-w>H
+noremap <leader>J <c-w>J
+noremap <leader>K <c-w>K
+noremap <up> :res +5<CR>
+noremap <down> :res -5<CR>
+noremap <left> :vertical res -5<CR>
+noremap <right> :vertical res +5<CR>
+" Tabs
+noremap ta :tabe<CR>
+noremap th :-tabnext<CR>
+noremap tl :+tabnext<CR>
+" Short commands
+nnoremap R :source $MYVIMRC<CR>
 
 
 " ==========================================
