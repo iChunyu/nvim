@@ -2,22 +2,29 @@
 " Basic settings for [Neo]Vim
 " ==========================================
 syntax on
+filetype on
+filetype plugin on
+filetype plugin indent on
 set number
 set relativenumber
 set autoindent
 set smartindent
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 set expandtab
 set encoding=utf-8
 set showmatch
 set hlsearch
-set scrolloff=7
+set ignorecase
+set smartcase
+set scrolloff=5
+exec "nohlsearch"
 
 let mapleader = " "                                         " set <leader> key
 let g:python3_host_prog = '/usr/bin/python'                 " python3 location
 
-" Exchange cursor movement for screen line
+" Map some usefull keys
 noremap j gj
 noremap k gk
 noremap 0 g0
@@ -26,18 +33,46 @@ noremap gj j
 noremap gk k
 noremap g0 0
 noremap g$ $
+noremap J 5j
+noremap K 5k
+noremap = nzz
+noremap - Nzz
+noremap <leader><CR> :nohlsearch<CR>
+
+map s <nop>
+map S :w<CR>
+map Q :q<CR>
+map R :source $MYVIMRC<CR>
+map sl :set splitright<CR>:vsplit<CR>
+map sh :set nosplitright<CR>:vsplit<CR>
+map sj :set splitbelow<CR>:split<CR> 
+map sk :set nosplitbelow<CR>:split<CR> 
+map <leader>l <c-w>l
+map <leader>h <c-w>h
+map <leader>j <c-w>j
+map <leader>k <c-w>k
+map <up> :res +5<CR>
+map <down> :res -5<CR>
+map <left> :vertical res -5<CR>
+map <right> :vertical res +5<CR>
+map sh <c-w>t<c-w>H
+map sv <c-w>t<c-w>K
+map ta :tabe<CR>
+map th :-tabnext<CR>
+map tl :+tabnext<CR>
 
 
 " ==========================================
 " Plugins
 " ==========================================
 call plug#begin()
-Plug 'SirVer/ultisnips'
-Plug 'lervag/vimtex'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'EdenEast/nightfox.nvim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+    Plug 'SirVer/ultisnips'
+    Plug 'lervag/vimtex'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'EdenEast/nightfox.nvim'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'luochen1990/rainbow'
 call plug#end()
 
 
@@ -124,4 +159,10 @@ let g:coc_global_extensions = [
     \ 'coc-vimtex',
     \ 'coc-json',
     \ 'coc-python' ]
+
+
+" ==========================================
+" Rainbow
+" ==========================================
+let g:rainbow_active = 1
 
