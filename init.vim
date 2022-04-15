@@ -33,8 +33,8 @@ noremap gj j
 noremap gk k
 noremap g0 0
 noremap g$ $
-noremap J 5j
-noremap K 5k
+noremap J 5gj
+noremap K 5gk
 noremap = nzz
 noremap - Nzz
 noremap <leader><CR> :nohlsearch<CR>
@@ -61,6 +61,8 @@ noremap ta :tabe<CR>
 noremap th :-tabnext<CR>
 noremap tl :+tabnext<CR>
 " Short commands
+noremap <leader>o o<Esc>k
+noremap <leader>O O<Esc>j
 nnoremap R :source $MYVIMRC<CR>
 
 
