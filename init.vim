@@ -27,14 +27,16 @@ let g:python3_host_prog = '/usr/bin/python'                 " python3 location
 " Movements
 noremap j gj
 noremap k gk
-noremap 0 g0
-noremap $ g$
 noremap gj j
 noremap gk k
-noremap g0 0
-noremap g$ $
 noremap J 5gj
 noremap K 5gk
+" Map 0 and $ only in normal mode
+nnoremap g0 0
+nnoremap 0 g0
+nnoremap $ g$
+nnoremap g$ $
+" Centering search results
 noremap = nzz
 noremap - Nzz
 noremap <leader><CR> :nohlsearch<CR>
