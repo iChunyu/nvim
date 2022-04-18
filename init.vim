@@ -23,6 +23,7 @@ exec "nohlsearch"
 
 let mapleader = " "                                         " set <leader> key
 let g:python3_host_prog = '/usr/bin/python'                 " python3 location
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " Movements
 noremap j gj
