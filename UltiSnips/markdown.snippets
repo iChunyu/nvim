@@ -1,0 +1,125 @@
+# ShortCodes for Hugo markdown (extented)
+
+snippet math "math shortcode" bA
+{{< math >}}$$
+$1
+$${{< /math >}}
+$0
+endsnippet
+
+snippet mm "math shortcode" wA
+{{< math >}}$$1${{< /math >}}
+endsnippet
+
+snippet img "HTML image" bA
+<div align=center>
+	<img src=$1 width=$2 />
+</div>
+endsnippet
+
+snippet ref "hyper reference" wA
+[$1]({{< ref "$2" >}}) $0
+endsnippet
+
+snippet '(ad)|(note)' "admonition" rbA
+{{< admonition ${1:note|abstract|info|tip|success|question|warning|failure|danger|bug|quote|example} >}}
+$2
+{{< /admonition >}}
+$0
+endsnippet
+
+snippet bili "bilibili" bA
+{{< bilibili $1 >}}
+$0
+endsnippet
+
+snippet typeit "typewriter" bA
+{{< typeit >}}
+$1
+{{< /typeit >}}
+$0
+endsnippet
+
+snippet ff "Fraction"
+\frac{$1}{$2}$0
+endsnippet
+
+
+snippet dd "differentiator"
+\frac{\mathrm{d}}{\mathrm{d}$1} $0
+endsnippet
+
+snippet '([A-Za-z]*)rm' "mathrm" ri
+`!p
+stripped = match.group(1)
+snip.rv = '\\mathrm{' + stripped + '}'
+`$0
+endsnippet
+
+snippet '([A-Za-z]*)bf' "mathbf" ri
+`!p
+stripped = match.group(1)
+snip.rv = '\\mathbf{' + stripped + '}'
+`$0
+endsnippet
+
+snippet '[A-Za-z]vec' "vec" ri
+`!p
+stripped = match.group(0)[0]
+snip.rv = '\\vec{' + stripped + '}'
+`$0
+endsnippet
+
+snippet '[A-Za-z]hat' "hat" ri
+`!p
+stripped = match.group(0)[0]
+snip.rv = '\\hat{' + stripped + '}'
+`$0
+endsnippet
+
+snippet '[A-Za-z]bre' "breve" ri
+`!p
+stripped = match.group(0)[0]
+snip.rv = '\\breve{' + stripped + '}'
+`$0
+endsnippet
+
+snippet exp "exp" 
+\mathrm{e}^{$1}
+endsnippet
+
+snippet '([A-Za-z])_([A-Za-z]{2,})' "subscript string" ri
+`!p
+g1 = match.group(1)
+g2 = match.group(2)
+results = g1 + '_\\mathrm{' + g2 + '}'
+snip.rv = results
+`$0
+endsnippet
+
+snippet '([A-Za-z])_(\d{2,})' "subscript number" ri
+`!p
+g1 = match.group(1)
+g2 = match.group(2)
+results = g1 + '_{' + g2 + '}'
+snip.rv = results
+`$0
+endsnippet
+
+snippet '([A-Za-z])\^([A-Za-z]{2,})' "superscript string" ri
+`!p
+g1 = match.group(1)
+g2 = match.group(2)
+results = g1 + '^\\mathrm{' + g2 + '}'
+snip.rv = results
+`$0
+endsnippet
+
+snippet '([A-Za-z])\^(\d{2,})' "superscript number" ri
+`!p
+g1 = match.group(1)
+g2 = match.group(2)
+results = g1 + '^{' + g2 + '}'
+snip.rv = results
+`$0
+endsnippet
