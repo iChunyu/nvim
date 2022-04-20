@@ -80,6 +80,9 @@ call plug#begin()
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'luochen1990/rainbow'
+    Plug 'gcmt/wildfire.vim'
+    Plug 'tpope/vim-surround'
+    Plug 'mbbill/undotree'
 call plug#end()
 
 
@@ -173,3 +176,8 @@ let g:coc_global_extensions = [
 " ==========================================
 let g:rainbow_active = 1
 
+
+" ==========================================
+" Undotree
+" ==========================================
+nnoremap <F5> :UndotreeToggle<CR>
