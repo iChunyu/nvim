@@ -1,0 +1,123 @@
+snippet spdoc "my LaTeX template" bA
+\documentclass[UTF8,fontset=adobe]{ctexart}
+
+
+% ==================================================================
+% My packages
+% ==================================================================
+
+% Date format yyyy-mm-dd
+\usepackage{datetime2}
+
+% Page margin
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left = 2.5cm,
+	right = 2.5cm,
+	bottom = 2.8cm,
+	top = 2.8cm
+}
+
+% Footer and header of page
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrule}{}
+\lhead{}
+\chead{}
+\rhead{}
+\cfoot{\thepage}
+
+% add bibliography to TOC
+\usepackage{tocbibind}
+
+% XeLaTeX logo
+\usepackage{metalogo}	
+
+% Color
+\usepackage[table]{xcolor}
+\definecolor{blue}{rgb}{0.1765,0.5216,0.9412}
+\definecolor{red}{rgb}{0.9569,0.2627,0.2353}
+\definecolor{yellow}{rgb}{1.0000,0.7373,0.1961}
+\definecolor{green}{rgb}{0.0392,0.6588,0.3451}
+\definecolor{pink}{rgb}{0.9843,0.4471,0.6000}
+
+% Code style
+\usepackage{listings}
+\lstset{
+	basicstyle = \zihao{5}\ttfamily,
+	keywordstyle = \color[rgb]{0.00,0.00,1.00},
+	commentstyle = \color[rgb]{0.24, 0.46,0.24},
+	stringstyle = \color[rgb]{0.62,0.12,0.93},
+	frame = single,
+	numbers = left,
+	tabsize = 4,
+	breaklines = true,
+	showstringspaces = false
+}
+
+% Optimize footnotemark
+\usepackage[perpage]{footmisc}              % clear count per page
+\usepackage{pifont}                         % use number with ciecle
+\renewcommand{\thefootnote}{\ding{\numexpr171+\value{footnote}}}
+
+% Hyperlink
+\usepackage{hyperref}                       % required package
+\hypersetup{hidelinks}                      % hide notations for hyperlink
+\hypersetup{colorlinks = true}              % use color to show hyperlink
+
+% Math
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{nicematrix}
+\usepackage{bm}                             % bold fonts
+\usepackage{newtxmath}                      % times now roam font
+\numberwithin{equation}{section}
+
+% SI units
+\usepackage{siunitx}
+
+% Table and figure
+\usepackage{graphicx}                       % figure package
+\usepackage{tabularx}                       % fixed-width table
+\usepackage{multirow}                       % merge row
+\usepackage{booktabs}                       % standard three-line table
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{subcaption}
+\graphicspath{{./figures/}}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\captionsetup{labelsep=period}
+
+% Support user-defined styles of enumerate
+\usepackage{enumitem}
+\setlist{noitemsep}
+% \setlist[1]{labelindent=\parindent} % < Usually a good idea
+% \setlist[itemize]{leftmargin=*}
+
+
+% Biolography style
+\usepackage{gbt7714}                        % China standard style
+\bibliographystyle{gbt7714-numerical}       % numerical / author-year
+
+\usepackage{multicol}
+\setlength\columnsep{2em}
+
+\usepackage[nameinlink]{cleveref}
+\crefname{equation}{式}{式}
+\crefname{table}{表}{表}
+\crefname{figure}{图}{图}
+\crefformat{section}{第~#2#1#3~节}
+\crefformat{subsection}{第~#2#1#3~小节}
+
+
+% ==================================================================
+% Document starts from here
+% ==================================================================
+
+\begin{document}
+$0
+\end{document}
+endsnippet
+

@@ -1,0 +1,61 @@
+snippet '(env)|(beg)' "begin an environment" rbA
+\begin{$1}
+	$0
+\end{$1}
+endsnippet
+
+snippet eqn "equation" bA
+\begin{equation}
+	$1
+\end{equation}
+$0
+endsnippet
+
+snippet aln "align" bA
+\begin{align}
+	$1
+\end{align}
+$0
+endsnippet
+
+snippet ald "aligned" bA
+\begin{aligned}
+	$1
+\end{aligned}
+$0
+endsnippet
+
+snippet gat "gather" bA
+\begin{gather}
+	$1
+\end{gather}
+$0
+endsnippet
+
+snippet gad "gathered" bA
+\begin{gathered}
+	$1
+\end{gathered}
+$0
+endsnippet
+
+snippet fig "figure" bA
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=${1:\\linewidth}]{$2}
+	\caption{$3}
+	\label{fig:$4}
+\end{figure}
+$0
+endsnippet
+
+snippet tab "table" bA
+\begin{table}[!htb]
+	\centering
+	\caption{$1}
+	\label{tab:$2}
+	$0
+\end{table}
+endsnippet
+
+
