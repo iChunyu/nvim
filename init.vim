@@ -81,7 +81,6 @@ call plug#begin()
     Plug 'vim-airline/vim-airline-themes'
     Plug 'luochen1990/rainbow'
     Plug 'gcmt/wildfire.vim'
-    Plug 'tpope/vim-surround'
     Plug 'mbbill/undotree'
 call plug#end()
 

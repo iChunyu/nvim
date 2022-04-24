@@ -12,14 +12,14 @@ snippet ff "Fraction" iA
 endsnippet
 
 context "math()"
-snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)//' "Fraction" wrA
 \frac{`!p snip.rv = match.group(1)`}{$1}$0
 endsnippet
 
 context "math()"
-snippet '^.*\)/' "() Fraction" wrA
+snippet '^.*\)//' "() Fraction" wrA
 `!p
-stripped = match.string[:-1]
+stripped = match.string[:-2]
 depth = 0
 i = len(stripped) - 1
 while True:
