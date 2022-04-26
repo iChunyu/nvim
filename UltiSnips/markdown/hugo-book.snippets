@@ -1,0 +1,36 @@
+snippet pp "Parameters link" i
+[$1]({{< relref "#$1" >}})$0
+endsnippet
+
+snippet $$ "inline math" wA
+{{< katex >}}$1{{< /katex >}}$0
+endsnippet
+
+
+snippet $$ "inline math" bA
+{{< katex [display] >}}
+$1
+{{< /katex >}}
+$0
+endsnippet
+
+snippet columns "multicolumns" bA
+{{< columns >}}
+$0
+<--->
+
+{{< /columns >}}
+endsnippet
+
+snippet detail "detail to be expended" bA
+{{< details title="$1" open=${2:true}] >}}
+$0
+{{< /details >}}
+endsnippet
+
+snippet hint "hint" bA
+{{< hint ${1:info|warning|danger} >}}
+$0
+{{< /hint >}}
+endsnippet
+
