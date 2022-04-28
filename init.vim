@@ -83,6 +83,7 @@ call plug#begin()
     Plug 'gcmt/wildfire.vim'
     Plug 'mbbill/undotree'
     Plug 'ggandor/lightspeed.nvim'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 
@@ -189,3 +190,17 @@ nnoremap <F5> :UndotreeToggle<CR>
 lua require'lightspeed'.setup{}
 noremap L <Plug>Lightspeed_s
 noremap H <Plug>Lightspeed_S
+
+
+" ==========================================
+" TreeSitter
+" ==========================================
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+	-- one of "all", "language", or a list of languages
+	ensure_installed = {'bibtex', 'html', 'json', 'latex', 'python', 'vim'},
+	highlight = {
+		enable = true,              -- false will disable the whole extension
+	},
+}
+EOF
