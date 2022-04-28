@@ -82,6 +82,7 @@ call plug#begin()
     Plug 'luochen1990/rainbow'
     Plug 'gcmt/wildfire.vim'
     Plug 'mbbill/undotree'
+    Plug 'ggandor/lightspeed.nvim'
 call plug#end()
 
 
@@ -180,3 +181,11 @@ let g:rainbow_active = 1
 " Undotree
 " ==========================================
 nnoremap <F5> :UndotreeToggle<CR>
+
+
+" ==========================================
+" LightSpeed
+" ==========================================
+lua require'lightspeed'.setup{}
+noremap L <Plug>Lightspeed_s
+noremap H <Plug>Lightspeed_S
