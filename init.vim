@@ -84,6 +84,7 @@ call plug#begin()
     Plug 'mbbill/undotree'
     Plug 'ggandor/lightspeed.nvim'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'h-hg/fcitx.nvim'
 call plug#end()
 
 
