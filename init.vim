@@ -23,7 +23,9 @@ exec "nohlsearch"
 
 let mapleader = " "                                         " set <leader> key
 let g:python3_host_prog = '/usr/bin/python'                 " python3 location
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" restore previous cursor location
+" au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " Movements
 noremap j gj
@@ -170,7 +172,8 @@ let g:coc_global_extensions = [
     \ 'coc-marketplace',
     \ 'coc-vimtex',
     \ 'coc-json',
-    \ 'coc-python' ]
+    \ 'coc-python',
+    \ 'coc-git' ]
 
 
 " ==========================================
@@ -198,10 +201,10 @@ noremap H <Plug>Lightspeed_S
 " ==========================================
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-	-- one of "all", "language", or a list of languages
-	ensure_installed = {'bibtex', 'html', 'json', 'latex', 'python', 'vim'},
-	highlight = {
-		enable = true,              -- false will disable the whole extension
-	},
+    -- one of "all", "language", or a list of languages
+    ensure_installed = {'bibtex', 'html', 'json', 'latex', 'python', 'vim'},
+    highlight = {
+        enable = true,              -- false will disable the whole extension
+    },
 }
 EOF
