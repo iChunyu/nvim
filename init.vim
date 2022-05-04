@@ -68,6 +68,9 @@ noremap tl :+tabnext<CR>
 " Short commands
 noremap <leader>o o<Esc>k
 noremap <leader>O O<Esc>j
+noremap <leader>w :w<CR>
+noremap <leader>q :q<CR>
+noremap Y "+y
 nnoremap R :source $MYVIMRC<CR>
 
 
