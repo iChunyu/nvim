@@ -93,6 +93,8 @@ call plug#begin()
     Plug 'rcarriga/nvim-notify'
     Plug 'lewis6991/gitsigns.nvim'
     Plug 'godlygeek/tabular'
+    Plug 'kyazdani42/nvim-web-devicons'
+    Plug 'kyazdani42/nvim-tree.lua'
 call plug#end()
 
 
@@ -190,7 +192,7 @@ let g:rainbow_active = 1
 " ==========================================
 " Undotree
 " ==========================================
-nnoremap <F5> :UndotreeToggle<CR>
+nnoremap <leader>u :UndotreeToggle<CR>
 
 
 " ==========================================
@@ -236,3 +238,37 @@ noremap <leader>gu :Gitsigns undo_stage_hunk<CR>
 " Tabular
 " ==========================================
 vnoremap <leader>t :Tabular /
+
+
+" ==========================================
+" nvim-tree
+" ==========================================
+let g:nvim_tree_git_hl = 1
+let g:nvim_tree_highlight_opened_files = 1
+let g:nvim_tree_icons = {
+    \ 'default': "",
+    \ 'symlink': "",
+    \ 'git': {
+    \   'unstaged': "✗",
+    \   'staged': "✓",
+    \   'unmerged': "",
+    \   'renamed': "➜",
+    \   'untracked': "★",
+    \   'deleted': "",
+    \   'ignored': "◌"
+    \   },
+    \ 'folder': {
+    \   'arrow_open': "",
+    \   'arrow_closed': "",
+    \   'default': "",
+    \   'open': "",
+    \   'empty': "",
+    \   'empty_open': "",
+    \   'symlink': "",
+    \   'symlink_open': "",
+    \   }
+    \ }
+nnoremap <leader>n :NvimTreeToggle<CR>
+nnoremap <F5> :NvimTreeRefresh<CR>
+set termguicolors " this variable must be enabled for colors to be applied properly
+lua require'nvim-tree'.setup{}
