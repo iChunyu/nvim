@@ -87,6 +87,7 @@ call plug#begin()
     Plug 'ggandor/lightspeed.nvim'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'h-hg/fcitx.nvim'
+    Plug 'rcarriga/nvim-notify'
 call plug#end()
 
 
@@ -208,3 +209,9 @@ require'nvim-treesitter.configs'.setup {
     },
 }
 EOF
+
+
+" ==========================================
+" Nvim-Notify
+" ==========================================
+lua vim.notify = require("notify")
