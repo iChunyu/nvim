@@ -89,6 +89,7 @@ call plug#begin()
     Plug 'h-hg/fcitx.nvim'
     Plug 'rcarriga/nvim-notify'
     Plug 'lewis6991/gitsigns.nvim'
+    Plug 'godlygeek/tabular'
 call plug#end()
 
 
@@ -226,3 +227,9 @@ noremap <leader>gj :Gitsigns next_hunk<CR>
 noremap <leader>gk :Gitsigns prev_hunk<CR>
 noremap <leader>ga :Gitsigns stage_hunk<CR>
 noremap <leader>gu :Gitsigns undo_stage_hunk<CR>
+
+
+" ==========================================
+" Tabular
+" ==========================================
+vnoremap <leader>t :Tabular /
