@@ -88,6 +88,7 @@ call plug#begin()
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'h-hg/fcitx.nvim'
     Plug 'rcarriga/nvim-notify'
+    Plug 'lewis6991/gitsigns.nvim'
 call plug#end()
 
 
@@ -173,8 +174,7 @@ let g:coc_global_extensions = [
     \ 'coc-marketplace',
     \ 'coc-vimtex',
     \ 'coc-json',
-    \ 'coc-python',
-    \ 'coc-git' ]
+    \ 'coc-python' ]
 
 
 " ==========================================
@@ -200,7 +200,7 @@ noremap H <Plug>Lightspeed_S
 " ==========================================
 " TreeSitter
 " ==========================================
-lua <<EOF
+lua << EOF
 require'nvim-treesitter.configs'.setup {
     -- one of "all", "language", or a list of languages
     ensure_installed = {'bibtex', 'html', 'json', 'latex', 'python', 'vim'},
@@ -215,3 +215,14 @@ EOF
 " Nvim-Notify
 " ==========================================
 lua vim.notify = require("notify")
+
+
+" ==========================================
+" GitSigns
+" ==========================================
+lua require'gitsigns'.setup()
+noremap <leader>gd :Gitsigns preview_hunk<CR>
+noremap <leader>gj :Gitsigns next_hunk<CR>
+noremap <leader>gk :Gitsigns prev_hunk<CR>
+noremap <leader>ga :Gitsigns stage_hunk<CR>
+noremap <leader>gu :Gitsigns undo_stage_hunk<CR>
