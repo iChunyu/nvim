@@ -1,56 +1,59 @@
-# 我的 NeoVim 配置
+# 某春雨自用的 NeoVim 配置
 
-## 安装
+<!-- TOC GFM -->
 
-- 安装 NeoVim
+* [## 使用前的准备](#-使用前的准备)
+* [## 使用方法](#-使用方法)
+* [## 配置说明](#-配置说明)
+* [## 插件简介](#-插件简介)
+* [## 致谢](#-致谢)
+* [## 参考资料](#-参考资料)
 
-```
-sudo pacman -S neovim python-pynvim
-```
+<!-- /TOC -->
 
-- 插件管理 [`vim-plug`](https://github.com/junegunn/vim-plug)
+## 使用前的准备
+---
 
-```
-# 从 AUR 安装
-yay -S vim-plug
-# 从 GitHub 安装
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-```
+在使用本配置前，请确保已经安装：
 
-- 使用系统剪切板
+- [NeoVim](https://neovim.io/) 及其必要依赖；
+- [vim-plug](https://github.com/junegunn/vim-plug) 插件管理器；
 
-```
-sudo pacman -S xclip
-```
+以下内容可选，用于增强功能和美化：
 
-- Powerline 字体
+- [xclip](https://github.com/astrand/xclip)：启用 `+` 寄存器用于系统级复制；
+- [powerline-fonts](https://github.com/powerline/powerline)：用于 `airline` 插件美化。
 
-```
-sudo pacman -S powerline-fonts
-```
+如果你是 Arch 用户，上述基本配置可以使用 `yay` 进行安装：
 
-
-## 配置
-
-### 自动安装插件
-
-使用命令 `nvim` 进入 NeoVim 后，输入 `:PlugInstall` 即可自动安装插件。
-
-### Python 3 设置
-
-Python 3 路径设置为 `/usr/bin/python`，应当不需要变更。如果使用其他发行版而导致路径不同，再修改此设置。
-
-### AirLine
-
-安装字体即可。
-
-### VimTex
-
-安装 `zathura` 阅读器。
-
-```
-sudo pacman -S zathura zathura-pdf-poppler
+``` bash
+yay -S neovim python-pynvim     # NeoVim 和 Python 依赖
+yay -S vim-plug                 # 插件管理器
+yay -S xclip powerline-fonts    # [可选] 系统剪切板和美化字体
 ```
 
+## 使用方法
+---
 
+将本仓库克隆到用户配置文件夹下，对于 Linux 用户，可使用以下命令：
+
+``` bash
+git clone https://github.com/iChunyu/nvim.git ~/.config/nvim/
+```
+
+进入 NeoVim 后运行 `:PlugInstall` 等待插件安装完成即可。
+
+## 配置说明
+---
+
+
+## 插件简介
+---
+
+## 致谢
+---
+
+（草稿还没完成，但致谢必须写上：感谢 [theniceboy](https://github.com/theniceboy) 的 B 站视频和配置示例！）
+
+## 参考资料
+---
