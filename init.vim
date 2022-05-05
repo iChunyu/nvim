@@ -104,6 +104,10 @@ call plug#begin()
     Plug 'BurntSushi/ripgrep'
     Plug 'sharkdp/fd'
     Plug 'nvim-telescope/telescope.nvim'
+
+    " markdown enhancement
+    Plug 'mzlogin/vim-markdown-toc'
+    Plug 'dkarter/bullets.vim'
 call plug#end()
 
 
@@ -253,3 +257,19 @@ vnoremap <leader>t :Tabular /
 " ==========================================
 nnoremap <leader>tf <cmd>Telescope find_files<cr>
 lua require'telescope'.setup{}
+
+
+" ==========================================
+" vim-markdown-toc: table of contents
+" ==========================================
+let g:vmt_cycle_list_item_markers = 1
+" :GenTocGFM --- GitHub style TOC
+
+
+" ==========================================
+" bullets: auto add bullets
+" ==========================================
+let g:bullets_enabled_file_types = [
+    \ 'markdown',
+    \ 'text',
+    \ 'gitcommit']
