@@ -1,5 +1,5 @@
 " ==========================================
-" Basic settings for [Neo]Vim
+" Basic settings for NeoVim
 " ==========================================
 syntax on
 filetype on
@@ -21,7 +21,7 @@ set smartcase
 set scrolloff=5
 exec "nohlsearch"
 
-let mapleader = " "                                         " set <leader> key
+let g:mapleader = " "                                         " set <leader> key
 let g:python3_host_prog = '/usr/bin/python'                 " python3 location
 
 " restore previous cursor location
@@ -34,15 +34,18 @@ noremap gj j
 noremap gk k
 noremap J 5gj
 noremap K 5gk
-" Map 0 and $ only in normal mode
+
+" Map 0 and $ only in normal mode (screen line)
 nnoremap g0 0
 nnoremap 0 g0
 nnoremap $ g$
 nnoremap g$ $
+
 " Centering search results
 noremap = nzz
 noremap - Nzz
 noremap <leader><CR> :nohlsearch<CR>
+
 " Split the screen and resize
 noremap s <nop>
 noremap sl :set splitright<CR>:vsplit<CR>
@@ -61,11 +64,13 @@ noremap <up> :res +5<CR>
 noremap <down> :res -5<CR>
 noremap <left> :vertical res -5<CR>
 noremap <right> :vertical res +5<CR>
+
 " Tabs
 noremap ta :tabe<CR>
 noremap th :-tabnext<CR>
 noremap tl :+tabnext<CR>
-" Short commands
+
+" Other commands
 noremap <leader>o o<Esc>k
 noremap <leader>O O<Esc>j
 noremap <leader>w :w<CR>
@@ -75,7 +80,7 @@ nnoremap R :source $MYVIMRC<CR>
 
 
 " ==========================================
-" Plugins
+" Plugins (Required: vimplug)
 " ==========================================
 call plug#begin()
     Plug 'SirVer/ultisnips'
@@ -93,13 +98,17 @@ call plug#begin()
     Plug 'rcarriga/nvim-notify'
     Plug 'lewis6991/gitsigns.nvim'
     Plug 'godlygeek/tabular'
-    Plug 'kyazdani42/nvim-web-devicons'
-    Plug 'kyazdani42/nvim-tree.lua'
+
+    " telescope and its dependencies
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'BurntSushi/ripgrep'
+    Plug 'sharkdp/fd'
+    Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 
 " ==========================================
-" UnitSnips settings
+" UnitSnips: create user-defined snippets
 " ==========================================
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
@@ -149,7 +158,7 @@ let g:airline_symbols.linenr = ''
 
 
 " ==========================================
-" Coc configuration
+" Coc: auto completion
 " ==========================================
 set hidden
 set updatetime=100
@@ -178,25 +187,24 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 let g:coc_global_extensions = [
     \ 'coc-marketplace',
-    \ 'coc-vimtex',
     \ 'coc-json',
     \ 'coc-python' ]
 
 
 " ==========================================
-" Rainbow
+" Rainbow: colorful brackets
 " ==========================================
 let g:rainbow_active = 1
 
 
 " ==========================================
-" Undotree
+" Undotree: history tree like a local git
 " ==========================================
 nnoremap <leader>u :UndotreeToggle<CR>
 
 
 " ==========================================
-" LightSpeed
+" LightSpeed: fast jump
 " ==========================================
 lua require'lightspeed'.setup{}
 noremap L <Plug>Lightspeed_s
@@ -204,7 +212,7 @@ noremap H <Plug>Lightspeed_S
 
 
 " ==========================================
-" TreeSitter
+" TreeSitter: highlight code
 " ==========================================
 lua << EOF
 require'nvim-treesitter.configs'.setup {
@@ -218,13 +226,13 @@ EOF
 
 
 " ==========================================
-" Nvim-Notify
+" Nvim-Notify: beautiful notifications
 " ==========================================
 lua vim.notify = require("notify")
 
 
 " ==========================================
-" GitSigns
+" GitSigns: Git intergration
 " ==========================================
 lua require'gitsigns'.setup()
 noremap <leader>gd :Gitsigns preview_hunk<CR>
@@ -235,40 +243,13 @@ noremap <leader>gu :Gitsigns undo_stage_hunk<CR>
 
 
 " ==========================================
-" Tabular
+" Tabular: align text with the given symbol
 " ==========================================
 vnoremap <leader>t :Tabular /
 
 
 " ==========================================
-" nvim-tree
+" Telescope: find files
 " ==========================================
-let g:nvim_tree_git_hl = 1
-let g:nvim_tree_highlight_opened_files = 1
-let g:nvim_tree_icons = {
-    \ 'default': "",
-    \ 'symlink': "",
-    \ 'git': {
-    \   'unstaged': "✗",
-    \   'staged': "✓",
-    \   'unmerged': "",
-    \   'renamed': "➜",
-    \   'untracked': "★",
-    \   'deleted': "",
-    \   'ignored': "◌"
-    \   },
-    \ 'folder': {
-    \   'arrow_open': "",
-    \   'arrow_closed': "",
-    \   'default': "",
-    \   'open': "",
-    \   'empty': "",
-    \   'empty_open': "",
-    \   'symlink': "",
-    \   'symlink_open': "",
-    \   }
-    \ }
-nnoremap <leader>n :NvimTreeToggle<CR>
-nnoremap <F5> :NvimTreeRefresh<CR>
-set termguicolors " this variable must be enabled for colors to be applied properly
-lua require'nvim-tree'.setup{}
+nnoremap <leader>tf <cmd>Telescope find_files<cr>
+lua require'telescope'.setup{}
