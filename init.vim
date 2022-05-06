@@ -1,26 +1,33 @@
 " ==========================================
 " Basic settings for NeoVim
 " ==========================================
-syntax on
+" filetype support
 filetype on
 filetype plugin on
 filetype plugin indent on
+" line number
 set number
 set relativenumber
+" indent
 set autoindent
 set smartindent
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+" encoding
 set encoding=utf-8
+" highlight
+syntax on
 set showmatch
 set hlsearch
+exec "nohlsearch"
+" search
 set ignorecase
 set smartcase
+" top/bottom margin
 set scrolloff=5
-exec "nohlsearch"
-
+" extra
 let g:mapleader = " "                                         " set <leader> key
 let g:python3_host_prog = '/usr/bin/python'                 " python3 location
 
