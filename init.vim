@@ -225,10 +225,12 @@ noremap H <Plug>Lightspeed_S
 " ==========================================
 " TreeSitter: highlight code
 " ==========================================
+" Do NOT add 'latex' for now, breaking UltiSnips feature.
+"   Ref: https://github.com/nvim-treesitter/nvim-treesitter/issues/1184
 lua << EOF
 require'nvim-treesitter.configs'.setup {
     -- one of "all", "language", or a list of languages
-    ensure_installed = {'bibtex', 'html', 'json', 'latex', 'python', 'vim'},
+    ensure_installed = {'bibtex', 'html', 'json', 'python', 'vim'},
     highlight = {
         enable = true,              -- false will disable the whole extension
     },

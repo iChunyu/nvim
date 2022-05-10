@@ -1,6 +1,23 @@
-snippet snip "A snippet for writing Ultisnips snippets" b
+snippet nsnip "new snippet" bA
 `!p snip.rv = "snippet"` ${1:trigger} "${2:Description}" ${3:options}
 $4
 `!p snip.rv = "endsnippet"`
 $0
 endsnippet
+
+snippet defmath "define function to check math zone" bA
+# check whether the cursor is inside a math zone
+global !p
+def math():
+	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+endglobal
+endsnippet
+
+snippet msnip "new snippet with math zone checked" bA
+context "math()"
+`!p snip.rv = "snippet"` ${1:trigger} "${2:Description}" ${3:options}
+$4
+`!p snip.rv = "endsnippet"`
+$0
+endsnippet
+

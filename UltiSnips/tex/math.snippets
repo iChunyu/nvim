@@ -1,7 +1,7 @@
 global !p
 # check whether the cursor is inside a math zone
 def math():
-  return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
 endglobal
 
 # ================= Fraction settings =================
