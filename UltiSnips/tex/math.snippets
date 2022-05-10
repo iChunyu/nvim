@@ -40,40 +40,6 @@ snippet dd "differentiator" w
 \frac{\mathrm{d}}{\mathrm{d}$1} $0
 endsnippet
 
-snippet '([A-Za-z]*)rm' "mathrm" ri
-`!p
-stripped = match.group(1)
-snip.rv = '\\mathrm{' + stripped + '}'
-`$0
-endsnippet
-
-snippet '([A-Za-z]*)bf' "mathbf" ri
-`!p
-stripped = match.group(1)
-snip.rv = '\\mathbf{' + stripped + '}'
-`$0
-endsnippet
-
-snippet '[A-Za-z]vec' "vec" ri
-`!p
-stripped = match.group(0)[0]
-snip.rv = '\\vec{' + stripped + '}'
-`$0
-endsnippet
-
-snippet '[A-Za-z]hat' "hat" ri
-`!p
-stripped = match.group(0)[0]
-snip.rv = '\\hat{' + stripped + '}'
-`$0
-endsnippet
-
-snippet '[A-Za-z]bre' "breve" ri
-`!p
-stripped = match.group(0)[0]
-snip.rv = '\\breve{' + stripped + '}'
-`$0
-endsnippet
 
 snippet exp "exp" 
 \mathrm{e}^{$1}

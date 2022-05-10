@@ -1,0 +1,59 @@
+# Automatically expand delimiter
+
+# Check whether the cursor is inside a math zone
+global !p
+def math():
+	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+endglobal
+
+context "math()"
+snippet lr( "auto-expand ()" wA
+\left( $1 \right)$0
+endsnippet
+
+context "math()"
+snippet lr[ "auto-expand []" wA
+\left[ $1 \right]$0
+endsnippet
+
+context "math()"
+snippet lr{ "auto-expand {}" wA
+\left\{ $1 \right\}$0
+endsnippet
+
+context "math()"
+snippet lr< "auto-expand <>" wA
+\left\langle $1 \right\rangle$0
+endsnippet
+
+context "math()"
+snippet ab| "auto-expand ||" wA
+\left\lvert $1 \right\rvert$0
+endsnippet
+
+context "math()"
+snippet no| "auto-expand \|\|" wA
+\left\lVert $1 \right\rVert$0
+endsnippet
+
+# Manually control the size of delimiter
+# Hint: change surrounding delimiter with `csd` from VimTeX
+context "math()"
+snippet b( "big ()" wA
+\bigl( $1 \bigr)$0
+endsnippet
+
+context "math()"
+snippet bb( "Big ()" wA
+\Bigl( $1 \Bigr)$0
+endsnippet
+
+context "math()"
+snippet bg( "bigg ()" wA
+\biggl( $1 \biggr)$0
+endsnippet
+
+context "math()"
+snippet bbg( "Bigg ()" wA
+\Biggl( $1 \Biggr)$0
+endsnippet

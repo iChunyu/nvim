@@ -6,7 +6,7 @@ $0
 endsnippet
 
 snippet defmath "define function to check math zone" bA
-# check whether the cursor is inside a math zone
+# Check whether the cursor is inside a math zone
 global !p
 def math():
 	return vim.eval('vimtex#syntax#in_mathzone()') == '1'

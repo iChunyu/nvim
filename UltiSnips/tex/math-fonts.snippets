@@ -1,0 +1,59 @@
+# Check whether the cursor is inside a math zone
+global !p
+def math():
+	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+endglobal
+
+
+# Change math font style
+context "math()"
+snippet '([A-Za-z]+)rm' "mathrm" rA
+`!p snip.rv = '\\mathrm{' + match.group(1) + '}' `$0
+endsnippet
+
+context "math()"
+snippet '([A-Za-z]+)bf' "mathbf" rA
+`!p snip.rv = '\\mathbf{' + match.group(1) + '}' `$0
+endsnippet
+
+context "math()"
+snippet '([A-Za-z]+)fk' "mathbf" rA
+`!p snip.rv = '\\mathfrak{' + match.group(1) + '}' `$0
+endsnippet
+
+
+# Common-used hats
+context "math()"
+snippet '([A-Za-z])dot' "dot" rA
+`!p snip.rv = '\\dot{' + match.group(1) + '}' `$0
+endsnippet
+
+context "math()"
+snippet '([A-Za-z])ddo' "ddot" rA
+`!p snip.rv = '\\ddot{' + match.group(1) + '}' `$0
+endsnippet
+
+context "math()"
+snippet '([A-Za-z])vec' "vec" rA
+`!p snip.rv = '\\vec{' + match.group(1) + '}' `$0
+endsnippet
+
+context "math()"
+snippet '([A-Za-z])hat' "hat" rA
+`!p snip.rv = '\\hat{' + match.group(1) + '}' `$0
+endsnippet
+
+context "math()"
+snippet '([A-Za-z])bar' "bar" rA
+`!p snip.rv = '\\bar{' + match.group(1) + '}' `$0
+endsnippet
+
+context "math()"
+snippet '([A-Za-z])bre' "breve" rA
+`!p snip.rv = '\\breve{' + match.group(1) + '}' `$0
+endsnippet
+
+context "math()"
+snippet '([A-Za-z])til' "tilde" rA
+`!p snip.rv = '\\tilde{' + match.group(1) + '}' `$0
+endsnippet
