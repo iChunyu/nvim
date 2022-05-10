@@ -4,41 +4,6 @@ snippet '(env)|(beg)' "begin an environment" rbA
 \end{$1}
 endsnippet
 
-snippet eqn "equation" bA
-\begin{equation}
-	$1
-\end{equation}
-$0
-endsnippet
-
-snippet aln "align" bA
-\begin{align}
-	$1
-\end{align}
-$0
-endsnippet
-
-snippet ald "aligned" bA
-\begin{aligned}
-	$1
-\end{aligned}
-$0
-endsnippet
-
-snippet gat "gather" bA
-\begin{gather}
-	$1
-\end{gather}
-$0
-endsnippet
-
-snippet gad "gathered" bA
-\begin{gathered}
-	$1
-\end{gathered}
-$0
-endsnippet
-
 snippet fig "figure" bA
 \begin{figure}[!htb]
 	\centering
@@ -49,13 +14,33 @@ snippet fig "figure" bA
 $0
 endsnippet
 
-snippet tab "table" bA
+snippet tabu "table with tabular" bA
 \begin{table}[!htb]
 	\centering
 	\caption{$1}
 	\label{tab:$2}
-	$0
+	\begin{tabular}{$3}
+		$0
+	\end{tabular}
 \end{table}
 endsnippet
 
+snippet tabx "table with tabularx" bA
+\begin{table}[!htb]
+	\centering
+	\caption{$1}
+	\label{tab:$2}
+	\begin{tabularx}{$3}{$4}
+		$0
+	\end{tabularx}
+\end{table}
+endsnippet
+
+snippet tabl "table lines" bA
+\toprule
+$1
+\midrule
+$2
+\bottomrule
+endsnippet
 
