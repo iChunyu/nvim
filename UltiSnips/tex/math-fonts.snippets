@@ -24,36 +24,36 @@ endsnippet
 
 # Common-used hats
 context "math()"
-snippet '([A-Za-z])dot' "dot" rA
-`!p snip.rv = '\\dot{' + match.group(1) + '}' `$0
-endsnippet
-
-context "math()"
-snippet '([A-Za-z])ddo' "ddot" rA
-`!p snip.rv = '\\ddot{' + match.group(1) + '}' `$0
-endsnippet
-
-context "math()"
 snippet '([A-Za-z])vec' "vec" rA
 `!p snip.rv = '\\vec{' + match.group(1) + '}' `$0
 endsnippet
 
 context "math()"
-snippet '([A-Za-z])hat' "hat" rA
+snippet '([\\\{\}A-Za-z]+)dot' "dot" rA
+`!p snip.rv = '\\dot{' + match.group(1) + '}' `$0
+endsnippet
+
+context "math()"
+snippet '([\\\{\}A-Za-z]+)ddo' "ddot" rA
+`!p snip.rv = '\\ddot{' + match.group(1) + '}' `$0
+endsnippet
+
+context "math()"
+snippet '([\\\{\}A-Za-z]+)hat' "hat" rA
 `!p snip.rv = '\\hat{' + match.group(1) + '}' `$0
 endsnippet
 
 context "math()"
-snippet '([A-Za-z])bar' "bar" rA
+snippet '([\\\{\}A-Za-z]+)bar' "bar" rA
 `!p snip.rv = '\\bar{' + match.group(1) + '}' `$0
 endsnippet
 
 context "math()"
-snippet '([A-Za-z])bre' "breve" rA
+snippet '([\\\{\}A-Za-z]+)bre' "breve" rA
 `!p snip.rv = '\\breve{' + match.group(1) + '}' `$0
 endsnippet
 
 context "math()"
-snippet '([A-Za-z])til' "tilde" rA
+snippet '([\\\{\}A-Za-z]+)til' "tilde" rA
 `!p snip.rv = '\\tilde{' + match.group(1) + '}' `$0
 endsnippet

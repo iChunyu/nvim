@@ -328,12 +328,12 @@ snippets
 
 当使用正则表达式时，匹配结果可以通过形如 `match.group(1)` 的方式进行调用；输出到代码片段的内容只需要赋值给变量 `snip.rv` 即可。
 
-编写好代码片段文件后，在 [Neo]Vim 的配置文件中设置触发键即可。一般情况下，我们会使用 `<tab>` 展开代码片段，但测试发现这样会与后文的自动补全冲突，因此这里将触发设置成了 `<c-j>` （`Ctrl` 和 `j` 的组合键）。同时分别用 `<c-j>` 和 `<c-k>` 跳转到下一个或上一个断点。下面配置的最后一行手动指定（限定）代码片段的搜索路径，以加快加载速度。
+编写好代码片段文件后，在 [Neo]Vim 的配置文件中设置触发键即可。一般情况下，我们会使用 `<tab>` 展开代码片段，但测试发现这样会与后文的自动补全冲突，因此这里将触发设置成了 `jk` 。同时分别用 `jk` 和 `kj` 跳转到下一个或上一个断点。下面配置的最后一行手动指定（限定）代码片段的搜索路径，以加快加载速度。
 
 ``` vim
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsExpandTrigger="jk"
+let g:UltiSnipsJumpForwardTrigger="jk"
+let g:UltiSnipsJumpBackwardTrigger="kj"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
 ```
 
@@ -428,13 +428,15 @@ noremap H <Plug>Lightspeed_S
 lua << EOF
 require'nvim-treesitter.configs'.setup {
     -- one of "all", "language", or a list of languages
-    ensure_installed = {'bibtex', 'html', 'json', 'latex', 'python', 'vim'},
+    ensure_installed = {'bibtex', 'html', 'json', 'python', 'vim'},
     highlight = {
         enable = true,              -- false will disable the whole extension
     },
 }
 EOF
 ```
+
+> 该插件的 LaTeX 支持会导致 UltiSnip `context` 判断数学环境的功能失效，因此这里没有开启，详见 [该 Issue](https://github.com/nvim-treesitter/nvim-treesitter/issues/1184)。
 
 ### fcitx.nvim：输入法切换
 
