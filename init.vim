@@ -51,7 +51,7 @@ nnoremap g$ $
 " Centering search results
 noremap = nzz
 noremap - Nzz
-noremap <leader><CR> :nohlsearch<CR>
+noremap <silent> <leader><CR> :nohlsearch<CR>
 
 " Split the screen and resize
 noremap s <nop>
@@ -83,7 +83,6 @@ noremap <leader>O O<Esc>j
 noremap <leader>w :w<CR>
 noremap <leader>q :q<CR>
 noremap Y "+y
-nnoremap R :source $MYVIMRC<CR>
 
 
 " ==========================================
@@ -125,7 +124,7 @@ let g:UltiSnipsExpandTrigger="jk"
 let g:UltiSnipsJumpForwardTrigger="jk"
 let g:UltiSnipsJumpBackwardTrigger="kj"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
-nnoremap <leader>su <Cmd>call UltiSnips#RefreshSnippets()<CR>
+nnoremap R :source $MYVIMRC<CR>:call UltiSnips#RefreshSnippets()<CR>
 
 
 " ==========================================
@@ -200,7 +199,9 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 let g:coc_global_extensions = [
     \ 'coc-marketplace',
     \ 'coc-json',
-    \ 'coc-python' ]
+    \ 'coc-python',
+    \ 'coc-vimtex',
+    \ 'coc-ltex' ]
 
 
 " ==========================================
@@ -249,11 +250,12 @@ lua vim.notify = require("notify")
 " GitSigns: Git intergration
 " ==========================================
 lua require'gitsigns'.setup()
-noremap <leader>gd :Gitsigns preview_hunk<CR>
-noremap <leader>gj :Gitsigns next_hunk<CR>
-noremap <leader>gk :Gitsigns prev_hunk<CR>
-noremap <leader>ga :Gitsigns stage_hunk<CR>
-noremap <leader>gu :Gitsigns undo_stage_hunk<CR>
+noremap <silent> <leader>gd :Gitsigns preview_hunk<CR>
+noremap <silent> <leader>gj :Gitsigns next_hunk<CR>
+noremap <silent> <leader>gk :Gitsigns prev_hunk<CR>
+noremap <silent> <leader>ga :Gitsigns stage_hunk<CR>
+noremap <silent> <leader>gu :Gitsigns undo_stage_hunk<CR>
+noremap <silent> <leader>gb :lua package.loaded.gitsigns.blame_line{full=true}<CR>
 
 
 " ==========================================
