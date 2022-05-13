@@ -1,0 +1,17 @@
+snippet fra "frame" bA
+\begin{frame}{$1}
+	$0
+\end{frame}
+endsnippet
+
+snippet col "columns" bA
+\begin{columns}${1:[onlytextwidth]}
+\column{${2:0.5\textwidth}}
+	$0
+\end{columns}
+endsnippet
+
+snippet onslide "onslide" bA
+\onslide<1->{$1}
+endsnippet
+
