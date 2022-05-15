@@ -114,6 +114,7 @@ call plug#begin()
     " markdown enhancement
     Plug 'mzlogin/vim-markdown-toc'
     Plug 'dkarter/bullets.vim'
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 call plug#end()
 
 
@@ -287,3 +288,9 @@ let g:bullets_enabled_file_types = [
     \ 'markdown',
     \ 'text',
     \ 'gitcommit']
+
+
+" ==========================================
+" Markdown-preview
+" ==========================================
+noremap <leader>mp <Plug>MarkdownPreviewToggle

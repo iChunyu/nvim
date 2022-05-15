@@ -40,6 +40,7 @@
     - [telescope.nvim：搜索文件](#telescopenvim搜索文件)
     - [vim-markdown-toc：Markdown 生成目录](#vim-markdown-tocmarkdown-生成目录)
     - [bullets.vim：自动列表](#bulletsvim自动列表)
+    - [markdown-preview.nvim：Makrdown 预览](#markdown-previewnvimmakrdown-预览)
 - [致谢与参考](#致谢与参考)
 
 <!-- /TOC -->
@@ -308,7 +309,7 @@ snippets
 - `A`：检测到关键字之后自动展开；
 - `r`：使用正则表达式判定关键字，此时关键字需要用引号包围；
 - `w`：单独出现关键词时才能触发（关键词两边不是字母）；
-- `i`：与 `w` 相反，关键字在单词内部时才能出发；
+- `i`：与 `w` 相反，关键字在单词内部时才能触发；
 - `b`：当关键词为行首时才能触发。
 
 上述选项可以结合使用，例如 `bA` 表示关键词出现在行首时自动展开代码片段。
@@ -510,6 +511,14 @@ let g:bullets_enabled_file_types = [
     \ 'markdown',
     \ 'text',
     \ 'gitcommit']
+```
+
+### markdown-preview.nvim：Makrdown 预览
+
+[markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim) 提供了 Markdown 的预览功能，这里只把触发预览的键位进行了映射：
+
+``` vim
+noremap <leader>mp <Plug>MarkdownPreviewToggle
 ```
 
 ## 致谢与参考
