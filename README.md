@@ -329,14 +329,16 @@ snippets
 
 当使用正则表达式时，匹配结果可以通过形如 `match.group(1)` 的方式进行调用；输出到代码片段的内容只需要赋值给变量 `snip.rv` 即可。
 
-编写好代码片段文件后，在 [Neo]Vim 的配置文件中设置触发键即可。一般情况下，我们会使用 `<tab>` 展开代码片段，但测试发现这样会与后文的自动补全冲突，因此这里将触发设置成了 `jk` 。同时分别用 `jk` 和 `kj` 跳转到下一个或上一个断点。下面配置的最后一行手动指定（限定）代码片段的搜索路径，以加快加载速度。
+编写好代码片段文件后，在 [Neo]Vim 的配置文件中设置触发键即可。一般情况下，我们会使用 `<tab>` 展开代码片段，但测试发现这样会与后文的自动补全冲突，因此这里将触发设置成了 `<c-j>` 。同时分别用 `<c-j>` 和 `<c-k>` 跳转到下一个或上一个断点。下面配置的最后一行手动指定（限定）代码片段的搜索路径，以加快加载速度。
 
 ``` vim
-let g:UltiSnipsExpandTrigger="jk"
-let g:UltiSnipsJumpForwardTrigger="jk"
-let g:UltiSnipsJumpBackwardTrigger="kj"
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
 ```
+
+> 如果使用 `jk` 触发代码片段，容易在选择模式出现问题，例如：利用 `V` 进行整行选择，`j` 向下扩展时会出现延时；若选择多了，快速按 `k` 回退时会删除所选内容并进入写入模式。
 
 ### vimtex：LaTeX 支持
 

@@ -121,9 +121,9 @@ call plug#end()
 " ==========================================
 " UnitSnips: create user-defined snippets
 " ==========================================
-let g:UltiSnipsExpandTrigger="jk"
-let g:UltiSnipsJumpForwardTrigger="jk"
-let g:UltiSnipsJumpBackwardTrigger="kj"
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
 nnoremap R :source $MYVIMRC<CR>:call UltiSnips#RefreshSnippets()<CR>
 
