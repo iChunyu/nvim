@@ -380,6 +380,13 @@ function! s:check_back_space() abort
 endfunction
 ```
 
+coc 在代码补全时会提示相应的帮助文档，当帮助文档过长时，将翻页的功能映射到相应的组合键上：
+
+``` vim
+inoremap <nowait><expr> <c-s> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <nowait><expr> <c-a> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+```
+
 除此之外，通过一下方式设置 coc 的自动安装插件。其中 `coc-marketplace` 提供了 `:CocList marketplace` 搜索插件的功能。
 
 ``` vim
