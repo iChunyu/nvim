@@ -1,0 +1,14 @@
+snippet 'tab(\d)' "markdown table" rbA
+`!p
+n = eval(match.group(1))
+# tab = ''
+# for k in range(n):
+#     tab += '| ' + str(k+1) + ' '
+# tab += '|\n'
+tab = '|  ' * n + '|\n'
+tab += '| --- ' * n + '|\n'
+tab += '|  ' * n + '|\n'
+snip.rv = tab
+`
+endsnippet
+
