@@ -104,6 +104,7 @@ call plug#begin()
     Plug 'rcarriga/nvim-notify'
     Plug 'lewis6991/gitsigns.nvim'
     Plug 'godlygeek/tabular'
+    Plug 'chentoast/marks.nvim'
 
     " telescope and its dependencies
     Plug 'nvim-lua/plenary.nvim'
@@ -297,3 +298,9 @@ let g:bullets_enabled_file_types = [
 " Markdown-preview
 " ==========================================
 noremap <leader>mp <Plug>MarkdownPreviewToggle
+
+
+" ==========================================
+" marks.nvim
+" ==========================================
+lua require'marks'.setup{}

@@ -25,11 +25,11 @@ snippet '([A-Za-z])vec' "vec" rA
 endsnippet
 
 # Commands below may be used with others like `\dot{\bar{x}}` (type: `xbardot`)
-snippet '([\\\{\}A-Za-z]+)dt' "dot" rA
+snippet '([\\\{\}A-Za-z]+)dot' "dot" rA
 `!p snip.rv = '\\dot{' + match.group(1) + '}' `$0
 endsnippet
 
-snippet '([\\\{\}A-Za-z]+)ddt' "ddot" rA
+snippet '([\\\{\}A-Za-z]+)ddo' "ddot" rA
 `!p snip.rv = '\\ddot{' + match.group(1) + '}' `$0
 endsnippet
 
