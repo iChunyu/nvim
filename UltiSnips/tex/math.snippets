@@ -1,0 +1,206 @@
+global !p
+# check whether the cursor is inside a math zone
+def math():
+	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+endglobal
+
+
+# ============================================================
+# Short commands to deal with fractions
+# Ref: https://castel.dev/post/lecture-notes-1/
+# ============================================================
+context "math()"
+snippet ff "Fraction" iA
+\frac{$1}{$2}$0
+endsnippet
+
+context "math()"
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)//' "Fraction" wrA
+\frac{`!p snip.rv = match.group(1)`}{$1}$0
+endsnippet
+
+context "math()"
+snippet '^.*\)//' "() Fraction" wrA
+`!p
+stripped = match.string[:-2]
+depth = 0
+i = len(stripped) - 1
+while True:
+	if stripped[i] == ')': depth += 1
+	if stripped[i] == '(': depth -= 1
+	if depth == 0: break;
+	i -= 1
+snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
+`{$1}$0
+endsnippet
+
+
+# ============================================================
+# Automatically expand delimiter
+# ============================================================
+snippet lr( "auto-expand ()" wA
+\left( $1 \right)$0
+endsnippet
+
+snippet lr[ "auto-expand []" wA
+\left[ $1 \right]$0
+endsnippet
+
+snippet lr{ "auto-expand {}" wA
+\left\{ $1 \right\}$0
+endsnippet
+
+snippet lr< "auto-expand <>" wA
+\left\langle $1 \right\rangle$0
+endsnippet
+
+snippet ab| "auto-expand ||" wA
+\left\lvert $1 \right\rvert$0
+endsnippet
+
+snippet no| "auto-expand \|\|" wA
+\left\lVert $1 \right\rVert$0
+endsnippet
+
+# Manually control the size of delimiter
+# Hint: change surrounding delimiter with `csd` from VimTeX
+snippet b( "big ()" wA
+\bigl( $1 \bigr)$0
+endsnippet
+
+snippet bb( "Big ()" wA
+\Bigl( $1 \Bigr)$0
+endsnippet
+
+snippet bg( "bigg ()" wA
+\biggl( $1 \biggr)$0
+endsnippet
+
+snippet bbg( "Bigg ()" wA
+\Biggl( $1 \Biggr)$0
+endsnippet
+
+
+
+# ============================================================
+# Change math font
+# ============================================================
+context "math()"
+snippet '([A-Za-z]+)rm' "mathrm" rA
+`!p snip.rv = '\\mathrm{' + match.group(1) + '}' `$0
+endsnippet
+
+context "math()"
+snippet '([A-Za-z]+)bf' "mathbf" rA
+`!p snip.rv = '\\mathbf{' + match.group(1) + '}' `$0
+endsnippet
+
+context "math()"
+snippet '([A-Za-z]+)fk' "mathfrak" rA
+`!p snip.rv = '\\mathfrak{' + match.group(1) + '}' `$0
+endsnippet
+
+context "math()"
+snippet '([\\\{\}A-Za-z]+)bm' "bm" rA
+`!p snip.rv = '\\bm{' + match.group(1) + '}' `$0
+endsnippet
+
+
+# ============================================================
+# Add hats to symbols
+# ============================================================
+# `\vec` only accepts a single letter
+context "math()"
+snippet '([A-Za-z])vec' "vec" rA
+`!p snip.rv = '\\vec{' + match.group(1) + '}' `$0
+endsnippet
+
+# Commands below may be used with others like `\dot{\bar{x}}` (type: `xbardot`)
+context "math()"
+snippet '([\\\{\}A-Za-z]+)dot' "dot" rA
+`!p snip.rv = '\\dot{' + match.group(1) + '}' `$0
+endsnippet
+
+context "math()"
+snippet '([\\\{\}A-Za-z]+)ddo' "ddot" rA
+`!p snip.rv = '\\ddot{' + match.group(1) + '}' `$0
+endsnippet
+
+context "math()"
+snippet '([\\\{\}A-Za-z]+)hat' "hat" rA
+`!p snip.rv = '\\hat{' + match.group(1) + '}' `$0
+endsnippet
+
+context "math()"
+snippet '([\\\{\}A-Za-z]+)bar' "bar" rA
+`!p snip.rv = '\\bar{' + match.group(1) + '}' `$0
+endsnippet
+
+context "math()"
+snippet '([\\\{\}A-Za-z]+)bre' "breve" rA
+`!p snip.rv = '\\breve{' + match.group(1) + '}' `$0
+endsnippet
+
+context "math()"
+snippet '([\\\{\}A-Za-z]+)til' "tilde" rA
+`!p snip.rv = '\\tilde{' + match.group(1) + '}' `$0
+endsnippet
+
+
+# ============================================================
+# Common-used math enviromments
+# ============================================================
+snippet equ "equation" bA
+\begin{equation}
+	$1
+\end{equation}
+$0
+endsnippet
+
+snippet gat "gather" bA
+\begin{gather}
+	$1
+\end{gather}
+$0
+endsnippet
+
+snippet ali "align" bA
+\begin{align}
+	$1
+\end{align}
+$0
+endsnippet
+
+snippet gad "gathered" wA
+\begin{gathered}
+	$1
+\end{gathered}$0
+endsnippet
+
+snippet ald "aligned" wA
+\begin{aligned}
+	$1
+\end{aligned}$0
+endsnippet
+
+# Matrices
+snippet pmat "pmatrix" wA
+\begin{pmatrix}$1\end{pmatrix}$0
+endsnippet
+
+snippet bmat "bmatrix" wA
+\begin{bmatrix}$1\end{bmatrix}$0
+endsnippet
+
+snippet Bmat "Bmatrix" wA
+\begin{Bmatrix}$1\end{Bmatrix}$0
+endsnippet
+
+snippet vmat "vmatrix" wA
+\begin{vmatrix}$1\end{vmatrix}$0
+endsnippet
+
+snippet Vmat "Vmatrix" wA
+\begin{Vmatrix}$1\end{Vmatrix}$0
+endsnippet
+

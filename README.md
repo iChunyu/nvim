@@ -38,6 +38,7 @@
     - [gitsigns.nvim：Git 集成](#gitsignsnvimgit-集成)
     - [tabular：指定字符对齐文本](#tabular指定字符对齐文本)
     - [telescope.nvim：搜索文件](#telescopenvim搜索文件)
+    - [vim-markdown：Markdown 扩展](#vim-markdownmarkdown-扩展)
     - [vim-markdown-toc：Markdown 生成目录](#vim-markdown-tocmarkdown-生成目录)
     - [bullets.vim：自动列表](#bulletsvim自动列表)
     - [markdown-preview.nvim：Makrdown 预览](#markdown-previewnvimmakrdown-预览)
@@ -501,6 +502,12 @@ lua require'telescope'.setup{}
 ```
 
 普通模式使用空格和 `tf` 触发搜索窗口查找文件后，按下回车在当前窗口打开文件，或使用 `<c-x>` 分屏打开文件，也可以使用 `<c-t>` 在新标签页打开文件。
+
+### vim-markdown：Markdown 扩展
+
+[vim-markdown](https://github.com/preservim/vim-markdown) 提供了针对 Markdown 文档的强化，目前只使用了其数学环境的判断，使 [vimtex](https://github.com/lervag/vimtex) 的 `vimtex#syntax#in_mathzone()` 函数能够在 Markdown 文件中生效。
+
+关于该功能的讨论详见 [此 Issue](https://github.com/lervag/vimtex/issues/2395)。
 
 ### vim-markdown-toc：Markdown 生成目录
 

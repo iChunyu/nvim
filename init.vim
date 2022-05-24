@@ -113,6 +113,7 @@ call plug#begin()
     Plug 'nvim-telescope/telescope.nvim'
 
     " markdown enhancement
+    Plug 'preservim/vim-markdown'
     Plug 'mzlogin/vim-markdown-toc'
     Plug 'dkarter/bullets.vim'
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
@@ -277,27 +278,28 @@ lua require'telescope'.setup{}
 
 
 " ==========================================
-" vim-markdown-toc: table of contents
+" Markdown enhancement
 " ==========================================
-let g:vmt_list_item_char = '-'
-let g:vmt_fence_text = 'TOC'
-let g:vmt_fence_closing_text = '/TOC'
-" :GenTocGFM --- GitHub style TOC
+" vim-markdown: enable `vimtex#syntax#in_mathzone` in markdown
+let g:vim_markdown_math = 1
+let g:vim_markdown_folding_disabled = 1
+" check if in math zone (temp, for debug)
+nnoremap <leader>im i<c-r>=vimtex#syntax#in_mathzone()<cr><esc>
 
+" markdown-preview
+noremap <leader>mp <Plug>MarkdownPreviewToggle
 
-" ==========================================
 " bullets: auto add bullets
-" ==========================================
 let g:bullets_enabled_file_types = [
     \ 'markdown',
     \ 'text',
     \ 'gitcommit']
 
-
-" ==========================================
-" Markdown-preview
-" ==========================================
-noremap <leader>mp <Plug>MarkdownPreviewToggle
+" vim-markdown-toc: table of contents
+let g:vmt_list_item_char = '-'
+let g:vmt_fence_text = 'TOC'
+let g:vmt_fence_closing_text = '/TOC'
+" :GenTocGFM --- GitHub style TOC
 
 
 " ==========================================
