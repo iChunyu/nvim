@@ -105,6 +105,7 @@ call plug#begin()
     Plug 'lewis6991/gitsigns.nvim'
     Plug 'godlygeek/tabular'
     Plug 'chentoast/marks.nvim'
+    Plug 'numToStr/Comment.nvim'
 
     " telescope and its dependencies
     Plug 'nvim-lua/plenary.nvim'
@@ -306,3 +307,11 @@ let g:vmt_fence_closing_text = '/TOC'
 " marks.nvim
 " ==========================================
 lua require'marks'.setup{}
+
+
+" ==========================================
+" Comment
+" ==========================================
+lua require'Comment'.setup{}
+nnoremap <c-r> <Plug>(comment_toggle_current_linewise)
+vnoremap <c-r> <Plug>(comment_toggle_linewise_visual)

@@ -42,6 +42,7 @@
     - [vim-markdown-toc：Markdown 生成目录](#vim-markdown-tocmarkdown-生成目录)
     - [bullets.vim：自动列表](#bulletsvim自动列表)
     - [markdown-preview.nvim：Makrdown 预览](#markdown-previewnvimmakrdown-预览)
+    - [Comment.nvim：自动注释](#commentnvim自动注释)
 - [致谢与参考](#致谢与参考)
 
 <!-- /TOC -->
@@ -536,6 +537,10 @@ let g:bullets_enabled_file_types = [
 ``` vim
 noremap <leader>mp <Plug>MarkdownPreviewToggle
 ```
+
+### Comment.nvim：自动注释
+
+[Comment.nvim](https://github.com/numToStr/Comment.nvim) 提供了自动注释的功能，本配置将 `<c-r>` 映射为注释的触发快捷键。由于 Vim 存在普通模式和可视模式的区别，分别对两种情况进行了映射。
 
 ## 致谢与参考
 
