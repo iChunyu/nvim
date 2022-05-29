@@ -540,7 +540,7 @@ noremap <leader>mp <Plug>MarkdownPreviewToggle
 
 ### Comment.nvim：自动注释
 
-[Comment.nvim](https://github.com/numToStr/Comment.nvim) 提供了自动注释的功能，本配置将 `<c-r>` 映射为注释的触发快捷键。由于 Vim 存在普通模式和可视模式的区别，分别对两种情况进行了映射。
+[Comment.nvim](https://github.com/numToStr/Comment.nvim) 提供了自动注释的功能，本配置将 `Ctrl` 和 `/` 的组合建映射为注释的触发快捷键（配置中为 `<c-_>`）。由于 Vim 存在普通模式和可视模式的区别，分别对两种情况进行了映射。
 
 ## 致谢与参考
 
