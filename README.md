@@ -43,6 +43,7 @@
     - [bullets.vim：自动列表](#bulletsvim自动列表)
     - [markdown-preview.nvim：Makrdown 预览](#markdown-previewnvimmakrdown-预览)
     - [Comment.nvim：自动注释](#commentnvim自动注释)
+    - [nvim-colorizer.lua：显示颜色](#nvim-colorizerlua显示颜色)
 - [致谢与参考](#致谢与参考)
 
 <!-- /TOC -->
@@ -541,6 +542,10 @@ noremap <leader>mp <Plug>MarkdownPreviewToggle
 ### Comment.nvim：自动注释
 
 [Comment.nvim](https://github.com/numToStr/Comment.nvim) 提供了自动注释的功能，本配置将 `Ctrl` 和 `/` 的组合建映射为注释的触发快捷键（配置中为 `<c-_>`）。由于 Vim 存在普通模式和可视模式的区别，分别对两种情况进行了映射。
+
+### nvim-colorizer.lua：显示颜色
+
+[nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua) 可以将代码中的颜色代码使用相应的颜色进行显示，这里将该功能应用到所有而类型的文件中。
 
 ## 致谢与参考
 

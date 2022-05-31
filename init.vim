@@ -106,6 +106,7 @@ call plug#begin()
     Plug 'godlygeek/tabular'
     Plug 'chentoast/marks.nvim'
     Plug 'numToStr/Comment.nvim'
+    Plug 'norcalli/nvim-colorizer.lua'
 
     " telescope and its dependencies
     Plug 'nvim-lua/plenary.nvim'
@@ -315,3 +316,13 @@ lua require'marks'.setup{}
 lua require'Comment'.setup{}
 nnoremap <c-_> <Plug>(comment_toggle_current_linewise)
 vnoremap <c-_> <Plug>(comment_toggle_linewise_visual)
+
+
+" ==========================================
+" Colorizer
+" ==========================================
+lua << EOF
+require'colorizer'.setup{
+    '*';
+}
+EOF
