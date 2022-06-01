@@ -27,6 +27,8 @@ set ignorecase
 set smartcase
 " top/bottom margin
 set scrolloff=5
+" enable mouse
+set mouse=a
 " extra
 let g:mapleader = " "                                         " set <leader> key
 let g:python3_host_prog = '/usr/bin/python'                 " python3 location
@@ -107,6 +109,7 @@ call plug#begin()
     Plug 'chentoast/marks.nvim'
     Plug 'numToStr/Comment.nvim'
     Plug 'norcalli/nvim-colorizer.lua'
+    Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
 
     " telescope and its dependencies
     Plug 'nvim-lua/plenary.nvim'
@@ -129,7 +132,7 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
-nnoremap R :source $MYVIMRC<CR>:call UltiSnips#RefreshSnippets()<CR>
+nnoremap R :source $MYVIMRC \| call UltiSnips#RefreshSnippets()<CR>
 
 
 " ==========================================
@@ -251,7 +254,7 @@ EOF
 " ==========================================
 " Nvim-Notify: beautiful notifications
 " ==========================================
-lua vim.notify = require("notify")
+lua require'notify'.setup{}
 
 
 " ==========================================
@@ -326,3 +329,17 @@ require'colorizer'.setup{
     '*';
 }
 EOF
+
+
+" ==========================================
+" SnipRun
+" ==========================================
+lua << EOF
+require'sniprun'.setup{
+    display = {"NvimNotify"},
+    display_options = {
+        notification_timeout = 10   -- timeout for nvim_notify output
+  },
+}
+EOF
+noremap <F9> <Plug>SnipRun

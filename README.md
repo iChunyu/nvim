@@ -44,6 +44,7 @@
     - [markdown-preview.nvim：Makrdown 预览](#markdown-previewnvimmakrdown-预览)
     - [Comment.nvim：自动注释](#commentnvim自动注释)
     - [nvim-colorizer.lua：显示颜色](#nvim-colorizerlua显示颜色)
+    - [sniprun：运行代码片段](#sniprun运行代码片段)
 - [致谢与参考](#致谢与参考)
 
 <!-- /TOC -->
@@ -546,6 +547,12 @@ noremap <leader>mp <Plug>MarkdownPreviewToggle
 ### nvim-colorizer.lua：显示颜色
 
 [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua) 可以将代码中的颜色代码使用相应的颜色进行显示，这里将该功能应用到所有而类型的文件中。
+
+
+### sniprun：运行代码片段
+
+[sniprun](https://github.com/michaelb/sniprun) 可以运行选中的代码片段，基本不需要配置，只要对快捷键进行映射即可。
+
 
 ## 致谢与参考
 
