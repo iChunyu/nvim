@@ -219,6 +219,17 @@ let g:coc_global_extensions = [
 " Rainbow: colorful brackets
 " ==========================================
 let g:rainbow_active = 1
+let g:rainbow_conf = {
+    \   'guifgs': ['#2D85F0','#F4433C','#FFBC32','#0AA858','#B845FF','#FB7299','#8C564B','#7F7F7F','#8DA0CB'],
+    \   'separately': {
+    \       'tex':{
+    \           'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold',
+    \                           'start=/\\left[\(\[\{\.]/ end=/\\right[\)\]\}\.]/ fold',
+    \                           'start=/\\[bB]igl[\(\[\{\.]/ end=/\\[bB]igr[\)\]\}\.]/ fold',
+    \                           'start=/\\[bB]iggl[\(\[\{\.]/ end=/\\[bB]iggr[\)\]\}\.]/ fold'],
+    \       }
+    \   }
+    \ }
 
 
 " ==========================================
