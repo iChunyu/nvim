@@ -47,7 +47,7 @@ snippet lr[ "auto-expand []" wA
 endsnippet
 
 snippet lr{ "auto-expand {}" wA
-\left\{ $1 \right\}$0
+\left\\\{ $1 \right\\\}$0
 endsnippet
 
 snippet lr< "auto-expand <>" wA
@@ -146,6 +146,10 @@ snippet '([\\\{\}A-Za-z]+)til' "tilde" rA
 `!p snip.rv = '\\tilde{' + match.group(1) + '}' `$0
 endsnippet
 
+context "math()"
+snippet '([\\\{\}A-Za-z]+)uli' "underline" rA
+`!p snip.rv = '\\underline{' + match.group(1) + '}' `$0
+endsnippet
 
 # ============================================================
 # Common-used math enviromments
