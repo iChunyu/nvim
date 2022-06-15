@@ -151,8 +151,41 @@ snippet '([\\\{\}A-Za-z]+)uli' "underline" rA
 `!p snip.rv = '\\underline{' + match.group(1) + '}' `$0
 endsnippet
 
+
 # ============================================================
-# Common-used math enviromments
+# Common used operations
+# ============================================================
+context "math()"
+snippet '(\S+)\;(\S*)\;(\S*)\;' "sub/superscript" rA
+`!p
+rv = match.group(1)
+sub = match.group(2)
+sup = match.group(3)
+if len(sub) == 1:
+    rv += '_' + sub
+elif len(sub) >=2:
+    rv += '_{' + sub + '}'
+if len(sup) == 1:
+    rv += '^' + sup
+elif len(sup) >=2:
+    rv += '^{' + sup + '}'
+snip.rv = rv
+`$0
+endsnippet
+
+context "math()"
+snippet '([\}\)\]A-Za-z]+)ii' "inverse" rA
+`!p snip.rv = match.group(1) + '^{-1}' `$0
+endsnippet
+
+context "math()"
+snippet '([A-Za-z0-9]+)sr' "sqrt" rA
+`!p snip.rv = '\\sqrt{' + match.group(1) + '}' `$0
+endsnippet
+
+
+# ============================================================
+# Math enviromments
 # ============================================================
 snippet equ "equation" bA
 \begin{equation}
@@ -189,22 +222,22 @@ endsnippet
 
 # Matrices
 snippet pmat "pmatrix" wA
-\begin{pmatrix}$1\end{pmatrix}$0
+\begin{pmatrix} $1 \end{pmatrix}$0
 endsnippet
 
 snippet bmat "bmatrix" wA
-\begin{bmatrix}$1\end{bmatrix}$0
+\begin{bmatrix} $1 \end{bmatrix}$0
 endsnippet
 
 snippet Bmat "Bmatrix" wA
-\begin{Bmatrix}$1\end{Bmatrix}$0
+\begin{Bmatrix} $1 \end{Bmatrix}$0
 endsnippet
 
 snippet vmat "vmatrix" wA
-\begin{vmatrix}$1\end{vmatrix}$0
+\begin{vmatrix} $1 \end{vmatrix}$0
 endsnippet
 
 snippet Vmat "Vmatrix" wA
-\begin{Vmatrix}$1\end{Vmatrix}$0
+\begin{Vmatrix} $1 \end{Vmatrix}$0
 endsnippet
 
