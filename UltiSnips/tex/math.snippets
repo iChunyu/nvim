@@ -38,48 +38,57 @@ endsnippet
 # ============================================================
 # Automatically expand delimiter
 # ============================================================
+context "math()"
 snippet lr( "auto-expand ()" wA
 \left( $1 \right)$0
 endsnippet
 
+context "math()"
 snippet lr[ "auto-expand []" wA
 \left[ $1 \right]$0
 endsnippet
 
+context "math()"
 snippet lr{ "auto-expand {}" wA
 \left\\\{ $1 \right\\\}$0
 endsnippet
 
+context "math()"
 snippet lr< "auto-expand <>" wA
 \left\langle $1 \right\rangle$0
 endsnippet
 
+context "math()"
 snippet ab| "auto-expand ||" wA
 \left\lvert $1 \right\rvert$0
 endsnippet
 
+context "math()"
 snippet no| "auto-expand \|\|" wA
 \left\lVert $1 \right\rVert$0
 endsnippet
 
 # Manually control the size of delimiter
 # Hint: change surrounding delimiter with `csd` from VimTeX
+context "math()"
 snippet b( "big ()" wA
 \bigl( $1 \bigr)$0
 endsnippet
 
+context "math()"
 snippet b2( "Big ()" wA
 \Bigl( $1 \Bigr)$0
 endsnippet
 
+context "math()"
 snippet b3( "bigg ()" wA
 \biggl( $1 \biggr)$0
 endsnippet
 
+context "math()"
 snippet b4( "Bigg ()" wA
 \Biggl( $1 \Biggr)$0
 endsnippet
-
 
 
 # ============================================================
@@ -161,14 +170,10 @@ snippet '(\S+)\;(\S*)\;(\S*)\;' "sub/superscript" rA
 rv = match.group(1)
 sub = match.group(2)
 sup = match.group(3)
-if len(sub) == 1:
-    rv += '_' + sub
-elif len(sub) >=2:
-    rv += '_{' + sub + '}'
-if len(sup) == 1:
-    rv += '^' + sup
-elif len(sup) >=2:
-    rv += '^{' + sup + '}'
+if len(sub) == 1: rv += '_' + sub
+if len(sub) >= 2: rv += '_{' + sub + '}'
+if len(sup) == 1: rv += '^' + sup
+if len(sup) >= 2: rv += '^{' + sup + '}'
 snip.rv = rv
 `$0
 endsnippet
