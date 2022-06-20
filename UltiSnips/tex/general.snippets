@@ -1,3 +1,6 @@
+# ============================================================
+# General enviromments
+# ============================================================
 snippet '(env)|(beg)' "begin an environment" rbA
 \begin{$1}
 	$0
@@ -36,11 +39,19 @@ snippet tabx "table with tabularx" bA
 \end{table}
 endsnippet
 
+
+# ============================================================
+# Comon-used commands
+# ============================================================
 snippet tabl "table lines" bA
 \toprule
 $1
 \midrule
 $2
 \bottomrule
+endsnippet
+
+snippet href "hyper link" wA
+\href{${1:URL}}{${2:Text}}
 endsnippet
 
