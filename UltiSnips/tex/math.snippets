@@ -110,6 +110,21 @@ snippet '([A-Za-z]+)fk' "mathfrak" rA
 endsnippet
 
 context "math()"
+snippet '([A-Za-z]+)cl' "mathcal" rA
+`!p snip.rv = '\\mathcal{' + match.group(1) + '}' `$0
+endsnippet
+
+context "math()"
+snippet '([A-Za-z]+)sr' "mathscr" rA
+`!p snip.rv = '\\mathscr{' + match.group(1) + '}' `$0
+endsnippet
+
+context "math()"
+snippet '([A-Za-z]+)bb' "mathbb" rA
+`!p snip.rv = '\\mathbb{' + match.group(1) + '}' `$0
+endsnippet
+
+context "math()"
 snippet '([\\\{\}A-Za-z]+)bm' "bm" rA
 `!p snip.rv = '\\bm{' + match.group(1) + '}' `$0
 endsnippet
@@ -160,6 +175,10 @@ snippet '([\\\{\}A-Za-z]+)uli' "underline" rA
 `!p snip.rv = '\\underline{' + match.group(1) + '}' `$0
 endsnippet
 
+context "math()"
+snippet ubr "underline" A
+\underbrace{${VISUAL}}_{$1}$0
+endsnippet
 
 # ============================================================
 # Common used operations
@@ -184,7 +203,7 @@ snippet '([\}\)\]A-Za-z]+)ii' "inverse" rA
 endsnippet
 
 context "math()"
-snippet '([A-Za-z0-9]+)sr' "sqrt" rA
+snippet '([A-Za-z0-9]+)sqr' "sqrt" rA
 `!p snip.rv = '\\sqrt{' + match.group(1) + '}' `$0
 endsnippet
 
