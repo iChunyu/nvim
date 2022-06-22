@@ -110,6 +110,7 @@ call plug#begin()
     Plug 'numToStr/Comment.nvim'
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
+    Plug 'dhruvasagar/vim-table-mode'
 
     " telescope and its dependencies
     Plug 'nvim-lua/plenary.nvim'
@@ -283,7 +284,7 @@ noremap <silent> <leader>gb :lua package.loaded.gitsigns.blame_line{full=true}<C
 " ==========================================
 " Tabular: align text with the given symbol
 " ==========================================
-vnoremap <leader>t :Tabular /
+vnoremap <leader>ta :Tabular /
 
 
 " ==========================================
