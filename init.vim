@@ -85,6 +85,7 @@ noremap <leader>O O<Esc>j
 noremap <leader>w :w<CR>
 noremap <leader>q :q<CR>
 noremap Y "+y
+noremap <c-l> 1z=
 
 
 " ==========================================
@@ -223,12 +224,17 @@ let g:rainbow_active = 1
 let g:rainbow_conf = {
     \   'guifgs': ['#2D85F0','#F4433C','#FFBC32','#0AA858','#B845FF','#FB7299','#8C564B','#7F7F7F','#8DA0CB'],
     \   'separately': {
+    \       '*':{
+    \           'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+    \           'parentheses_options': 'containedin=ALL'
+    \       },
     \       'tex':{
     \           'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold',
     \                           'start=/\\left[\(\[\{\.]/ end=/\\right[\)\]\}\.]/ fold',
     \                           'start=/\\[bB]igl[\(\[\{\.]/ end=/\\[bB]igr[\)\]\}\.]/ fold',
     \                           'start=/\\[bB]iggl[\(\[\{\.]/ end=/\\[bB]iggr[\)\]\}\.]/ fold'],
-    \       }
+    \           'parentheses_options': 'containedin=ALL'
+    \       },
     \   }
     \ }
 
