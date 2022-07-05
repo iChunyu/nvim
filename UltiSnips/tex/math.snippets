@@ -4,6 +4,14 @@ def math():
 	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
 endglobal
 
+# define inverted breve overset
+# Ref: https://tex.stackexchange.com/questions/38897/inverted-breve-accent-in-math-mode
+snippet defibre "define ibreve" bA
+\usepackage[T3,T1]{fontenc}
+\DeclareSymbolFont{tipa}{T3}{cmr}{m}{n}
+\DeclareMathAccent{\ibreve}{\mathalpha}{tipa}{16}
+endsnippet
+
 
 # ============================================================
 # Short commands to deal with fractions
@@ -173,6 +181,12 @@ endsnippet
 context "math()"
 snippet '([\\\{\}A-Za-z]+)uli' "underline" rA
 `!p snip.rv = '\\underline{' + match.group(1) + '}' `$0
+endsnippet
+
+# NOTE: ibreve should be defined manually
+context "math()"
+snippet '([\\\{\}A-Za-z]+)ibr' "inverted-breve" rA
+`!p snip.rv = '\\ibreve{' + match.group(1) + '}' `$0
 endsnippet
 
 context "math()"
