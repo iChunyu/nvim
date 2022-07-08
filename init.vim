@@ -99,6 +99,7 @@ call plug#begin()
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'luochen1990/rainbow'
+    Plug 'tpope/vim-surround'
     Plug 'gcmt/wildfire.vim'
     Plug 'mbbill/undotree'
     Plug 'ggandor/lightspeed.nvim'
@@ -230,9 +231,10 @@ let g:rainbow_conf = {
     \       },
     \       'tex':{
     \           'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold',
-    \                           'start=/\\left[\(\[\{\.]/ end=/\\right[\)\]\}\.]/ fold',
-    \                           'start=/\\[bB]igl[\(\[\{\.]/ end=/\\[bB]igr[\)\]\}\.]/ fold',
-    \                           'start=/\\[bB]iggl[\(\[\{\.]/ end=/\\[bB]iggr[\)\]\}\.]/ fold'],
+    \                           'start=/\\left\\*[(\[{.]/ end=/\\right\\*[)\]}.]/ fold',
+    \                           'start=/\\left\\l[vV]ert/ end=/\\right\\r[vV]ert/ fold',
+    \                           'start=/\\[bB]igl\\*[(\[{.]/ end=/\\[bB]igr\\*[)\]}.]/ fold',
+    \                           'start=/\\[bB]iggl\\*[(\[{.]/ end=/\\[bB]iggr\\*[)\]}.]/ fold'],
     \           'parentheses_options': 'containedin=ALL'
     \       },
     \   }
