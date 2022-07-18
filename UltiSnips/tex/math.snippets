@@ -149,7 +149,7 @@ endsnippet
 
 # Commands below may be used with others like `\dot{\bar{x}}` (type: `xbardot`)
 context "math()"
-snippet '([\\\{\}A-Za-z]+)dot' "dot" rA
+snippet '([\\\{\}A-Za-z]+)(?<!\\c)dot' "dot" rA
 `!p snip.rv = '\\dot{' + match.group(1) + '}' `$0
 endsnippet
 
