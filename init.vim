@@ -337,7 +337,7 @@ lua require'marks'.setup{}
 " Comment
 " ==========================================
 lua require'Comment'.setup{}
-nnoremap <c-_> <Plug>(comment_toggle_current_linewise)
+nnoremap <c-_> <Plug>(comment_toggle_linewise_current)
 vnoremap <c-_> <Plug>(comment_toggle_linewise_visual)
 
 
