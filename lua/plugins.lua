@@ -18,6 +18,11 @@ require('packer').startup(function(use)
 
     -- LaTeX and Markdown
     use 'lervag/vimtex'
+    use 'hrsh7th/cmp-omni'          -- Enable nvim-cmp autocompletion
+
+    -- Beautify
+    use 'kyazdani42/nvim-web-devicons'
+    use {'nvim-lualine/lualine.nvim', config = require('lualine').setup()}
 end)
 
 
