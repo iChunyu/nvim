@@ -1,3 +1,12 @@
+-- Validate `parker.nvim` and install if necessary
+local fn = vim.fn
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+    packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd('packadd packer.nvim')
+end
+
+
 require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
@@ -10,11 +19,11 @@ require('packer').startup(function(use)
     use 'L3MON4D3/LuaSnip'          -- Snippets plugin
 
     -- Colorscheme
-    use {'EdenEast/nightfox.nvim', config = vim.cmd('colorscheme nightfox')}
+    use {'EdenEast/nightfox.nvim', config = function() vim.cmd('colorscheme nightfox') end}
 
     -- Snippets
     -- NOTE: tex snippets works correctly with `vimtex`
-    use {'SirVer/ultisnips', config = require('config.ultisnips')}
+    use {'SirVer/ultisnips', config = function() require('config.ultisnips') end}
 
     -- LaTeX and Markdown
     use 'lervag/vimtex'
@@ -22,7 +31,7 @@ require('packer').startup(function(use)
 
     -- Beautify
     use 'kyazdani42/nvim-web-devicons'
-    use {'nvim-lualine/lualine.nvim', config = require('lualine').setup()}
+    use {'nvim-lualine/lualine.nvim', config = function() require('lualine').setup() end}
 end)
 
 
