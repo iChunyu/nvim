@@ -50,7 +50,7 @@ map('', 'th', ':-tabnext<CR>')
 map('', 'tl', ':+tabnext<CR>')
 
 map('', '<leader>o', 'o<Esc>k')
-map('', '<leader>O', 'o<Esc>j')
+map('', '<leader>O', 'O<Esc>j')
 map('', 'Y', '"+y')
 map('', '<c-l>', '1z=')
 
