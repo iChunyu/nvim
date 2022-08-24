@@ -31,6 +31,9 @@ require('packer').startup(function(use)
 
     -- LaTeX and Markdown
     use 'lervag/vimtex'
+    use 'preservim/vim-markdown'
+    use 'mzlogin/vim-markdown-toc'
+    use { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install' }
 
     -- Autoswitch input methods
     use 'h-hg/fcitx.nvim'
@@ -41,14 +44,38 @@ require('packer').startup(function(use)
     -- Navigation
     use { 'ggandor/lightspeed.nvim', config = function() require('config.lightspeed') end }
 
+    -- Treesitter and treesitter-depended plugins
+    use 'p00f/nvim-ts-rainbow'
+    use { 'nvim-treesitter/nvim-treesitter', config = function() require('config.treesitter') end }
+
+    -- Text editing
     use { 'numToStr/Comment.nvim', config = function() require('config.comment') end }
+    use { 'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup() end }
+    use 'dkarter/bullets.vim'
+    use 'godlygeek/tabular'
+
+    -- Editor enhancement
+    use 'mbbill/undotree'
+    use { 'michaelb/sniprun', run = 'bash ./install.sh'}
+
+
     -- Beautify
     use 'kyazdani42/nvim-web-devicons'
     use { 'EdenEast/nightfox.nvim', config = function() vim.cmd('colorscheme nightfox') end }
     use { 'nvim-lualine/lualine.nvim', config = function() require('lualine').setup() end }
     use { 'rcarriga/nvim-notify', config = function() vim.notify = require("notify") end }
     use { 'norcalli/nvim-colorizer.lua', config = function() require 'colorizer'.setup() end }
+    use { 'chentoast/marks.nvim', config = function() require('marks').setup() end }
 end)
 
 
+-- Do `PackerSync` if `packer` is install at first time
+if packer_bootstrap then
+    require('packer').sync()
+end
+
+
 require('config.lsp')
+require('config.markdown')
+require('config.text')
+require('config.editor')
