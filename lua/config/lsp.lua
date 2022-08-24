@@ -1,13 +1,16 @@
--- (Seems `nvim-lsp-installer` has to be called before `lspconfig`)
-require("nvim-lsp-installer").setup({
-    automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
+-- (Seems 'mason' has to be called before 'lspconfig')
+require("mason").setup({
     ui = {
         icons = {
-            server_installed = "✓",
-            server_pending = "➜",
-            server_uninstalled = "✗"
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
         }
     }
+})
+require('mason-lspconfig').setup({
+    -- automatically detect which servers to install (based on which servers are set up via lspconfig)
+    automatic_installation = true
 })
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -16,7 +19,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = {'clangd', 'pyright', 'ltex', 'sumneko_lua'}
+local servers = { 'clangd', 'pyright', 'ltex', 'sumneko_lua' }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         -- on_attach = my_custom_on_attach,

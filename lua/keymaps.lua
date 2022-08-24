@@ -24,7 +24,7 @@ map('', '<leader>W', ':wq<CR>')
 -- Centering search result
 map('', '=', 'nzz')
 map('', '-', 'Nzz')
-map('', '<leader><CR>', ':nohlsearch<CR>', {silent = true})
+map('', '<leader><CR>', ':nohlsearch<CR>', { silent = true })
 
 -- Split the screen and resize
 map('', 's', '')
@@ -54,3 +54,6 @@ map('', '<leader>O', 'O<Esc>j')
 map('', 'Y', '"+y')
 map('', '<c-l>', '1z=')
 
+-- Formatting
+map('n', '<leader>f', ':lua vim.lsp.buf.formatting()<CR>', { silent = true })
+map('v', '<leader>f', ':lua vim.lsp.buf.range_formatting()<CR>', { silent = true })
