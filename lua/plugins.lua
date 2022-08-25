@@ -9,15 +9,14 @@ end
 
 
 require('packer').startup(function(use)
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
-    -- All the Lua functions, depended by most plugins
-    use 'nvim-lua/plenary.nvim'
+    -- Necessary plugins
+    use 'wbthomason/packer.nvim' -- Packer can manage itself
+    use 'nvim-lua/plenary.nvim' -- All the Lua functions, depended by most plugins
 
 
     -- [config.lsp] LSP and autocompletion
-    use 'williamboman/mason.nvim'
-    use 'williamboman/mason-lspconfig.nvim'
+    use 'williamboman/mason.nvim' -- LSP manager
+    use 'williamboman/mason-lspconfig.nvim' -- Bridge between `mason` and `lspconfig`
     use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
     use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
     use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
@@ -27,43 +26,39 @@ require('packer').startup(function(use)
 
 
     -- [config.enhance] Editor enhance
-    -- Treesitter and treesitter-depended plugins
-    use 'nvim-treesitter/nvim-treesitter'
-    use 'p00f/nvim-ts-rainbow'
-    -- Git integration
-    use 'lewis6991/gitsigns.nvim'
-    -- Navigation
-    use 'ggandor/lightspeed.nvim'
-    -- Editor enhancement
-    use 'mbbill/undotree'
-    use { 'michaelb/sniprun', run = 'bash ./install.sh' }
-    -- Autoswitch input methods
-    use 'h-hg/fcitx.nvim'
+    use 'nvim-treesitter/nvim-treesitter' -- Treesitter
+    use 'p00f/nvim-ts-rainbow' -- Treesitter-based rainbow
+    use 'lewis6991/gitsigns.nvim' -- Git integration
+    use 'ggandor/lightspeed.nvim' -- Fast jump between words
+    use 'mbbill/undotree' -- Editing history and undo
+    use { 'michaelb/sniprun', run = 'bash ./install.sh' } -- Run snippets
+    use 'h-hg/fcitx.nvim' -- Autoswitch input methods
+    use 'kyazdani42/nvim-tree.lua' -- File explorer
+    use { 'akinsho/bufferline.nvim', tag = 'v2.*' } -- Tabline
 
 
     -- [config.marktex] LaTeX and Markdown
-    -- NOTE: tex snippets have to work with `vimtex` (to detect math zone)
-    use 'SirVer/ultisnips'
-    use 'lervag/vimtex'
-    use 'preservim/vim-markdown'
-    use 'mzlogin/vim-markdown-toc'
-    use { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install' }
+    use 'SirVer/ultisnips' -- Snippets, (require `vimtex` and `vim-markdown` to detect math zone)
+    use 'lervag/vimtex' -- LaTeX support
+    use 'preservim/vim-markdown' -- Enable `vimtex#syntax#in_mathzone` in markdown
+    use 'mzlogin/vim-markdown-toc' -- Autogenerate table of contents
+    use { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install' } -- Markdown live preview
 
 
     -- [config.editing] Text editing
-    use 'numToStr/Comment.nvim'
-    use 'windwp/nvim-autopairs'
-    use 'dkarter/bullets.vim'
-    use 'godlygeek/tabular'
+    use 'numToStr/Comment.nvim' -- Comment snippets
+    use 'windwp/nvim-autopairs' -- Finish brackets
+    use 'dkarter/bullets.vim' -- Generate bullets list
+    use 'godlygeek/tabular' -- Align text with given symbol
 
 
     -- [config.beautify] Beautify
-    use 'kyazdani42/nvim-web-devicons'
-    use 'EdenEast/nightfox.nvim'
-    use 'nvim-lualine/lualine.nvim'
-    use 'rcarriga/nvim-notify'
-    use 'norcalli/nvim-colorizer.lua'
-    use 'chentoast/marks.nvim'
+    use 'kyazdani42/nvim-web-devicons' -- Icons
+    use 'EdenEast/nightfox.nvim' -- Colorscheme
+    use 'nvim-lualine/lualine.nvim' -- Status line
+    use 'rcarriga/nvim-notify' -- Notify style
+    use 'norcalli/nvim-colorizer.lua' -- Show color in text
+    use 'chentoast/marks.nvim' -- Show bookmarks
 end)
 
 

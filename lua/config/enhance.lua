@@ -67,3 +67,20 @@ require('sniprun').setup({
 })
 map('', '<F9>', '<Plug>SnipRun', { silent = true })
 map('', '<F5>', 'ggVG:SnipRun<CR><c-o>', { silent = true })
+
+
+------------------------------------------
+-- nvim-tree
+------------------------------------------
+require("nvim-tree").setup()
+map('', '<leader>e', ':NvimTreeToggle<CR>')
+
+
+------------------------------------------
+-- bufferline
+------------------------------------------
+require("bufferline").setup()
+map('', 'tt', ':BufferLinePick<CR>')
+map('', 'th', ':BufferLineCyclePrev<CR>')
+map('', 'tl', ':BufferLineCycleNext<CR>')
+map('', 'tq', ':BufferLinePickClose<CR>')
