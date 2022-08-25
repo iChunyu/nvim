@@ -13,6 +13,7 @@ vim.g['UltiSnipsJumpBackwardTrigger'] = '<c-k>'
 -- vim-markdown: enable `vimtex#syntax#in_mathzone` in markdown
 ------------------------------------------
 vim.g['vim_markdown_math'] = 1
+vim.g['vim_markdown_folding_disabled'] = 1
 
 
 ------------------------------------------
