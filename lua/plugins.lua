@@ -28,12 +28,12 @@ require('packer').startup(function(use)
 
     -- [config.enhance] Editor enhance
     -- Treesitter and treesitter-depended plugins
-    use { 'nvim-treesitter/nvim-treesitter', config = function() require('config.treesitter') end }
+    use 'nvim-treesitter/nvim-treesitter'
     use 'p00f/nvim-ts-rainbow'
     -- Git integration
-    use { 'lewis6991/gitsigns.nvim', config = function() require('config.gitsigns') end }
+    use 'lewis6991/gitsigns.nvim'
     -- Navigation
-    use { 'ggandor/lightspeed.nvim', config = function() require('config.lightspeed') end }
+    use 'ggandor/lightspeed.nvim'
     -- Editor enhancement
     use 'mbbill/undotree'
     use { 'michaelb/sniprun', run = 'bash ./install.sh' }
@@ -41,9 +41,9 @@ require('packer').startup(function(use)
     use 'h-hg/fcitx.nvim'
 
 
-    -- [config.tex-md] LaTeX and Markdown
+    -- [config.marktex] LaTeX and Markdown
     -- NOTE: tex snippets have to work with `vimtex` (to detect math zone)
-    use { 'SirVer/ultisnips', config = function() require('config.ultisnips') end }
+    use 'SirVer/ultisnips'
     use 'lervag/vimtex'
     use 'preservim/vim-markdown'
     use 'mzlogin/vim-markdown-toc'
@@ -51,19 +51,19 @@ require('packer').startup(function(use)
 
 
     -- [config.editing] Text editing
-    use { 'numToStr/Comment.nvim', config = function() require('config.comment') end }
-    use { 'windwp/nvim-autopairs', config = function() require("nvim-autopairs").setup() end }
+    use 'numToStr/Comment.nvim'
+    use 'windwp/nvim-autopairs'
     use 'dkarter/bullets.vim'
     use 'godlygeek/tabular'
 
 
     -- [config.beautify] Beautify
     use 'kyazdani42/nvim-web-devicons'
-    use { 'EdenEast/nightfox.nvim', config = function() vim.cmd('colorscheme nightfox') end }
-    use { 'nvim-lualine/lualine.nvim', config = function() require('lualine').setup() end }
-    use { 'rcarriga/nvim-notify', config = function() vim.notify = require("notify") end }
-    use { 'norcalli/nvim-colorizer.lua', config = function() require 'colorizer'.setup() end }
-    use { 'chentoast/marks.nvim', config = function() require('marks').setup() end }
+    use 'EdenEast/nightfox.nvim'
+    use 'nvim-lualine/lualine.nvim'
+    use 'rcarriga/nvim-notify'
+    use 'norcalli/nvim-colorizer.lua'
+    use 'chentoast/marks.nvim'
 end)
 
 
@@ -74,6 +74,7 @@ end
 
 
 require('config.lsp')
-require('config.markdown')
-require('config.text')
-require('config.editor')
+require('config.enhance')
+require('config.marktex')
+require('config.editing')
+require('config.beautify')

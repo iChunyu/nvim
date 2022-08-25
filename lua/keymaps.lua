@@ -45,7 +45,7 @@ map('', '<down>', ':res -5<CR>')
 map('', '<left>', ':vertical res -5<CR>')
 map('', '<right>', ':vertical res +5<CR>')
 
-map('', 'ta', ':tabe<CR')
+map('', 'ta', ':tabe<CR>')
 map('', 'th', ':-tabnext<CR>')
 map('', 'tl', ':+tabnext<CR>')
 
