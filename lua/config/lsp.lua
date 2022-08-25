@@ -13,12 +13,11 @@ require('mason-lspconfig').setup({
     automatic_installation = true
 })
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-
-local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+local lspconfig = require('lspconfig')
 local servers = { 'clangd', 'pyright', 'ltex', 'sumneko_lua' }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
@@ -27,11 +26,10 @@ for _, lsp in ipairs(servers) do
     }
 end
 
--- luasnip setup
-local luasnip = require 'luasnip'
 
--- nvim-cmp setup
+-- Set up `nvim-cmp` including `luasnip`
 local cmp = require 'cmp'
+local luasnip = require 'luasnip'
 cmp.setup {
     snippet = {
         expand = function(args)
