@@ -36,6 +36,7 @@ require('packer').startup(function(use)
     use 'kyazdani42/nvim-tree.lua' -- File explorer
     use { 'akinsho/bufferline.nvim', tag = 'v2.*' } -- Tabline
     use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' } -- Fuzzy finder
+    use 'folke/which-key.nvim' -- Show key bindings
 
 
     -- [config.marktex] LaTeX and Markdown

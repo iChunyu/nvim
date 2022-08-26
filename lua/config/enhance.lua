@@ -73,17 +73,17 @@ map('', '<F5>', 'ggVG:SnipRun<CR><c-o>', { silent = true })
 -- nvim-tree
 ------------------------------------------
 require("nvim-tree").setup()
-map('', '<leader>e', ':NvimTreeToggle<CR>')
+map('', '<leader>e', ':NvimTreeToggle<CR>', { silent = true })
 
 
 ------------------------------------------
 -- bufferline
 ------------------------------------------
 require("bufferline").setup()
-map('', 'tt', ':BufferLinePick<CR>')
-map('', 'th', ':BufferLineCyclePrev<CR>')
-map('', 'tl', ':BufferLineCycleNext<CR>')
-map('', 'tq', ':BufferLinePickClose<CR>')
+map('', 'tt', ':BufferLinePick<CR>', { silent = true })
+map('', 'th', ':BufferLineCyclePrev<CR>', { silent = true })
+map('', 'tl', ':BufferLineCycleNext<CR>', { silent = true })
+map('', 'tq', ':BufferLinePickClose<CR>', { silent = true })
 
 
 ------------------------------------------
@@ -93,3 +93,9 @@ map('', '<leader>ff', '<cmd>Telescope find_files<cr>')
 map('', '<leader>fg', '<cmd>Telescope live_grep<cr>')
 map('', '<leader>fb', '<cmd>Telescope buffers<cr>')
 map('', '<leader>fh', '<cmd>Telescope help_tags<cr>')
+
+
+------------------------------------------
+-- which-key
+------------------------------------------
+require('which-key').setup {}

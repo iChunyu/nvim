@@ -26,4 +26,6 @@ vim.opt.cursorline = true
 vim.opt.cursorlineopt = 'screenline'
 vim.opt.termguicolors = true
 
+vim.opt.timeoutlen = 500
+
 vim.g['python3_host_prog'] = '/usr/bin/python'
