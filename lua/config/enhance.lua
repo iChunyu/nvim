@@ -26,7 +26,7 @@ require('gitsigns').setup {
     on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
 
-        local function map(mode, l, r, opts)
+        local function gitmap(mode, l, r, opts)
             opts = opts or {}
             opts.buffer = bufnr
             opts.silent = true
@@ -34,13 +34,13 @@ require('gitsigns').setup {
         end
 
         -- Keymap
-        map('', '<leader>gd', gs.preview_hunk)
-        map('', '<leader>gj', gs.next_hunk)
-        map('', '<leader>gk', gs.prev_hunk)
-        map('', '<leader>ga', gs.stage_hunk)
-        map('', '<leader>gu', gs.undo_stage_hunk)
-        map('', '<leader>gb', gs.toggle_current_line_blame)
-        map('', '<leader>gB', function() gs.blame_line { full = true } end)
+        gitmap('', '<leader>gd', gs.preview_hunk)
+        gitmap('', '<leader>gj', gs.next_hunk)
+        gitmap('', '<leader>gk', gs.prev_hunk)
+        gitmap('', '<leader>ga', gs.stage_hunk)
+        gitmap('', '<leader>gu', gs.undo_stage_hunk)
+        gitmap('', '<leader>gb', gs.toggle_current_line_blame)
+        gitmap('', '<leader>gB', function() gs.blame_line { full = true } end)
     end
 }
 
@@ -84,3 +84,12 @@ map('', 'tt', ':BufferLinePick<CR>')
 map('', 'th', ':BufferLineCyclePrev<CR>')
 map('', 'tl', ':BufferLineCycleNext<CR>')
 map('', 'tq', ':BufferLinePickClose<CR>')
+
+
+------------------------------------------
+-- telescope
+------------------------------------------
+map('', '<leader>ff', '<cmd>Telescope find_files<cr>')
+map('', '<leader>fg', '<cmd>Telescope live_grep<cr>')
+map('', '<leader>fb', '<cmd>Telescope buffers<cr>')
+map('', '<leader>fh', '<cmd>Telescope help_tags<cr>')

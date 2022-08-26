@@ -26,7 +26,7 @@ require('packer').startup(function(use)
 
 
     -- [config.enhance] Editor enhance
-    use 'nvim-treesitter/nvim-treesitter' -- Treesitter
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Treesitter
     use 'p00f/nvim-ts-rainbow' -- Treesitter-based rainbow
     use 'lewis6991/gitsigns.nvim' -- Git integration
     use 'ggandor/lightspeed.nvim' -- Fast jump between words
@@ -35,6 +35,7 @@ require('packer').startup(function(use)
     use 'h-hg/fcitx.nvim' -- Autoswitch input methods
     use 'kyazdani42/nvim-tree.lua' -- File explorer
     use { 'akinsho/bufferline.nvim', tag = 'v2.*' } -- Tabline
+    use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' } -- Fuzzy finder
 
 
     -- [config.marktex] LaTeX and Markdown

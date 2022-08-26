@@ -74,7 +74,7 @@ sudo npm install -g neovim
 | **其他**       |                                                          |
 | `<leader>o`    | 向下插入空行                                             |
 | `<leader>O`    | 向上插入空行                                             |
-| `<leader>f`    | 使用 LSP 格式化代码                                      |
+| `<leader>F`    | 使用 LSP 格式化代码                                      |
 
 
 ## 插件键位映射
@@ -117,6 +117,11 @@ sudo npm install -g neovim
 | `th`                 | 跳转到左侧标签页                                                     |
 | `tl`                 | 跳转到右侧标签页                                                     |
 | `tq`                 | 根据标签页提示字符关闭标签页（不保存修改）                           |
+| **telescope**        |                                                                      |
+| `ff`                 | 查找文件                                                             |
+| `fg`                 | 查找关键字                                                           |
+| `fb`                 | 查找打开的缓冲区                                                     |
+| `fh`                 | 查找帮助文档                                                         |
 
 
 
