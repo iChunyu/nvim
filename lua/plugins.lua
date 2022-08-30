@@ -63,6 +63,7 @@ require('packer').startup(function(use)
     use 'norcalli/nvim-colorizer.lua' -- Show color in text
     use 'chentoast/marks.nvim' -- Show bookmarks
     use 'lukas-reineke/indent-blankline.nvim' -- Show indent lines
+    use 'yamatsum/nvim-cursorline' -- Show all the same words under current cursor
 end)
 
 
