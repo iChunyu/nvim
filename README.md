@@ -122,6 +122,8 @@ sudo npm install -g neovim
 | `fg`                 | 查找关键字                                                           |
 | `fb`                 | 查找打开的缓冲区                                                     |
 | `fh`                 | 查找帮助文档                                                         |
+| **renamer**          |                                                                      |
+| `<F2>`               | 批量重命名变量                                                       |
 
 
 

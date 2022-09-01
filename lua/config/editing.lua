@@ -33,3 +33,10 @@ vim.g['bullets_enabled_file_types'] = { 'markdown', 'text', 'gitcommit' }
 -- tabular
 ------------------------------------------
 map('v', '<leader>ta', ':Tabular /')
+
+
+------------------------------------------
+-- renamer.nvim
+------------------------------------------
+require('renamer').setup {}
+map('', '<F2>', '<cmd>lua require("renamer").rename()<cr>', { silent = true })

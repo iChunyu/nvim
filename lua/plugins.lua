@@ -53,6 +53,7 @@ require('packer').startup(function(use)
     use 'windwp/nvim-autopairs' -- Finish brackets
     use 'dkarter/bullets.vim' -- Generate bullets list
     use 'godlygeek/tabular' -- Align text with given symbol
+    use { 'filipdutescu/renamer.nvim', branch = 'master' } -- Rename variables
 
 
     -- [config.beautify] Beautify
