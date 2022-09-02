@@ -27,8 +27,6 @@ require('packer').startup(function(use)
 
 
     -- [config.enhance] Editor enhance
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Treesitter
-    use 'p00f/nvim-ts-rainbow' -- Treesitter-based rainbow
     use 'lewis6991/gitsigns.nvim' -- Git integration
     use 'ggandor/lightspeed.nvim' -- Fast jump between words
     use 'mbbill/undotree' -- Editing history and undo
@@ -48,7 +46,7 @@ require('packer').startup(function(use)
     use { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install' } -- Markdown live preview
 
 
-    -- [config.editing] Text editing
+    -- [config.editing] Code/text editing
     use 'numToStr/Comment.nvim' -- Comment snippets
     use 'windwp/nvim-autopairs' -- Finish brackets
     use 'dkarter/bullets.vim' -- Generate bullets list
@@ -57,6 +55,8 @@ require('packer').startup(function(use)
 
 
     -- [config.beautify] Beautify
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Treesitter syntax highlight
+    use 'luochen1990/rainbow' -- Rainbow brackets
     use 'kyazdani42/nvim-web-devicons' -- Icons
     use 'EdenEast/nightfox.nvim' -- Colorscheme
     use 'nvim-lualine/lualine.nvim' -- Status line
