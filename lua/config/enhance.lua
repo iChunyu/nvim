@@ -91,11 +91,13 @@ map('', '<leader>fh', '<cmd>Telescope help_tags<cr>')
 ------------------------------------------
 require('toggleterm').setup({
     open_mapping = '<F4>',
-    direction = 'float',
+    direction = 'horizontal', -- 'float'
     float_opts = {
         border = 'curved'
     }
 })
-map('t', '<esc>', [[<C-\><C-n>]])
-map('n', '<leader>tr', ':ToggleTermSendCurrentLine<CR>')
-map('v', '<leader>tr', ':ToggleTermSendVisualSelection<CR>')
+map('n', '<leader>t', ':ToggleTerm direction=horizontal<CR>')
+map('n', '<leader>T', ':ToggleTerm direction=float<CR>')
+map('t', '<esc>', '<C-\\><C-n>')
+map('n', '<leader>r', ':ToggleTermSendCurrentLine<CR>')
+map('v', '<leader>r', ':ToggleTermSendVisualSelection<CR>')

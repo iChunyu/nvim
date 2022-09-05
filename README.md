@@ -112,7 +112,7 @@ sudo npm install -g neovim
 | **comment**          |                                                                      |
 | `<ctrl>/`            | 注释当前行或注释选中代码                                             |
 | **tabular**          |                                                                      |
-| `<leader>ta`         | 将选中内容依据给定符号对齐：先选中文本，触发后给定符号并回车即可     |
+| `<leader>a`          | 将选中内容依据给定符号对齐：先选中文本，触发后给定符号并回车即可     |
 | **nvim-tree**        |                                                                      |
 | `<leader>e`          | 打开文件浏览器                                                       |
 | **bufferline**       |                                                                      |
@@ -128,7 +128,10 @@ sudo npm install -g neovim
 | **renamer**          |                                                                      |
 | `<F2>`               | 批量重命名变量                                                       |
 | **toggleterm**       |                                                                      |
-| `<F4>`               | 打开、关闭终端                                                       |
+| `<F4>`               | 打开、关闭终端（默认为底部终端）                                     |
+| `<leader>t`          | 打开底部终端                                                         |
+| `<leader>T`          | 打开浮动终端                                                         |
+| `<leader>r`          | 将当前行或所选内容发送到终端并执行                                   |
 
 
 

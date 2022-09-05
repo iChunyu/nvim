@@ -32,7 +32,7 @@ vim.g['bullets_enabled_file_types'] = { 'markdown', 'text', 'gitcommit' }
 ------------------------------------------
 -- tabular
 ------------------------------------------
-map('v', '<leader>ta', ':Tabular /')
+map('v', '<leader>a', ':Tabular /')
 
 
 ------------------------------------------
