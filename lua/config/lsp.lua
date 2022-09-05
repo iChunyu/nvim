@@ -18,7 +18,7 @@ require('mason-lspconfig').setup({
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 local lspconfig = require('lspconfig')
-local servers = { 'clangd', 'pyright', 'ltex', 'sumneko_lua' }
+local servers = { 'ltex', 'texlab', 'clangd', 'pyright', 'sumneko_lua' }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         -- on_attach = my_custom_on_attach,
@@ -66,7 +66,6 @@ cmp.setup {
     sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
-        { name = 'omni' },
         { name = 'path' }
     },
 }
