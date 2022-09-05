@@ -60,7 +60,17 @@ map('', '<leader>e', ':NvimTreeToggle<CR>', { silent = true })
 ------------------------------------------
 -- bufferline
 ------------------------------------------
-require("bufferline").setup()
+require("bufferline").setup {
+    options = {
+        mode = 'buffers',
+        diagnostics = 'nvim_lsp',
+        diagnostics_indicator = function(count, level, diagnostics_dict, context)
+            local icon = level:match("error") and " " or " "
+            return " " .. icon .. count
+        end,
+    always_show_bufferline = false,
+    }
+}
 map('', 'tt', ':BufferLinePick<CR>', { silent = true })
 map('', 'th', ':BufferLineCyclePrev<CR>', { silent = true })
 map('', 'tl', ':BufferLineCycleNext<CR>', { silent = true })
@@ -74,9 +84,3 @@ map('', '<leader>ff', '<cmd>Telescope find_files<cr>')
 map('', '<leader>fg', '<cmd>Telescope live_grep<cr>')
 map('', '<leader>fb', '<cmd>Telescope buffers<cr>')
 map('', '<leader>fh', '<cmd>Telescope help_tags<cr>')
-
-
-------------------------------------------
--- which-key
-------------------------------------------
-require('which-key').setup {}

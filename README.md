@@ -118,10 +118,10 @@ sudo npm install -g neovim
 | `tl`                 | 跳转到右侧标签页                                                     |
 | `tq`                 | 根据标签页提示字符关闭标签页（不保存修改）                           |
 | **telescope**        |                                                                      |
-| `ff`                 | 查找文件                                                             |
-| `fg`                 | 查找关键字                                                           |
-| `fb`                 | 查找打开的缓冲区                                                     |
-| `fh`                 | 查找帮助文档                                                         |
+| `<leader>ff`         | 查找文件                                                             |
+| `<leader>fg`         | 查找关键字                                                           |
+| `<leader>fb`         | 查找打开的缓冲区                                                     |
+| `<leader>fh`         | 查找帮助文档                                                         |
 | **renamer**          |                                                                      |
 | `<F2>`               | 批量重命名变量                                                       |
 
