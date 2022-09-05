@@ -83,6 +83,9 @@ sudo npm install -g neovim
 
 | 键                   | 说明                                                                 |
 | :---                 | :---                                                                 |
+| **LSP**              |                                                                      |
+| `<ctrl>j`            | 向上翻阅帮助文档                                                     |
+| `<ctrl>k`            | 向下翻阅帮助文档                                                     |
 | **gitsigns**         |                                                                      |
 | `<leader>gd`         | 查看当前位置改动                                                     |
 | `<leader>gj`         | 跳转到下一处改动                                                     |
