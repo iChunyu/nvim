@@ -34,6 +34,7 @@ require('packer').startup(function(use)
     use 'kyazdani42/nvim-tree.lua' -- File explorer
     use { 'akinsho/bufferline.nvim', tag = 'v2.*' } -- Tabline
     use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' } -- Fuzzy finder
+    use { 'akinsho/toggleterm.nvim', tag = '*' } -- Terminal integration
 
 
     -- [config.marktex] LaTeX and Markdown
@@ -62,7 +63,6 @@ require('packer').startup(function(use)
     use 'norcalli/nvim-colorizer.lua' -- Show color in text
     use 'chentoast/marks.nvim' -- Show bookmarks
     use 'lukas-reineke/indent-blankline.nvim' -- Show indent lines
-    use 'yamatsum/nvim-cursorline' -- Show all the same words under current cursor
 end)
 
 

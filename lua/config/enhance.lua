@@ -68,7 +68,7 @@ require("bufferline").setup {
             local icon = level:match("error") and " " or " "
             return " " .. icon .. count
         end,
-    always_show_bufferline = false,
+        always_show_bufferline = false,
     }
 }
 map('', 'tt', ':BufferLinePick<CR>', { silent = true })
@@ -84,3 +84,18 @@ map('', '<leader>ff', '<cmd>Telescope find_files<cr>')
 map('', '<leader>fg', '<cmd>Telescope live_grep<cr>')
 map('', '<leader>fb', '<cmd>Telescope buffers<cr>')
 map('', '<leader>fh', '<cmd>Telescope help_tags<cr>')
+
+
+------------------------------------------
+-- toggleterm
+------------------------------------------
+require('toggleterm').setup({
+    open_mapping = '<F4>',
+    direction = 'float',
+    float_opts = {
+        border = 'curved'
+    }
+})
+map('t', '<esc>', [[<C-\><C-n>]])
+map('n', '<leader>tr', ':ToggleTermSendCurrentLine<CR>')
+map('v', '<leader>tr', ':ToggleTermSendVisualSelection<CR>')

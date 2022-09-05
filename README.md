@@ -124,6 +124,8 @@ sudo npm install -g neovim
 | `<leader>fh`         | 查找帮助文档                                                         |
 | **renamer**          |                                                                      |
 | `<F2>`               | 批量重命名变量                                                       |
+| **toggleterm**       |                                                                      |
+| `<F4>`               | 打开、关闭终端                                                       |
 
 
 
