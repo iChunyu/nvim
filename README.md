@@ -32,7 +32,7 @@ sudo npm install -g neovim
 
 ## 基本键位映射
 
-本配置文档的 `<leader>` 设置为 **空格** ，其他组合键如下，注意区分大小写。
+本配置文档的 `<leader>` 和 `<localleader>` 均设置为 **空格** ，其他组合键如下，注意区分大小写。
 
 | 键             | 功能                                                     |
 | :---           | :---                                                     |
@@ -105,6 +105,26 @@ sudo npm install -g neovim
 | **ultisnip**         |                                                                      |
 | `<ctrl>j`            | 手动展开代码片段、跳转到下一个断点                                   |
 | `<ctrl>k`            | 跳转到上一个断点                                                     |
+| **vimtex**           |                                                                      |
+| `<localleader>li`    | 查看当前文档信息                                                     |
+| `<localleader>lt`    | 打开目录                                                             |
+| `<localleader>ll`    | 编译文档                                                             |
+| `<localleader>lv`    | 打开编译后的文档                                                     |
+| `<localleader>lc`    | 清理编译产生的临时文件                                               |
+| `<localleader>lC`    | 清理所有非必要文件                                                   |
+| `dse`                | 删除周围环境                                                         |
+| `dsc`                | 删除周围命令                                                         |
+| `ds$`                | 删除行内数学                                                         |
+| `dsd`                | 删除周围定界符                                                       |
+| `cse`                | 更改周围环境                                                         |
+| `csc`                | 更改当前命令                                                         |
+| `cs$`                | 更改行内数学                                                         |
+| `csd`                | 更改周围定界符                                                       |
+| `tsc`                | 切换带星号的命令                                                     |
+| `tse`                | 切换带星号的环境                                                     |
+| `tsd`                | 切换周围定界符                                                       |
+| `<F7>`               | 为选择的文本添加命令                                                 |
+| `<F8>`               | 为周围定界符添加 `\left` 和 `\right`                                 |
 | **vim-markdown-toc** |                                                                      |
 | `:GenTocGFM<CR>`     | 在当前位置插入 GitHub 风格的目录，并自动更新（未映射新键位）         |
 | **markdown-preview** |                                                                      |
