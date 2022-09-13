@@ -18,7 +18,7 @@
 
 ## 安装前的准备
 
-本配置文件适配最新版 [NeoVim](https://neovim.io/)，请确保其版本不低于 0.5。
+本配置文件适配最新版 [NeoVim](https://neovim.io/)，请确保其版本不低于 0.7。
 
 为确保功能正常，请确保 [Python](https://www.python.org/) 和 [Node.js](https://nodejs.org/) 已正确安装，然后在命令行补充以下功能：
 
@@ -27,7 +27,13 @@ pip install pynvim
 sudo npm install -g neovim
 ```
 
-插件和 LSP 应当在首次启动时自动安装，如果未能正确安装，请确保能够正常访问 GitHub 后重新启动，或手动运行 `:PackerSync`。
+为确保 `Telescope` 等插件功能正常，可选择性安装以下工具：
+
+- [fd](https://github.com/sharkdp/fd) 查找文件
+- [ripgrep](https://github.com/BurntSushi/ripgrep) 查找字符串
+- [xclip](https://github.com/astrand/xclip) 系统剪切板
+
+插件和 LSP 应当在首次启动时自动安装，如果未能正确安装，请确保能够正常访问 GitHub 后重新启动，或手动运行 `:PackerSync`。插件安装完成后可使用 `:checkhealth` 检查依赖是否正常。
 
 
 ## 基本键位映射
