@@ -19,9 +19,6 @@ map('n', '<leader>Q', ':q!<CR>')
 map('n', '<leader>w', ':w<CR>')
 map('n', '<leader>W', ':wq<CR>')
 
--- not working
--- map('', 'R', ':source $MYVIMRC<CR>')
-
 -- Centering search result
 map('n', '=', 'nzz')
 map('n', '-', 'Nzz')
@@ -52,7 +49,7 @@ map('n', 'Tl', ':+tabnext<CR>')
 
 map('n', '<leader>o', 'o<Esc>k')
 map('n', '<leader>O', 'O<Esc>j')
-map('n', 'Y', '"+y')
+map({ 'n', 'v' }, 'Y', '"+y')
 map('n', '<c-l>', '1z=')
 
 -- Formatting
