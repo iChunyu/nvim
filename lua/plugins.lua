@@ -1,4 +1,5 @@
 -- Validate `parker.nvim` and install if necessary
+local map = vim.keymap.set
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -71,7 +72,7 @@ end)
 if packer_bootstrap then
     require('packer').sync()
 end
-
+map('n','<leader>ps',':PackerSync<CR>')
 
 require('config.lsp')
 require('config.enhance')
