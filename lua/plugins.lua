@@ -53,6 +53,7 @@ require('packer').startup(function(use)
     use 'dkarter/bullets.vim' -- Generate bullets list
     use 'godlygeek/tabular' -- Align text with given symbol
     use { 'filipdutescu/renamer.nvim', branch = 'master' } -- Rename variables
+    use 'tversteeg/registers.nvim' -- Preview the contents of the registers
 
 
     -- [config.beautify] Beautify
@@ -72,7 +73,7 @@ end)
 if packer_bootstrap then
     require('packer').sync()
 end
-map('n','<leader>ps',':PackerSync<CR>')
+map('n', '<leader>ps', ':PackerSync<CR>')
 
 require('config.lsp')
 require('config.enhance')

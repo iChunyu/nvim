@@ -40,3 +40,10 @@ map('v', '<leader>a', ':Tabular /')
 ------------------------------------------
 require('renamer').setup {}
 map('', '<F2>', '<cmd>lua require("renamer").rename()<cr>', { silent = true })
+
+
+------------------------------------------
+-- registers.nvim
+------------------------------------------
+vim.g['registers_window_min_height'] = 10
+vim.g['registers_window_border'] = 'rounded'
