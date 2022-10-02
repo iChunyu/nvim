@@ -45,5 +45,12 @@ map('', '<F2>', '<cmd>lua require("renamer").rename()<cr>', { silent = true })
 ------------------------------------------
 -- registers.nvim
 ------------------------------------------
-vim.g['registers_window_min_height'] = 10
-vim.g['registers_window_border'] = 'rounded'
+require('registers').setup {
+    window = {
+        max_width = 100,
+        highlight_cursorline = true,
+        border = 'rounded',
+        transparency = 0,
+    },
+}
+
