@@ -53,5 +53,4 @@ map({ 'n', 'v' }, 'Y', '"+y')
 map('n', '<c-l>', '1z=')
 
 -- Formatting
-map('n', '<leader>F', ':lua vim.lsp.buf.formatting()<CR>', { silent = true })
-map('v', '<leader>F', ':lua vim.lsp.buf.range_formatting()<CR>', { silent = true })
+map('n', '<leader>F', ':lua vim.lsp.buf.format()<CR>', { silent = true })
