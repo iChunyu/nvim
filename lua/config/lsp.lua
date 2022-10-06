@@ -29,11 +29,10 @@ end
 
 -- Set up `nvim-cmp` including `luasnip`
 local cmp = require 'cmp'
-local luasnip = require 'luasnip'
 cmp.setup {
     snippet = {
         expand = function(args)
-            luasnip.lsp_expand(args.body)
+            vim.fn["UltiSnips#Anon"](args.body)
         end,
     },
     mapping = cmp.mapping.preset.insert({
@@ -47,19 +46,18 @@ cmp.setup {
         ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
             else
                 fallback()
+                -- Disable <Tab> expand, reserved for indent
+                -- require("cmp_nvim_ultisnips.mappings").expand_or_jump_forwards(fallback)
             end
         end, { 'i', 's' }),
         ['<S-Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                luasnip.jump(-1)
             else
                 fallback()
+                -- require("cmp_nvim_ultisnips.mappings").jump_backwards(fallback)
             end
         end, { 'i', 's' }),
     }),
@@ -67,6 +65,6 @@ cmp.setup {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
-        { name = 'emoji' }
+        { name = 'emoji' },
     },
 }
