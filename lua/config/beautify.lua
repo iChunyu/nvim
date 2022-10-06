@@ -2,7 +2,7 @@
 -- treesitter
 ------------------------------------------
 require('nvim-treesitter.configs').setup {
-    -- one of "all", "language", or a list of languages
+    -- one of 'all', 'language', or a list of languages
     -- Do NOT add 'latex' and 'markdown' for now, breaking `vimtex#syntax#in_mathzone`
     -- Ref: https://github.com/nvim-treesitter/nvim-treesitter/issues/1184
     ensure_installed = { 'bibtex', 'python', 'vim', 'lua', 'cpp' },
@@ -15,6 +15,26 @@ require('nvim-treesitter.configs').setup {
 ------------------------------------------
 -- nightfox
 ------------------------------------------
+-- Default options
+require('nightfox').setup({
+    options = {
+        styles = { -- Style to be applied to different syntax groups
+            -- Value is any valid attr-list value `:
+            -- bold, underline, undercurl, underdouble, underdotted, underdashed
+            -- strikethrough, reverse, italic, standout, nocombine, NONE
+            comments = 'italic',
+            conditionals = 'NONE',
+            constants = 'NONE',
+            functions = 'NONE',
+            keywords = 'NONE',
+            numbers = 'NONE',
+            operators = 'NONE',
+            strings = 'NONE',
+            types = 'NONE',
+            variables = 'NONE',
+        },
+    },
+})
 vim.cmd('colorscheme nordfox')
 
 
@@ -37,7 +57,7 @@ require('lualine').setup {
 ------------------------------------------
 -- nvim-notify
 ------------------------------------------
-vim.notify = require("notify")
+vim.notify = require('notify')
 
 
 ------------------------------------------
@@ -63,18 +83,17 @@ vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
 vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
 
 vim.opt.list = true
--- vim.opt.listchars:append "space:⋅" -- Show spaces as virtual dot
--- vim.opt.listchars:append "eol:↴" -- Show end of line
+-- vim.opt.listchars:append 'space:⋅' -- Show spaces as virtual dot
+-- vim.opt.listchars:append 'eol:↴' -- Show end of line
 
-require("indent_blankline").setup {
-    space_char_blankline = " ",
+require('indent_blankline').setup {
+    space_char_blankline = ' ',
     char_highlight_list = {
-        "IndentBlanklineIndent1",
-        "IndentBlanklineIndent2",
-        "IndentBlanklineIndent3",
-        "IndentBlanklineIndent4",
-        "IndentBlanklineIndent5",
-        "IndentBlanklineIndent6",
+        'IndentBlanklineIndent1',
+        'IndentBlanklineIndent2',
+        'IndentBlanklineIndent3',
+        'IndentBlanklineIndent4',
+        'IndentBlanklineIndent5',
+        'IndentBlanklineIndent6',
     },
 }
-
