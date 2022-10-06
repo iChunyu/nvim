@@ -58,7 +58,6 @@ require('packer').startup(function(use)
 
     -- [config.beautify] Beautify
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Treesitter syntax highlight
-    use 'luochen1990/rainbow' -- Rainbow brackets
     use 'kyazdani42/nvim-web-devicons' -- Icons
     use 'EdenEast/nightfox.nvim' -- Colorscheme
     use 'nvim-lualine/lualine.nvim' -- Status line

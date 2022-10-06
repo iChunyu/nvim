@@ -11,30 +11,6 @@ require('nvim-treesitter.configs').setup {
     },
 }
 
-------------------------------------------
--- rainbow
-------------------------------------------
-vim.cmd [[
-let g:rainbow_active = 1
-let g:rainbow_conf = {
-    \   'guifgs': [ '#E06C75', '#E5C07B', '#98C379', '#56B6C2', '#61AFEF', '#C678DD' ],
-    \   'separately': {
-    \       '*':{
-    \           'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-    \           'parentheses_options': 'containedin=ALL'
-    \       },
-    \       'tex':{
-    \           'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold',
-    \                           'start=/\\left\\*[(\[{.]/ end=/\\right\\*[)\]}.]/ fold',
-    \                           'start=/\\left\\l[vV]ert/ end=/\\right\\r[vV]ert/ fold',
-    \                           'start=/\\[bB]igl\\*[(\[{.]/ end=/\\[bB]igr\\*[)\]}.]/ fold',
-    \                           'start=/\\[bB]iggl\\*[(\[{.]/ end=/\\[bB]iggr\\*[)\]}.]/ fold'],
-    \           'parentheses_options': 'containedin=ALL'
-    \       },
-    \   }
-    \ }
-]]
-
 
 ------------------------------------------
 -- nightfox
