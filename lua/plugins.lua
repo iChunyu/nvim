@@ -15,7 +15,7 @@ require('packer').startup(function(use)
     use 'nvim-lua/plenary.nvim' -- All the Lua functions, depended by most plugins
 
 
-    -- [config.lsp] LSP and autocompletion
+    -- [lsp] LSP and autocompletion
     use 'williamboman/mason.nvim' -- LSP manager
     use 'williamboman/mason-lspconfig.nvim' -- Bridge between `mason` and `lspconfig`
     use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
@@ -26,7 +26,7 @@ require('packer').startup(function(use)
     use 'quangnguyen30192/cmp-nvim-ultisnips' -- Cmp source for UltiSnips
 
 
-    -- [config.enhance] Editor enhance
+    -- [enhance] Editor enhance
     use 'lewis6991/gitsigns.nvim' -- Git integration
     use 'ggandor/lightspeed.nvim' -- Fast jump between words
     use 'mbbill/undotree' -- Editing history and undo
@@ -39,7 +39,7 @@ require('packer').startup(function(use)
     use { 'akinsho/toggleterm.nvim', tag = '*' } -- Terminal integration
 
 
-    -- [config.marktex] LaTeX and Markdown
+    -- [marktex] LaTeX and Markdown
     use 'SirVer/ultisnips' -- Snippets, (require `vimtex` and `vim-markdown` to detect math zone)
     use 'lervag/vimtex' -- LaTeX support
     use 'preservim/vim-markdown' -- Enable `vimtex#syntax#in_mathzone` in markdown
@@ -47,7 +47,7 @@ require('packer').startup(function(use)
     use { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install' } -- Markdown live preview
 
 
-    -- [config.editing] Code/text editing
+    -- [editing] Code/text editing
     use 'numToStr/Comment.nvim' -- Comment snippets
     use 'windwp/nvim-autopairs' -- Finish brackets
     use 'dkarter/bullets.vim' -- Generate bullets list
@@ -56,7 +56,7 @@ require('packer').startup(function(use)
     use 'tversteeg/registers.nvim' -- Preview the contents of the registers
 
 
-    -- [config.beautify] Beautify
+    -- [beautify] Beautify
     use 'kyazdani42/nvim-web-devicons' -- Icons
     use 'EdenEast/nightfox.nvim' -- Colorscheme
     use 'nvim-lualine/lualine.nvim' -- Status line
@@ -72,9 +72,3 @@ if packer_bootstrap then
     require('packer').sync()
 end
 map('n', '<leader>ps', ':PackerSync<CR>')
-
-require('config.lsp')
-require('config.enhance')
-require('config.marktex')
-require('config.editing')
-require('config.beautify')
