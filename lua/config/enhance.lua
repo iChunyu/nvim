@@ -84,7 +84,19 @@ map('', '<leader>ff', '<cmd>Telescope find_files<cr>')
 map('', '<leader>fg', '<cmd>Telescope live_grep<cr>')
 map('', '<leader>fb', '<cmd>Telescope buffers<cr>')
 map('', '<leader>fh', '<cmd>Telescope help_tags<cr>')
-
+require("telescope").load_extension('command_center')
+-- Example below, to be migrated
+-- map('', '<leader>fc', '<cmd>Telescope command_center<cr>')
+-- local command_center = require("command_center")
+-- command_center.add({
+--     {
+--         desc = '[notify] test',
+--         cmd = ':lua vim.notify("Hello")',
+--         keys = {
+--             {'n','<leader>x'},
+--         },
+--     }
+-- })
 
 ------------------------------------------
 -- toggleterm

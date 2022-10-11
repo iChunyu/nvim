@@ -35,6 +35,7 @@ require('packer').startup(function(use)
     use 'kyazdani42/nvim-tree.lua' -- File explorer
     use { 'akinsho/bufferline.nvim', tag = 'v2.*' } -- Tabline
     use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' } -- Fuzzy finder
+    use 'FeiyouG/command_center.nvim' -- Create and manage keybindings and commands
     use { 'akinsho/toggleterm.nvim', tag = '*' } -- Terminal integration
 
 
@@ -56,7 +57,6 @@ require('packer').startup(function(use)
 
 
     -- [config.beautify] Beautify
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Treesitter syntax highlight
     use 'kyazdani42/nvim-web-devicons' -- Icons
     use 'EdenEast/nightfox.nvim' -- Colorscheme
     use 'nvim-lualine/lualine.nvim' -- Status line
