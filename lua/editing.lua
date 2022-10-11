@@ -54,3 +54,8 @@ require('registers').setup {
     },
 }
 
+
+------------------------------------------
+-- nvim-surround
+------------------------------------------
+require("nvim-surround").setup {}

@@ -54,6 +54,7 @@ require('packer').startup(function(use)
     use 'godlygeek/tabular' -- Align text with given symbol
     use { 'filipdutescu/renamer.nvim', branch = 'master' } -- Rename variables
     use 'tversteeg/registers.nvim' -- Preview the contents of the registers
+    use 'kylechui/nvim-surround' -- Change surrounding delimeter pairs
 
 
     -- [beautify] Beautify
