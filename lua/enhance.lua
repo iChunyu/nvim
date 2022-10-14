@@ -75,6 +75,7 @@ map('', 'tt', ':BufferLinePick<CR>', { silent = true })
 map('', 'th', ':BufferLineCyclePrev<CR>', { silent = true })
 map('', 'tl', ':BufferLineCycleNext<CR>', { silent = true })
 map('', 'tq', ':BufferLinePickClose<CR>', { silent = true })
+map('', 'td', ':Bdelete<CR>', { silent = true })
 
 
 ------------------------------------------

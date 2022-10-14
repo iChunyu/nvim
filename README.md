@@ -150,6 +150,7 @@ sudo npm install -g neovim
 | `th`                 | 跳转到左侧标签页                                                     |
 | `tl`                 | 跳转到右侧标签页                                                     |
 | `tq`                 | 根据标签页提示字符关闭标签页（不保存修改）                           |
+| `td`                 | 关闭当前标签页                                                       |
 | **telescope**        |                                                                      |
 | `<leader>ff`         | 查找文件                                                             |
 | `<leader>fg`         | 查找关键字                                                           |
