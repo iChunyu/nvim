@@ -37,7 +37,7 @@ map('', 'H', '<Plug>Lightspeed_S')
 ------------------------------------------
 -- undotree
 ------------------------------------------
-map('n', '<leader>u', ':UndotreeToggle<CR>')
+map('n', '<leader>u', '<cmd>UndotreeToggle<CR>')
 
 
 ------------------------------------------
@@ -47,14 +47,14 @@ require('sniprun').setup({
     display = { "NvimNotify" },
 })
 map('', '<F9>', '<Plug>SnipRun', { silent = true })
-map('', '<F5>', 'ggVG:SnipRun<CR><c-o>', { silent = true })
+map('', '<F5>', 'ggVG<cmd>SnipRun<CR><c-o>', { silent = true })
 
 
 ------------------------------------------
 -- nvim-tree
 ------------------------------------------
 require("nvim-tree").setup()
-map('', '<leader>e', ':NvimTreeToggle<CR>', { silent = true })
+map('', '<leader>e', '<cmd>NvimTreeToggle<CR>', { silent = true })
 
 
 ------------------------------------------
@@ -71,11 +71,11 @@ require("bufferline").setup {
         always_show_bufferline = false,
     }
 }
-map('', 'tt', ':BufferLinePick<CR>', { silent = true })
-map('', 'th', ':BufferLineCyclePrev<CR>', { silent = true })
-map('', 'tl', ':BufferLineCycleNext<CR>', { silent = true })
-map('', 'tq', ':BufferLinePickClose<CR>', { silent = true })
-map('', 'td', ':Bdelete<CR>', { silent = true })
+map('', 'tt', '<cmd>BufferLinePick<CR>', { silent = true })
+map('', 'th', '<cmd>BufferLineCyclePrev<CR>', { silent = true })
+map('', 'tl', '<cmd>BufferLineCycleNext<CR>', { silent = true })
+map('', 'tq', '<cmd>BufferLinePickClose<CR>', { silent = true })
+map('', 'td', '<cmd>Bdelete<CR>', { silent = true })
 
 
 ------------------------------------------
@@ -92,7 +92,7 @@ require("telescope").load_extension('command_center')
 -- command_center.add({
 --     {
 --         desc = '[notify] test',
---         cmd = ':lua vim.notify("Hello")',
+--         cmd = '<cmd>lua vim.notify("Hello")',
 --         keys = {
 --             {'n','<leader>x'},
 --         },
@@ -109,8 +109,8 @@ require('toggleterm').setup({
         border = 'curved'
     }
 })
-map('n', '<leader>t', ':ToggleTerm direction=horizontal<CR>')
-map('n', '<leader>T', ':ToggleTerm direction=float<CR>')
+map('n', '<leader>t', '<cmd>ToggleTerm direction=horizontal<CR>')
+map('n', '<leader>T', '<cmd>ToggleTerm direction=float<CR>')
 map('t', '<esc>', '<C-\\><C-n>')
-map('n', '<leader>r', ':ToggleTermSendCurrentLine<CR>')
-map('v', '<leader>r', ':ToggleTermSendVisualSelection<CR>')
+map('n', '<leader>r', '<cmd>ToggleTermSendCurrentLine<CR>')
+map('v', '<leader>r', '<cmd>ToggleTermSendVisualSelection<CR>')
