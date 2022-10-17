@@ -67,7 +67,7 @@ require('packer').startup(function(use)
     use 'chentoast/marks.nvim' -- Show bookmarks
     use 'lukas-reineke/indent-blankline.nvim' -- Show indent lines
     use 'MunifTanjim/nui.nvim' -- UI Component Library for Neovim
-    use { 'folke/noice.nvim', event = 'VimEnter' } -- UI
+    use { 'folke/noice.nvim', event = 'VimEnter', config = function() require("noice").setup() end } -- UI
 end)
 
 
@@ -75,4 +75,4 @@ end)
 if packer_bootstrap then
     require('packer').sync()
 end
-map('n', '<leader>ps', ':PackerSync<CR>')
+map('n', '<leader>ps', '<cmd>PackerSync<CR>')

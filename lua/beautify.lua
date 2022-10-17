@@ -83,10 +83,3 @@ require('indent_blankline').setup {
         'IndentBlanklineIndent6',
     },
 }
-
-
-------------------------------------------
--- noice
--- require: nui, notify
-------------------------------------------
-require("noice").setup()
