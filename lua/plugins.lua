@@ -23,6 +23,7 @@ require('packer').startup(function(use)
     use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
     use 'hrsh7th/cmp-path' -- Enable filesystem path autocompletion
     use 'hrsh7th/cmp-emoji' -- Enable emoji autocompletion
+    use 'hrsh7th/cmp-cmdline' -- Enable command line autocompletion
     use 'quangnguyen30192/cmp-nvim-ultisnips' -- Cmp source for UltiSnips
 
 
