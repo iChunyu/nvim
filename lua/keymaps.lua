@@ -1,4 +1,5 @@
 local map = vim.keymap.set
+local cmd = require('command_center')
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -53,4 +54,12 @@ map({ 'n', 'v' }, 'Y', '"+y')
 map('n', '<c-l>', '1z=')
 
 -- Formatting
-map('n', '<leader>F', '<cmd>lua vim.lsp.buf.format()<CR>', { silent = true })
+-- map('n', '<leader>F', '<cmd>lua vim.lsp.buf.format()<CR>', { silent = true })
+cmd.add({
+    {
+        desc = 'Format code',
+        cmd = '<cmd>lua vim.lsp.buf.format()<cr>',
+        keys = { 'n', '<leader>F', { silent = true } },
+        category = 'lsp'
+    }
+})
