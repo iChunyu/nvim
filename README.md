@@ -156,6 +156,7 @@ sudo npm install -g neovim
 | `<leader>fg`         | 查找关键字                                                           |
 | `<leader>fb`         | 查找打开的缓冲区                                                     |
 | `<leader>fh`         | 查找帮助文档                                                         |
+| `<leader>fc`         | 查找命令映射                                                         |
 | **renamer**          |                                                                      |
 | `<F2>`               | 批量重命名变量                                                       |
 | **toggleterm**       |                                                                      |

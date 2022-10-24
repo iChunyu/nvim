@@ -73,7 +73,7 @@ require('lightspeed').setup {}
 -- map('', 'H', '<Plug>Lightspeed_S')
 cmd.add({
     {
-        desc = 'Jump forjard',
+        desc = 'Jump forward',
         cmd = '<Plug>Lightspeed_s',
         keys = { 'n', 'L' },
         category = 'lightspeed'
