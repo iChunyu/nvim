@@ -37,6 +37,12 @@ require('lualine').setup {
             statusline = {},
             winbar = {},
         },
+    },
+    sections = {
+        lualine_x = { {
+            require("noice").api.status.mode.get,
+            cond = require("noice").api.status.mode.has
+        }, 'encoding', 'filetype' }
     }
 }
 
@@ -83,3 +89,11 @@ require('indent_blankline').setup {
         'IndentBlanklineIndent6',
     },
 }
+
+
+------------------------------------------
+-- noice
+------------------------------------------
+require("noice").setup({
+    lsp_progress = { enabled = false }
+})

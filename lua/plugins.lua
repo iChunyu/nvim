@@ -68,12 +68,7 @@ require('packer').startup(function(use)
     use 'chentoast/marks.nvim' -- Show bookmarks
     use 'lukas-reineke/indent-blankline.nvim' -- Show indent lines
     use 'MunifTanjim/nui.nvim' -- UI Component Library for Neovim
-    use { 'folke/noice.nvim', event = 'VimEnter', -- UI
-        config = function() require("noice").setup({
-                lsp_progress = { enabled = false }
-            })
-        end
-    }
+    use 'folke/noice.nvim' -- event = 'VimEnter', -- UI
 end)
 
 

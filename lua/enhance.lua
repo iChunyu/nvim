@@ -69,22 +69,22 @@ cmd.add({
 -- lightspeed
 ------------------------------------------
 require('lightspeed').setup {}
--- map('', 'L', '<Plug>Lightspeed_s')
--- map('', 'H', '<Plug>Lightspeed_S')
-cmd.add({
-    {
-        desc = 'Jump forward',
-        cmd = '<Plug>Lightspeed_s',
-        keys = { 'n', 'L' },
-        category = 'lightspeed'
-
-    }, {
-        desc = 'Jump backward',
-        cmd = '<Plug>Lightspeed_S',
-        keys = { 'n', 'H' },
-        category = 'lightspeed'
-    }
-})
+map('', 'L', '<Plug>Lightspeed_s')
+map('', 'H', '<Plug>Lightspeed_S')
+-- cmd.add({
+--     {
+--         desc = 'Jump forward',
+--         cmd = '<Plug>Lightspeed_s',
+--         keys = { { 'n', 'v' }, 'L' },
+--         category = 'lightspeed'
+--
+--     }, {
+--         desc = 'Jump backward',
+--         cmd = '<Plug>Lightspeed_S',
+--         keys = { { 'n', 'v' }, 'H' },
+--         category = 'lightspeed'
+--     }
+-- })
 
 
 ------------------------------------------
