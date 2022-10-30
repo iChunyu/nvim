@@ -22,7 +22,7 @@
 
 为确保功能正常，请确保 [Python](https://www.python.org/) 和 [Node.js](https://nodejs.org/) 已正确安装，然后在命令行补充以下功能：
 
-```
+```bash
 pip install pynvim
 sudo npm install -g neovim
 ```
@@ -36,6 +36,15 @@ sudo npm install -g neovim
 插件和 LSP 应当在首次启动时自动安装，如果未能正确安装，请确保能够正常访问 GitHub 后重新启动，或手动运行 `:PackerSync`。插件安装完成后可使用 `:checkhealth` 检查依赖是否正常。
 
 `vimtex` 配置使用 [zathura](https://pwmt.org/projects/zathura/) 作为默认的 PDF 阅读器，可通过包管理器安装。
+
+
+为了启动 Arduino 的 LSP，可参考 [arduino-language-server](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#arduino_language_server) 的配置说明，并需要提前安装 [`arduino-cli`](https://arduino.github.io/arduino-cli)：
+
+```bash
+brew update && brew install arduino-cli
+arduino-cli config init
+arduino-cli core install arduino:avr
+```
 
 
 ## 基本键位映射
