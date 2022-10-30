@@ -1,5 +1,4 @@
 local map = vim.keymap.set
-local cmd = require('command_center')
 
 ------------------------------------------
 -- vimtex
@@ -40,7 +39,7 @@ vim.g['vim_markdown_folding_disabled'] = 1
 vim.g['vmt_list_item_char'] = '-'
 vim.g['vmt_fence_text'] = 'TOC'
 vim.g['vmt_fence_closing_text'] = '/TOC'
-cmd.add({
+require('command_center').add({
     {
         desc = 'Generate GitHub style TOC',
         cmd = '<cmd>GenTocGFM<cr>',
@@ -64,12 +63,4 @@ cmd.add({
 ------------------------------------------
 -- markdown-preview: keymap
 ------------------------------------------
--- map('', '<leader>mp', '<Plug>MarkdownPreviewToggle')
-cmd.add({
-    {
-        desc = 'Preview markdown',
-        cmd = '<Plug>MarkdownPreviewToggle',
-        keys = { 'n', '<leader>mp' },
-        category = 'markdown'
-    }
-})
+map('', '<leader>mp', '<Plug>MarkdownPreviewToggle')

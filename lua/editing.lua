@@ -1,5 +1,4 @@
--- local map = vim.keymap.set
-local cmd = require('command_center')
+local map = vim.keymap.set
 
 ------------------------------------------
 -- comment
@@ -33,30 +32,14 @@ vim.g['bullets_enabled_file_types'] = { 'markdown', 'text', 'gitcommit' }
 ------------------------------------------
 -- tabular
 ------------------------------------------
--- map('v', '<leader>a', ':Tabular /')
-cmd.add({
-    {
-        desc = 'Align text',
-        cmd = ':Tabular /',
-        keys = { 'v', '<leader>a' },
-        category = 'tabular'
-    }
-})
+map('v', '<leader>a', ':Tabular /')
 
 
 ------------------------------------------
 -- renamer.nvim
 ------------------------------------------
 require('renamer').setup {}
--- map('', '<F2>', '<cmd>lua require("renamer").rename()<cr>', { silent = true })
-cmd.add({
-    {
-        desc = 'Rename variables',
-        cmd = '<cmd>lua require("renamer").rename()<cr>',
-        keys = { 'n', '<F2>', { silent = true } },
-        category = 'renamer'
-    }
-})
+map('', '<F2>', '<cmd>lua require("renamer").rename()<cr>', { silent = true })
 
 
 ------------------------------------------
