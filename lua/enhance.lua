@@ -4,25 +4,25 @@ local map = vim.keymap.set
 -- gitsigns
 ------------------------------------------
 require('gitsigns').setup {
-on_attach = function(bufnr)
-    local gs = package.loaded.gitsigns
+    on_attach = function(bufnr)
+        local gs = package.loaded.gitsigns
 
-    local function gitmap(mode, l, r, opts)
-        opts = opts or {}
-        opts.buffer = bufnr
-        opts.silent = true
-        vim.keymap.set(mode, l, r, opts)
+        local function gitmap(mode, l, r, opts)
+            opts = opts or {}
+            opts.buffer = bufnr
+            opts.silent = true
+            vim.keymap.set(mode, l, r, opts)
+        end
+
+        -- Keymap
+        gitmap('', '<leader>gd', gs.preview_hunk)
+        gitmap('', '<leader>gj', gs.next_hunk)
+        gitmap('', '<leader>gk', gs.prev_hunk)
+        gitmap('', '<leader>ga', gs.stage_hunk)
+        gitmap('', '<leader>gu', gs.undo_stage_hunk)
+        gitmap('', '<leader>gb', gs.toggle_current_line_blame)
+        gitmap('', '<leader>gB', function() gs.blame_line { full = true } end)
     end
-
-    -- Keymap
-    gitmap('', '<leader>gd', gs.preview_hunk)
-    gitmap('', '<leader>gj', gs.next_hunk)
-    gitmap('', '<leader>gk', gs.prev_hunk)
-    gitmap('', '<leader>ga', gs.stage_hunk)
-    gitmap('', '<leader>gu', gs.undo_stage_hunk)
-    gitmap('', '<leader>gb', gs.toggle_current_line_blame)
-    gitmap('', '<leader>gB', function() gs.blame_line { full = true } end)
-end
 }
 
 
@@ -100,7 +100,7 @@ require('toggleterm').setup({
     }
 })
 map('t', '<esc>', '<C-\\><C-n>')
-map('n', '<leader>t', '<cmd>ToggleTerm direction=horizontal<CR>')
-map('n', '<leader>T', '<cmd>ToggleTerm direction=float<CR>')
-map('n', '<leader>r', '<cmd>ToggleTermSendCurrentLine<CR>')
-map('v', '<leader>r', '<cmd>ToggleTermSendVisualSelection<CR>')
+map('n', '<leader>t', ':ToggleTerm direction=horizontal<CR>', { silent = true })
+map('n', '<leader>T', ':ToggleTerm direction=float<CR>', { silent = true })
+map('n', '<leader>r', ':ToggleTermSendCurrentLine<CR>', { silent = true })
+map('v', '<leader>r', ':ToggleTermSendVisualSelection<CR>', { silent = true })
