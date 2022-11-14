@@ -40,6 +40,7 @@ require('packer').startup(function(use)
     use 'FeiyouG/command_center.nvim' -- Create and manage keybindings and commands
     use { 'akinsho/toggleterm.nvim', tag = '*' } -- Terminal integration
     use 'stevearc/vim-arduino' -- Arduino support
+    use 'olimorris/persisted.nvim'
 
 
     -- [marktex] LaTeX and Markdown
