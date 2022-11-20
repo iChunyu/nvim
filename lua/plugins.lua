@@ -1,12 +1,16 @@
 -- Validate `parker.nvim` and install if necessary
-local map = vim.keymap.set
-local fn = vim.fn
-local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
-        install_path })
-    vim.cmd('packadd packer.nvim')
+local ensure_packer = function()
+    local fn = vim.fn
+    local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+    if fn.empty(fn.glob(install_path)) > 0 then
+        fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+        vim.cmd [[packadd packer.nvim]]
+        return true
+    end
+    return false
 end
+local packer_bootstrap = ensure_packer()
+local map = vim.keymap.set
 
 
 require('packer').startup(function(use)
@@ -71,11 +75,15 @@ require('packer').startup(function(use)
     use 'lukas-reineke/indent-blankline.nvim' -- Show indent lines
     use 'MunifTanjim/nui.nvim' -- UI Component Library for Neovim
     use 'folke/noice.nvim' -- event = 'VimEnter', -- UI
+
+
+    -- [Bootstrapping]
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+    if packer_bootstrap then
+        require('packer').sync()
+    end
 end)
 
 
--- Do `PackerSync` if `packer` is installed at first time
-if packer_bootstrap then
-    require('packer').sync()
-end
 map('n', '<leader>ps', '<cmd>PackerSync<CR>')
