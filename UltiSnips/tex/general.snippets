@@ -17,6 +17,18 @@ snippet fig "figure" bA
 $0
 endsnippet
 
+snippet ffig "figure" bA
+\begin{figure}[!htb]
+    \centering
+    \subcaptionbox{$3\label{fig:$1}}{\includegraphics[height=${4:90pt}]{$1.${2:pdf}}}
+    \hspace{${5:15pt}}
+    \subcaptionbox{$8\label{fig:$6}}{\includegraphics[height=$4]{$6.${7:pdf}}}
+    \caption{$9}
+    \label{fig:$10}
+\end{figure}
+$0
+endsnippet
+
 snippet tabu "table with tabular" bA
 \begin{table}[!htb]
 	\centering
