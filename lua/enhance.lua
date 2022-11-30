@@ -104,13 +104,3 @@ map('n', '<leader>t', ':ToggleTerm direction=horizontal<CR>', { silent = true })
 map('n', '<leader>T', ':ToggleTerm direction=float<CR>', { silent = true })
 map('n', '<leader>r', ':ToggleTermSendCurrentLine<CR>', { silent = true })
 map('v', '<leader>r', ':ToggleTermSendVisualSelection<CR>', { silent = true })
-
-
-------------------------------------------
--- persisted.nvim
-------------------------------------------
-require("persisted").setup({
-    use_git_branch = true,
-})
-require("telescope").load_extension("persisted") -- To load the telescope extension
-map('','<leader>fs','<cmd>Telescope persisted<cr>')
