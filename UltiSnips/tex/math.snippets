@@ -149,7 +149,7 @@ endsnippet
 
 # Commands below may be used with others like `\dot{\bar{x}}` (type: `xbardot`)
 context "math()"
-snippet '([\\\{\}A-Za-z]+)(?<!\\c)dot' "dot" rA
+snippet '([\\\{\}A-Za-z]+)(?<!\\[cv])dot' "dot" rA
 `!p snip.rv = '\\dot{' + match.group(1) + '}' `$0
 endsnippet
 
@@ -253,11 +253,9 @@ snippet gad "gathered" wA
 endsnippet
 
 snippet cas "cases" bA
-\left\\{
-\begin{aligned}
+\left\\{\begin{aligned}
 	$1
-\end{aligned}
-\right.
+\end{aligned}\right.
 endsnippet
 
 snippet ald "aligned" wA
