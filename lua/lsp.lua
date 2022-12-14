@@ -1,3 +1,6 @@
+------------------------------------------
+-- Mason ans LSP config
+------------------------------------------
 -- (Seems 'mason' has to be called before 'lspconfig')
 require("mason").setup({
     ui = {
@@ -17,7 +20,7 @@ require('mason-lspconfig').setup({
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
-local servers = { 'ltex', 'texlab', 'pyright', 'sumneko_lua', 'clangd' }
+local servers = { 'ltex', 'texlab', 'pyright', 'sumneko_lua', 'clangd', 'marksman' }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         -- on_attach = my_custom_on_attach,
@@ -39,8 +42,9 @@ lspconfig.arduino_language_server.setup {
 }
 
 
-
--- Set up `nvim-cmp` including `luasnip`
+------------------------------------------
+-- nvim-cmp and its extensions
+------------------------------------------
 local cmp = require 'cmp'
 cmp.setup {
     snippet = {
@@ -98,4 +102,17 @@ cmp.setup.cmdline(':', {
     }, {
         { name = 'cmdline' }
     })
+})
+
+
+------------------------------------------
+-- null-ls built-in configuration
+------------------------------------------
+local null_ls = require('null-ls')
+null_ls.setup({
+    sources = {
+        -- dependency: `:MasonInstall markdownlint`
+        null_ls.builtins.diagnostics.markdownlint,
+        null_ls.builtins.formatting.markdownlint,
+    }
 })

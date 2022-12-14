@@ -29,6 +29,7 @@ require('packer').startup(function(use)
     use 'hrsh7th/cmp-emoji' -- Enable emoji autocompletion
     use 'hrsh7th/cmp-cmdline' -- Enable command line autocompletion
     use 'quangnguyen30192/cmp-nvim-ultisnips' -- Cmp source for UltiSnips
+    use 'jose-elias-alvarez/null-ls.nvim' -- Inject LSP diagnostics, code actions, and more
 
 
     -- [enhance] Editor enhance
