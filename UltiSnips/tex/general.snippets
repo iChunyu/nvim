@@ -67,3 +67,24 @@ snippet href "hyper link" wA
 \href{${1:URL}}{${2:Text}}
 endsnippet
 
+snippet ltab "long table" bA
+\begin{longtable}{${1:|l|l|}}
+	\caption{$2}
+	\label{tab:$3}
+	% 首页表头
+	${4:\\\\ \\hline}
+	\endfirsthead
+	% 续页表头
+	${5:\\multicolumn{2}{l}{（续表）} \\\\ \\hline}
+	\endhead
+	% 前页表尾
+	${6:\\hline \\multicolumn{2}{r}{（接下一页表格）} \\\\ }
+	\endfoot
+	% 末页表尾
+	${7:\\hline}
+	\endlastfoot
+	% 表格内容
+	$8
+\end{longtable}
+endsnippet
+
