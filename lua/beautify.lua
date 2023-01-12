@@ -95,9 +95,9 @@ require('indent_blankline').setup {
 ------------------------------------------
 -- noice
 ------------------------------------------
-require("noice").setup({
-    lsp_progress = { enabled = false }
-})
+-- require("noice").setup({
+--     lsp_progress = { enabled = false }
+-- })
 
 
 ------------------------------------------
