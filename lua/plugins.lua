@@ -76,7 +76,10 @@ require('packer').startup(function(use)
     use 'lukas-reineke/indent-blankline.nvim' -- Show indent lines
     use 'MunifTanjim/nui.nvim' -- UI Component Library for Neovim
     use 'folke/noice.nvim' -- event = 'VimEnter', -- UI
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Treesitter integration
+    use { 'nvim-treesitter/nvim-treesitter',
+        run = function()
+            require('nvim-treesitter.install').update({ with_sync = true })
+        end } -- Treesitter integration
 
 
     -- [Bootstrapping]
