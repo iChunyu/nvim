@@ -16,7 +16,6 @@ require('mason-lspconfig').setup({
     automatic_installation = true
 })
 
-
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
@@ -27,19 +26,6 @@ for _, lsp in ipairs(servers) do
         capabilities = capabilities,
     }
 end
--- Arduino LSP:
--- `arduino-cli` must be installed (`brew install arduino-cli`)
--- Run `arduino-cli config init` and `arduino-cli core install arduino:avr`
-lspconfig.arduino_language_server.setup {
-    cmd = {
-        'arduino-language-server',
-        '-cli-config', '~/.arduino15/arduino-cli.yaml',
-        '-fqbn', 'arduino:avr:uno',
-        '-cli', 'arduino-cli',
-        '-clangd', 'clangd'
-    },
-    capabilities = capabilities,
-}
 
 
 ------------------------------------------

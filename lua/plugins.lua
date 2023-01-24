@@ -44,7 +44,6 @@ require('packer').startup(function(use)
     use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' } -- Fuzzy finder
     use 'FeiyouG/command_center.nvim' -- Create and manage keybindings and commands
     use { 'akinsho/toggleterm.nvim', tag = '*' } -- Terminal integration
-    use 'stevearc/vim-arduino' -- Arduino support
     use 'sindrets/diffview.nvim' -- Single tabpage interface for easily cycling through diffs
 
 
