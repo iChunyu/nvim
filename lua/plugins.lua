@@ -45,6 +45,7 @@ require('packer').startup(function(use)
     use 'FeiyouG/command_center.nvim' -- Create and manage keybindings and commands
     use { 'akinsho/toggleterm.nvim', tag = '*' } -- Terminal integration
     use 'sindrets/diffview.nvim' -- Single tabpage interface for easily cycling through diffs
+    use 'folke/trouble.nvim' -- LSP diagnostics
 
 
     -- [marktex] LaTeX and Markdown
@@ -75,10 +76,10 @@ require('packer').startup(function(use)
     use 'lukas-reineke/indent-blankline.nvim' -- Show indent lines
     use 'MunifTanjim/nui.nvim' -- UI Component Library for Neovim
     use 'folke/noice.nvim' -- event = 'VimEnter', -- UI
-    use { 'nvim-treesitter/nvim-treesitter',
+    use { 'nvim-treesitter/nvim-treesitter', -- Treesitter integration
         run = function()
             require('nvim-treesitter.install').update({ with_sync = true })
-        end } -- Treesitter integration
+        end }
 
 
     -- [Bootstrapping]

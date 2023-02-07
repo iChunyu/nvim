@@ -1,7 +1,9 @@
 # 某春雨自用的 NeoVim 配置
 
 
-本仓库是我自用的 NeoVim 配置，使用 Lua 进行配置。基于 VimScript 的最后一次配置在 [`e50327e`](https://github.com/iChunyu/nvim/tree/e50327e0e759bac2c6d4408fec2a89fba192cada) 提交处，相应的配置说明写在我的博客 [NeoVim 基本配置](https://ichunyu.github.io/neovim/) 中，有需要的小伙伴请自行移步。
+本仓库是我自用的 NeoVim 配置，使用 Lua 进行配置。
+
+> 基于 VimScript 的最后一次配置在 [`e50327e`](https://github.com/iChunyu/nvim/tree/e50327e0e759bac2c6d4408fec2a89fba192cada) 提交处，相应的配置说明写在我的博客 [NeoVim 基本配置](https://ichunyu.github.io/neovim/) 中，有需要的小伙伴请自行移步。:warning: VimScript 的配置与当前 Lua 的配置不同。
 
 
 ## 目录
@@ -170,9 +172,11 @@ arduino-cli core install arduino:avr
 | `<F2>`               | 批量重命名变量                                                       |
 | **toggleterm**       |                                                                      |
 | `<F4>`               | 打开、关闭终端（默认为底部终端）                                     |
-| `<leader>t`          | 打开底部终端                                                         |
-| `<leader>T`          | 打开浮动终端                                                         |
 | `<leader>r`          | 将当前行或所选内容发送到终端并执行                                   |
+| **command_center**   |                                                                      |
+| `<leader>fc`         | 查找并使用没有定义按键的命令                                         |
+| **trouble**          |                                                                      |
+| `<leader>t`          | 检查并预览当前文件的错误和警告                                       |
 
 
 

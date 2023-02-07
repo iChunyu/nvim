@@ -94,13 +94,31 @@ map('', '<leader>fc', '<cmd>Telescope command_center<cr>')
 ------------------------------------------
 require('toggleterm').setup({
     open_mapping = '<F4>',
-    direction = 'horizontal', -- 'float'
+    direction = 'float',
     float_opts = {
         border = 'curved'
     }
 })
 map('t', '<esc>', '<C-\\><C-n>')
-map('n', '<leader>t', ':ToggleTerm direction=horizontal<CR>', { silent = true })
-map('n', '<leader>T', ':ToggleTerm direction=float<CR>', { silent = true })
+-- map('n', '<leader>t', ':ToggleTerm direction=horizontal<CR>', { silent = true })
+-- map('n', '<leader>T', ':ToggleTerm direction=float<CR>', { silent = true })
 map('n', '<leader>r', ':ToggleTermSendCurrentLine<CR>', { silent = true })
 map('v', '<leader>r', ':ToggleTermSendVisualSelection<CR>', { silent = true })
+require('command_center').add({
+    {
+        desc = 'Toggle horizontal terminal',
+        cmd = '<cmd>ToggleTerm direction=horizontal<cr>',
+        category = 'ToggleTerm'
+    },{
+        desc = 'Toggle float terminal',
+        cmd = '<cmd>ToggleTerm direction=float<cr>',
+        category = 'ToggleTerm'
+    }
+})
+
+
+------------------------------------------
+-- Trouble.nvim
+------------------------------------------
+require('trouble').setup {}
+map('n','<leader>t','<cmd>TroubleToggle<cr>')
