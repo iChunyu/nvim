@@ -39,9 +39,9 @@ require('packer').startup(function(use)
     use { 'michaelb/sniprun', run = 'bash ./install.sh' } -- Run snippets
     use 'h-hg/fcitx.nvim' -- Autoswitch input methods
     use 'kyazdani42/nvim-tree.lua' -- File explorer
-    use { 'akinsho/bufferline.nvim', tag = 'v2.*' } -- Tabline
+    use { 'akinsho/bufferline.nvim', tag = '*' } -- Tabline
     use 'moll/vim-bbye' -- Delete buffer
-    use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' } -- Fuzzy finder
+    use { 'nvim-telescope/telescope.nvim', tag = '*' } -- Fuzzy finder
     use 'FeiyouG/command_center.nvim' -- Create and manage keybindings and commands
     use { 'akinsho/toggleterm.nvim', tag = '*' } -- Terminal integration
     use 'sindrets/diffview.nvim' -- Single tabpage interface for easily cycling through diffs
