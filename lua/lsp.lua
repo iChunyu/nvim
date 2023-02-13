@@ -19,7 +19,7 @@ require('mason-lspconfig').setup({
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
-local servers = { 'ltex', 'texlab', 'pyright', 'sumneko_lua', 'clangd', 'marksman' }
+local servers = { 'ltex', 'texlab', 'pyright', 'lua_ls', 'clangd', 'marksman' }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         -- on_attach = my_custom_on_attach,
@@ -42,10 +42,7 @@ cmp.setup {
         ['<C-k>'] = cmp.mapping.scroll_docs(-10),
         ['<C-j>'] = cmp.mapping.scroll_docs(10),
         ['<C-Space>'] = cmp.mapping.complete(),
-        ['<CR>'] = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-        },
+        ['<CR>'] = cmp.mapping.confirm({ select = false }),
         ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
