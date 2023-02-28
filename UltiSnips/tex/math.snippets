@@ -217,6 +217,11 @@ snippet '([\}\)\]A-Za-z]+)ii' "inverse" rA
 endsnippet
 
 context "math()"
+snippet '([\}\)\]A-Za-z]+)tt' "inverse" rA
+`!p snip.rv = match.group(1) + '^\mathrm{T}' `$0
+endsnippet
+
+context "math()"
 snippet '([A-Za-z0-9]+)sqr' "sqrt" rA
 `!p snip.rv = '\\sqrt{' + match.group(1) + '}' `$0
 endsnippet

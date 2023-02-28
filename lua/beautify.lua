@@ -101,6 +101,12 @@ require("noice").setup({
 
 
 ------------------------------------------
+-- todo-comments.nvim
+------------------------------------------
+require("todo-comments").setup {}
+
+
+------------------------------------------
 -- treesitter
 ------------------------------------------
 require 'nvim-treesitter.configs'.setup {
