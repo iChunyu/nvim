@@ -120,9 +120,6 @@ arduino-cli core install arduino:avr
 | `H`                  | 向前查找并跳转（同上）                                               |
 | **undotree**         |                                                                      |
 | `<leader>u`          | 打开改动历史：结合分屏跳转、选中历史节点后可以回滚                   |
-| **sniprun**          |                                                                      |
-| `<F5>`               | 运行整个代码文件                                                     |
-| `<F9>`               | 运行选中的代码片段（需要在可视模式下先选中）                         |
 | **ultisnip**         |                                                                      |
 | `<ctrl>j`            | 手动展开代码片段、跳转到下一个断点                                   |
 | `<ctrl>k`            | 跳转到上一个断点                                                     |
@@ -172,8 +169,6 @@ arduino-cli core install arduino:avr
 | **toggleterm**       |                                                                      |
 | `<F4>`               | 打开、关闭终端（默认为底部终端）                                     |
 | `<leader>r`          | 将当前行或所选内容发送到终端并执行                                   |
-| **command_center**   |                                                                      |
-| `<leader>fc`         | 查找并使用没有定义按键的命令                                         |
 | **trouble**          |                                                                      |
 | `<leader>t`          | 检查并预览当前文件的错误和警告                                       |
 

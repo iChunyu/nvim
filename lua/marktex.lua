@@ -39,25 +39,6 @@ vim.g['vim_markdown_folding_disabled'] = 1
 vim.g['vmt_list_item_char'] = '-'
 vim.g['vmt_fence_text'] = 'TOC'
 vim.g['vmt_fence_closing_text'] = '/TOC'
-require('command_center').add({
-    {
-        desc = 'Generate GitHub style TOC',
-        cmd = '<cmd>GenTocGFM<cr>',
-        category = 'markdown'
-    }, {
-        desc = 'Generate Redcarpet style TOC',
-        cmd = '<cmd>GenTocRedcarpet<cr>',
-        category = 'markdown'
-    }, {
-        desc = 'Generate GitLab style TOC',
-        cmd = '<cmd>GenTocGitLab<cr>',
-        category = 'markdown'
-    }, {
-        desc = 'Generate Marked style TOC',
-        cmd = '<cmd>GenTocMarked<cr>',
-        category = 'markdown'
-    }
-})
 
 
 ------------------------------------------

@@ -28,7 +28,7 @@ require('packer').startup(function(use)
     use 'hrsh7th/cmp-path' -- Enable filesystem path autocompletion
     use 'hrsh7th/cmp-emoji' -- Enable emoji autocompletion
     use 'hrsh7th/cmp-cmdline' -- Enable command line autocompletion
-    use 'quangnguyen30192/cmp-nvim-ultisnips' -- Cmp source for UltiSnips
+    -- use 'quangnguyen30192/cmp-nvim-ultisnips' -- Cmp source for UltiSnips
     use 'jose-elias-alvarez/null-ls.nvim' -- Inject LSP diagnostics, code actions, and more
 
 
@@ -36,13 +36,11 @@ require('packer').startup(function(use)
     use 'lewis6991/gitsigns.nvim' -- Git integration
     use 'ggandor/lightspeed.nvim' -- Fast jump between words
     use 'mbbill/undotree' -- Editing history and undo
-    use { 'michaelb/sniprun', run = 'bash ./install.sh' } -- Run snippets
     use 'h-hg/fcitx.nvim' -- Autoswitch input methods
     use 'kyazdani42/nvim-tree.lua' -- File explorer
     use { 'akinsho/bufferline.nvim', tag = '*' } -- Tabline
     use 'moll/vim-bbye' -- Delete buffer
     use { 'nvim-telescope/telescope.nvim', tag = '*' } -- Fuzzy finder
-    use 'FeiyouG/command_center.nvim' -- Create and manage keybindings and commands
     use { 'akinsho/toggleterm.nvim', tag = '*' } -- Terminal integration
     use 'sindrets/diffview.nvim' -- Single tabpage interface for easily cycling through diffs
     use 'folke/trouble.nvim' -- LSP diagnostics

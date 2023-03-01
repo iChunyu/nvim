@@ -41,16 +41,6 @@ map('n', '<leader>u', '<cmd>UndotreeToggle<CR>')
 
 
 ------------------------------------------
--- sniprun
-------------------------------------------
-require('sniprun').setup({
-    display = { "NvimNotify" },
-})
-map('', '<F9>', '<Plug>SnipRun', { silent = true })
-map('', '<F5>', 'ggVG<cmd>SnipRun<CR><c-o>', { silent = true })
-
-
-------------------------------------------
 -- nvim-tree
 ------------------------------------------
 require("nvim-tree").setup()
@@ -81,12 +71,10 @@ map('', 'td', '<cmd>Bdelete<CR>', { silent = true })
 ------------------------------------------
 -- telescope
 ------------------------------------------
-require("telescope").load_extension('command_center')
 map('', '<leader>ff', '<cmd>Telescope find_files<cr>')
 map('', '<leader>fg', '<cmd>Telescope live_grep<cr>')
 map('', '<leader>fb', '<cmd>Telescope buffers<cr>')
 map('', '<leader>fh', '<cmd>Telescope help_tags<cr>')
-map('', '<leader>fc', '<cmd>Telescope command_center<cr>')
 
 
 ------------------------------------------
@@ -100,21 +88,8 @@ require('toggleterm').setup({
     }
 })
 map('t', '<esc>', '<C-\\><C-n>')
--- map('n', '<leader>t', ':ToggleTerm direction=horizontal<CR>', { silent = true })
--- map('n', '<leader>T', ':ToggleTerm direction=float<CR>', { silent = true })
 map('n', '<leader>r', ':ToggleTermSendCurrentLine<CR>', { silent = true })
 map('v', '<leader>r', ':ToggleTermSendVisualSelection<CR>', { silent = true })
-require('command_center').add({
-    {
-        desc = 'Toggle horizontal terminal',
-        cmd = '<cmd>ToggleTerm direction=horizontal<cr>',
-        category = 'ToggleTerm'
-    },{
-        desc = 'Toggle float terminal',
-        cmd = '<cmd>ToggleTerm direction=float<cr>',
-        category = 'ToggleTerm'
-    }
-})
 
 
 ------------------------------------------
