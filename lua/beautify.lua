@@ -109,18 +109,18 @@ require("todo-comments").setup {}
 ------------------------------------------
 -- treesitter
 ------------------------------------------
-require 'nvim-treesitter.configs'.setup {
-    -- Optional dependencies for `noice`
-    ensure_installed = { 'help', 'lua', 'vim', 'regex', 'bash' },
-
-    -- Automatically install missing parsers when entering buffer
-    -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-    auto_install = false,
-
-    -- See `:help vimtex-faq-treesitter`
-    ignore_install = { 'latex', 'markdown' },
-
-    highlight = {
-        enable = true
-    }
-}
+-- require 'nvim-treesitter.configs'.setup {
+--     -- Optional dependencies for `noice`
+--     ensure_installed = { 'help', 'lua', 'vim', 'regex', 'bash' },
+--
+--     -- Automatically install missing parsers when entering buffer
+--     -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+--     auto_install = false,
+--
+--     -- See `:help vimtex-faq-treesitter`
+--     ignore_install = { 'latex', 'markdown' },
+--
+--     highlight = {
+--         enable = true
+--     }
+-- }

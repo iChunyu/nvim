@@ -91,11 +91,11 @@ cmp.setup.cmdline(':', {
 ------------------------------------------
 -- null-ls built-in configuration
 ------------------------------------------
-local null_ls = require('null-ls')
-null_ls.setup({
-    sources = {
-        -- dependency: `:MasonInstall markdownlint`
-        null_ls.builtins.diagnostics.markdownlint,
-        null_ls.builtins.formatting.markdownlint,
-    }
-})
+-- local null_ls = require('null-ls')
+-- null_ls.setup({
+--     sources = {
+--         -- dependency: `:MasonInstall markdownlint`
+--         null_ls.builtins.diagnostics.markdownlint,
+--         null_ls.builtins.formatting.markdownlint,
+--     }
+-- })

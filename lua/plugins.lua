@@ -75,10 +75,10 @@ require('packer').startup(function(use)
     use 'MunifTanjim/nui.nvim' -- UI Component Library for Neovim
     use 'folke/noice.nvim' -- UI
     use 'folke/todo-comments.nvim' -- Highlight and search for todo comments
-    use { 'nvim-treesitter/nvim-treesitter', -- Treesitter integration
-        run = function()
-            require('nvim-treesitter.install').update({ with_sync = true })
-        end }
+    -- use { 'nvim-treesitter/nvim-treesitter', -- Treesitter integration
+        -- run = function()
+        --     require('nvim-treesitter.install').update({ with_sync = true })
+        -- end }
 
 
     -- [Bootstrapping]
