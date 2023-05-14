@@ -4,7 +4,8 @@
 -- Default options
 require('nightfox').setup({
     options = {
-        styles = { -- Style to be applied to different syntax groups
+        styles = {
+            -- Style to be applied to different syntax groups
             -- Value is any valid attr-list value `:
             -- bold, underline, undercurl, underdouble, underdotted, underdashed
             -- strikethrough, reverse, italic, standout, nocombine, NONE
@@ -124,3 +125,9 @@ require("todo-comments").setup {}
 --         enable = true
 --     }
 -- }
+
+
+------------------------------------------
+-- satellite
+------------------------------------------
+require('satellite').setup {}
