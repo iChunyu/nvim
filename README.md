@@ -26,6 +26,7 @@
 
 ```bash
 pip install pynvim
+# yay -S npm
 sudo npm install -g neovim
 ```
 
@@ -39,13 +40,11 @@ sudo npm install -g neovim
 
 `vimtex` 配置使用 [zathura](https://pwmt.org/projects/zathura/) 作为默认的 PDF 阅读器，可通过包管理器安装。
 
-
-为了启动 Arduino 的 LSP，可参考 [arduino-language-server](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#arduino_language_server) 的配置说明，并需要提前安装 [`arduino-cli`](https://arduino.github.io/arduino-cli)：
+对于 ArchLinux，上述工具可以采用以下命令安装：
 
 ```bash
-brew update && brew install arduino-cli
-arduino-cli config init
-arduino-cli core install arduino:avr
+yay -S fd ripgrep xclip zathura zathura-mupdf
+yay -S jre-openjdk          # Neovim 的 LTeX LSP 需要 Java 环境
 ```
 
 
