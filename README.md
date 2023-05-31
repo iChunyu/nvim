@@ -36,7 +36,7 @@ sudo npm install -g neovim
 - [ripgrep](https://github.com/BurntSushi/ripgrep) 查找字符串
 - [xclip](https://github.com/astrand/xclip) 系统剪切板
 
-插件和 LSP 应当在首次启动时自动安装，如果未能正确安装，请确保能够正常访问 GitHub 后重新启动，或手动运行 `:PackerSync`。插件安装完成后可使用 `:checkhealth` 检查依赖是否正常。
+插件和 LSP 应当在首次启动时自动安装，如果未能正确安装，请确保能够正常访问 GitHub 后重新启动，或手动运行 `:Lazy` 后按 `U` 进行同步。插件安装完成后可使用 `:checkhealth` 检查依赖是否正常。
 
 `vimtex` 配置使用 [zathura](https://pwmt.org/projects/zathura/) 作为默认的 PDF 阅读器，可通过包管理器安装。
 
@@ -97,11 +97,11 @@ yay -S jre-openjdk          # Neovim 的 LTeX LSP 需要 Java 环境
 
 ## 插件键位映射
 
-本配置文件所涉及的插件列表详见 [`plugins.lua`](./lua/plugins.lua)。相关插件的键位映射和基本用法如下表所示。
+本配置文件所涉及相关插件的键位映射和基本用法如下表所示。
 
 | 键                   | 说明                                                                 |
 | :---                 | :---                                                                 |
-| **Packer**           |                                                                      |
+| **Lazy**             |                                                                      |
 | `<leader>lz`         | 查看插件                                                             |
 | **LSP**              |                                                                      |
 | `<ctrl>j`            | 向上翻阅帮助文档                                                     |
