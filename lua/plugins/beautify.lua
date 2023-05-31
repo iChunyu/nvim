@@ -1,10 +1,11 @@
 local map = vim.keymap.set
 
 return {
-    'nvim-tree/nvim-web-devicons',
-    'MunifTanjim/nui.nvim',
-    'rcarriga/nvim-notify',
+    'nvim-tree/nvim-web-devicons', -- Icons and colors for each icon
+    'MunifTanjim/nui.nvim',        -- UI Component Library for Neovim
+    'rcarriga/nvim-notify',        -- A fancy, configurable, notification manager
 
+    -- Colorscheme
     {
         'folke/tokyonight.nvim',
         lazy = false,
@@ -14,11 +15,14 @@ return {
         end
     },
 
+    -- Beautiful UI
     {
         "folke/noice.nvim",
         event = "VeryLazy",
+        opts = { lsp_progress = { enabled = false } }
     },
 
+    -- Statusline
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -43,18 +47,13 @@ return {
         }
     },
 
-    {
-        'norcalli/nvim-colorizer.lua',
-        config = function()
-            require 'colorizer'.setup()
-        end
-    },
+    -- Color highlighter
+    { 'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup() end },
 
-    {
-        'chentoast/marks.nvim',
-        config = true
-    },
+    -- View and interact with Vim marks
+    { 'chentoast/marks.nvim',        config = true },
 
+    -- Indent guides for Neovim
     {
         'lukas-reineke/indent-blankline.nvim',
         config = function()
@@ -64,11 +63,9 @@ return {
             vim.cmd [[highlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine]]
             vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
             vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
-
             vim.opt.list = true
             -- vim.opt.listchars:append 'space:⋅' -- Show spaces as virtual dot
             -- vim.opt.listchars:append 'eol:↴' -- Show end of line
-
             require('indent_blankline').setup {
                 space_char_blankline = ' ',
                 char_highlight_list = {
@@ -83,12 +80,10 @@ return {
         end
     },
 
-    {
-        "folke/todo-comments.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
-    },
+    -- Highlight, list and search todo comments
+    'folke/todo-comments.nvim',
 
-    --
+    -- VS Code-like renaming UI
     {
         'filipdutescu/renamer.nvim',
         config = function()
@@ -96,10 +91,7 @@ return {
         end
     },
 
-    {
-        'lewis6991/satellite.nvim',
-        config = true
-    }
-
+    -- Decorate scrollbar for Neovim
+    { 'lewis6991/satellite.nvim', config = true }
 
 }
