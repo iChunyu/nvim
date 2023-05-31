@@ -7,20 +7,29 @@ require('settings')
 -- `.lua/keymaps.lua` changes and adds key mappings without any plugin
 require('keymaps')
 
--- `./lua/plugins.lua` collects plugins and perform auto-installation
-require('plugins')
 
--- './lua/lsp.lua' configurates LSP, autocompletion etc.
-require('lsp')
+-- [Bootstrap] Use `lazy.nvim` to manage plugins
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
+end
+vim.opt.rtp:prepend(lazypath)
 
--- './lua/enhance.lua' sets plugins to enhance Neovim
-require('enhance')
+-- Configure `lazy.nvim` and plugins
+require("lazy").setup("plugins")
 
--- './lua/marktex.lua' specially concerntrates on Markdown/LaTeX config
-require('marktex')
 
--- './lua/editing.lua' collects preferences for common editing
-require('editing')
+-- Custom 'hover' keys (overwrite default map 'K')
+-- Ref: https://github.com/folke/lazy.nvim/issues/73#issuecomment-1364301358
+local ViewConfig = require("lazy.view.config")
+ViewConfig.keys.hover = "<c-k>"
 
--- './lua/beautify.lua' beautifies Neovim
-require('beautify')
+local map = vim.keymap.set
+map('n','<leader>lz','<cmd>Lazy<cr><cmd>set cursorline<cr>',{silent=true})

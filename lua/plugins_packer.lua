@@ -65,12 +65,7 @@ require('packer').startup(function(use)
 
 
     -- [beautify] Beautify
-    use 'kyazdani42/nvim-web-devicons' -- Icons
-    use 'EdenEast/nightfox.nvim' -- Colorscheme
-    use 'nvim-lualine/lualine.nvim' -- Status line
-    use 'rcarriga/nvim-notify' -- Notify style
-    use 'norcalli/nvim-colorizer.lua' -- Show color in text
-    use 'chentoast/marks.nvim' -- Show bookmarks
+
     use 'lukas-reineke/indent-blankline.nvim' -- Show indent lines
     use 'MunifTanjim/nui.nvim' -- UI Component Library for Neovim
     use 'folke/noice.nvim' -- UI
