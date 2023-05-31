@@ -102,7 +102,7 @@ yay -S jre-openjdk          # Neovim 的 LTeX LSP 需要 Java 环境
 | 键                   | 说明                                                                 |
 | :---                 | :---                                                                 |
 | **Packer**           |                                                                      |
-| `<leader>ps`         | 更新插件                                                             |
+| `<leader>lz`         | 查看插件                                                             |
 | **LSP**              |                                                                      |
 | `<ctrl>j`            | 向上翻阅帮助文档                                                     |
 | `<ctrl>k`            | 向下翻阅帮助文档                                                     |
@@ -111,6 +111,7 @@ yay -S jre-openjdk          # Neovim 的 LTeX LSP 需要 Java 环境
 | `<leader>gj`         | 跳转到下一处改动                                                     |
 | `<leader>gk`         | 跳转到上一处改动                                                     |
 | `<leader>ga`         | 将当前位置的改动添加到暂存区                                         |
+| `<leader>gA`         | 将当前文件的改动添加到暂存区                                         |
 | `<leader>gu`         | 将当前位置的改动从暂存区内撤销                                       |
 | `<leader>gb`         | 查看当前位置的提交信息                                               |
 | `<leader>gB`         | 查看上一次提交信息                                                   |
