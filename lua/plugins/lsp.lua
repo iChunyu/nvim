@@ -112,9 +112,10 @@ return {
     --     'jose-elias-alvarez/null-ls.nvim',
     --     opts = {
     --         sources = {
-    --             -- dependency: `:MasonInstall markdownlint`
-    --             null_ls.builtins.diagnostics.markdownlint,
-    --             null_ls.builtins.formatting.markdownlint,
+    --             -- dependency: `:MasonInstall vale`
+    --             -- NOTE: add a `.vale.ini` file to `~/` and run `vale sync` to initialize
+    --             -- `.vale.ini` can be generated from: https://vale.sh/generator
+    --             -- require('null-ls').builtins.diagnostics.vale,
     --         }
     --     }
     -- }

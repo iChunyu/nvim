@@ -81,7 +81,7 @@ return {
     },
 
     -- Highlight, list and search todo comments
-    'folke/todo-comments.nvim',
+    { 'folke/todo-comments.nvim', config = true },
 
     -- VS Code-like renaming UI
     {
