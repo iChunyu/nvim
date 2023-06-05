@@ -41,18 +41,20 @@ return {
             'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
             'hrsh7th/cmp-path',     -- Enable filesystem path autocompletion
             'hrsh7th/cmp-emoji',    -- Enable emoji autocompletion
-            'hrsh7th/cmp-cmdline'   -- Enable command line autocompletion
+            'hrsh7th/cmp-cmdline',  -- Enable command line autocompletion
+            'saadparwaiz1/cmp_luasnip'
         },
         config = function()
             local cmp = require('cmp')
+            local luasnip = require('luasnip')
             cmp.setup({
                 snippet = {
                     -- REQUIRED - you must specify a snippet engine
                     expand = function(args)
                         -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-                        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+                        luasnip.lsp_expand(args.body) -- For `luasnip` users.
                         -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-                        vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+                        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
                     end,
                 },
                 mapping = cmp.mapping.preset.insert({
@@ -66,18 +68,19 @@ return {
                     ['<Tab>'] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             cmp.select_next_item()
+                        elseif luasnip.expand_or_jumpable() then
+                            luasnip.expand_or_jump()
                         else
                             fallback()
-                            -- Disable <Tab> expand, reserved for indent
-                            -- require("cmp_nvim_ultisnips.mappings").expand_or_jump_forwards(fallback)
                         end
                     end, { 'i', 's' }),
                     ['<S-Tab>'] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             cmp.select_prev_item()
+                        elseif luasnip.jumpable(-1) then
+                            luasnip.jump(-1)
                         else
                             fallback()
-                            -- require("cmp_nvim_ultisnips.mappings").jump_backwards(fallback)
                         end
                     end, { 'i', 's' }),
                 }),
@@ -85,7 +88,7 @@ return {
                     { name = 'nvim_lsp' },
                     { name = 'path' },
                     { name = 'emoji' },
-                    -- { name = 'luasnip' }, -- For luasnip users.
+                    { name = 'luasnip' } -- For luasnip users.
                 }
             })
             -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
@@ -99,8 +102,7 @@ return {
             cmp.setup.cmdline(':', {
                 mapping = cmp.mapping.preset.cmdline(),
                 sources = cmp.config.sources({
-                    { name = 'path' }
-                }, {
+                    { name = 'path' },
                     { name = 'cmdline' }
                 })
             })
@@ -113,11 +115,34 @@ return {
     --     opts = {
     --         sources = {
     --             -- dependency: `:MasonInstall vale`
-    --             -- NOTE: add a `.vale.ini` file to `~/` and run `vale sync` to initialize
+    --             -- add a `.vale.ini` file to `~/` and run `vale sync` to initialize
     --             -- `.vale.ini` can be generated from: https://vale.sh/generator
     --             -- require('null-ls').builtins.diagnostics.vale,
     --         }
     --     }
     -- }
 
+    {
+        "L3MON4D3/LuaSnip",
+        version = "*",
+        build = "make install_jsregexp", -- install jsregexp (optional!).
+        opts = {
+            -- Enable autotriggered snippets
+            enable_autosnippets = true,
+            -- Use Tab (or some other key if you prefer) to trigger visual selection
+            store_selection_keys = "<Tab>",
+        },
+        config = function()
+            require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/LuaSnip/" })
+            vim.cmd [[
+                " Expand or jump in insert mode
+                imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
+                " Jump forward through tabstops in visual mode
+                smap <silent><expr> <Tab> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>'
+                " Jump backward through snippet tabstops with Shift-Tab (for example)
+                imap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+                smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+            ]]
+        end
+    }
 }

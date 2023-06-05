@@ -20,7 +20,7 @@ return {
     },
 
     -- Autopairs for neovim
-    { 'windwp/nvim-autopairs', disable_filetype = { 'tex', 'markdown' } },
+    { 'windwp/nvim-autopairs', opts = { disable_filetype = { 'tex', 'markdown' } } },
 
     -- Text filtering and alignment
     {
