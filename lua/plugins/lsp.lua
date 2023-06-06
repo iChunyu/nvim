@@ -1,3 +1,9 @@
+-- Untisnip settings: set here to avoid incorrect <tab> triger
+-- Looks these mappings must be here, or <tab> will triger `UltiSnips#Expand`
+-- vim.g['UltiSnipsExpandTrigger'] = '<c-j>'
+-- vim.g['UltiSnipsJumpForwardTrigger'] = '<c-j>'
+-- vim.g['UltiSnipsJumpBackwardTrigger'] = '<c-k>'
+
 return {
 
     -- Portable package manager for Neovim
@@ -68,8 +74,8 @@ return {
                     ['<Tab>'] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             cmp.select_next_item()
-                        elseif luasnip.expand_or_jumpable() then
-                            luasnip.expand_or_jump()
+                            -- elseif luasnip.expand_or_jumpable() then
+                            --     luasnip.expand_or_jump()
                         else
                             fallback()
                         end
@@ -77,8 +83,8 @@ return {
                     ['<S-Tab>'] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             cmp.select_prev_item()
-                        elseif luasnip.jumpable(-1) then
-                            luasnip.jump(-1)
+                            -- elseif luasnip.jumpable(-1) then
+                            --     luasnip.jump(-1)
                         else
                             fallback()
                         end
@@ -120,7 +126,17 @@ return {
     --             -- require('null-ls').builtins.diagnostics.vale,
     --         }
     --     }
-    -- }
+    -- },
+
+    -- Snippets, (require `vimtex` and `vim-markdown` to detect math zone)
+    -- {
+    --     'SirVer/ultisnips',
+    --     -- config = function()
+    --         -- vim.g['UltiSnipsExpandTrigger'] = '<c-j>'
+    --         -- vim.g['UltiSnipsJumpForwardTrigger'] = '<c-j>'
+    --         -- vim.g['UltiSnipsJumpBackwardTrigger'] = '<c-k>'
+    --     -- end
+    -- },
 
     {
         "L3MON4D3/LuaSnip",
@@ -131,7 +147,7 @@ return {
                 -- Enable autotriggered snippets
                 enable_autosnippets = true,
                 -- Use Tab (or some other key if you prefer) to trigger visual selection
-                store_selection_keys = "<Tab>",
+                store_selection_keys = "<C-j>",
                 -- Update text in the repeated node
                 update_events = 'TextChanged,TextChangedI'
             })
