@@ -21,9 +21,13 @@ local conds = require("luasnip.extras.conditions")
 local conds_expand = require("luasnip.extras.conditions.expand")
 local postfix = require("luasnip.extras.postfix").postfix
 
+local line_begin = require("luasnip.extras.expand_conditions").line_begin
+local in_mathzone = require("luasnip-helper").in_mathzone
 
 return {
-    s('lsnip',
+
+    -- Common-used short commands
+    s({ trig = "lsc", snippetType = "autosnippet" },
         fmta(
             [[
                 local ls = require("luasnip")
@@ -48,21 +52,74 @@ return {
                 local conds = require("luasnip.extras.conditions")
                 local conds_expand = require("luasnip.extras.conditions.expand")
                 local postfix = require("luasnip.extras.postfix").postfix
-
+                -- conditions
+                local line_begin = require("luasnip.extras.expand_conditions").line_begin
+                local in_mathzone = require('luasnip-helper').in_mathzone
             ]],
             {}
+        ),
+        { condition = line_begin }
+    ),
+
+    -- Return matched captures
+    s({ trig = "mm(%d)", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+        fmta([[
+                f( function(_, snip) return snip.captures[<>] end )
+            ]],
+            { f(function(_, snip) return snip.captures[1] end) }
         )
     ),
 
-    s('inmath',
+    -- Snippet for snippet
+    s({ trig = "lss", snippetType = "autosnippet" },
         fmta(
             [[
-                local in_mathzone = function()
-                    return vim.fn['vimtex#syntax#in_mathzone']() == 1
-                end
-
+                s("<>",
+                    fmta(
+                        <>
+                            <>
+                        <>,
+                        {<>}
+                    )
+                )
             ]],
-            {}
-        )
+            {
+                i(1),
+                t("[["),
+                i(2),
+                t("]]"),
+                i(3),
+            }
+        ),
+        { condition = line_begin }
+    ),
+
+    -- Auto-expand snippet
+    s({ trig = "lsa", snippetType = "autosnippet" },
+        fmta(
+            [[
+                s({ trig = "<>", <>snippetType = "autosnippet" },
+                    fmta(
+                        <>
+                            <>
+                        <>,
+                        {<>}
+                    ),
+                    { condition = <> }
+                )
+            ]],
+            {
+                i(1),
+                c(2, { t(""), t("regTrig = true, wordTrig = false, ") }),
+                t("[["),
+                i(3),
+                t("]]"),
+                i(4),
+                c(5, { t("line_begin"), t("in_mathzone") })
+            }
+        ),
+        { condition = line_begin }
     )
+
 }
+

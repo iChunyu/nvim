@@ -126,22 +126,26 @@ return {
         "L3MON4D3/LuaSnip",
         version = "*",
         build = "make install_jsregexp", -- install jsregexp (optional!).
-        opts = {
-            -- Enable autotriggered snippets
-            enable_autosnippets = true,
-            -- Use Tab (or some other key if you prefer) to trigger visual selection
-            store_selection_keys = "<Tab>",
-        },
         config = function()
+            require("luasnip").config.set_config({
+                -- Enable autotriggered snippets
+                enable_autosnippets = true,
+                -- Use Tab (or some other key if you prefer) to trigger visual selection
+                store_selection_keys = "<Tab>",
+                -- Update text in the repeated node
+                update_events = 'TextChanged,TextChangedI'
+            })
             require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/LuaSnip/" })
             vim.cmd [[
-                " Expand or jump in insert mode
-                imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
-                " Jump forward through tabstops in visual mode
-                smap <silent><expr> <Tab> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>'
-                " Jump backward through snippet tabstops with Shift-Tab (for example)
-                imap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
-                smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+                " Jump forward through tabstops
+                imap <silent><expr> <C-j> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<C-j>'
+                smap <silent><expr> <C-j> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<C-j>'
+                " Jump backward through snippet tabstops
+                imap <silent><expr> <C-k> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<C-k>'
+                smap <silent><expr> <C-k> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<C-k>'
+                " Cycle forward through choice nodes
+                imap <silent><expr> <C-l> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-l>'
+                smap <silent><expr> <C-l> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-l>'
             ]]
         end
     }

@@ -2,20 +2,20 @@ local map = vim.keymap.set
 
 -- Untisnip settings
 -- Looks these mappings must be here, or <tab> will triger `UltiSnips#Expand`
-vim.g['UltiSnipsExpandTrigger'] = '<c-j>'
-vim.g['UltiSnipsJumpForwardTrigger'] = '<c-j>'
-vim.g['UltiSnipsJumpBackwardTrigger'] = '<c-k>'
+-- vim.g['UltiSnipsExpandTrigger'] = '<c-j>'
+-- vim.g['UltiSnipsJumpForwardTrigger'] = '<c-j>'
+-- vim.g['UltiSnipsJumpBackwardTrigger'] = '<c-k>'
 
 return {
     -- Snippets, (require `vimtex` and `vim-markdown` to detect math zone)
-    {
-        'SirVer/ultisnips',
-        -- config = function()
-            -- vim.g['UltiSnipsExpandTrigger'] = '<c-j>'
-            -- vim.g['UltiSnipsJumpForwardTrigger'] = '<c-j>'
-            -- vim.g['UltiSnipsJumpBackwardTrigger'] = '<c-k>'
-        -- end
-    },
+    -- {
+    --     'SirVer/ultisnips',
+    --     -- config = function()
+    --         -- vim.g['UltiSnipsExpandTrigger'] = '<c-j>'
+    --         -- vim.g['UltiSnipsJumpForwardTrigger'] = '<c-j>'
+    --         -- vim.g['UltiSnipsJumpBackwardTrigger'] = '<c-k>'
+    --     -- end
+    -- },
 
     -- LaTeX support
     {
