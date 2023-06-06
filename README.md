@@ -120,7 +120,7 @@ yay -S jre-openjdk          # Neovim 的 LTeX LSP 需要 Java 环境
 | `H`                  | 向前查找并跳转（同上）                                               |
 | **undotree**         |                                                                      |
 | `<leader>u`          | 打开改动历史：结合分屏跳转、选中历史节点后可以回滚                   |
-| **ultisnip**         |                                                                      |
+| **luasnip**          |                                                                      |
 | `<ctrl>j`            | 手动展开代码片段、跳转到下一个断点                                   |
 | `<ctrl>k`            | 跳转到上一个断点                                                     |
 | **vimtex**           |                                                                      |
@@ -188,14 +188,15 @@ yay -S jre-openjdk          # Neovim 的 LTeX LSP 需要 Java 环境
 
 非常感谢 [Elijan Mastnak](https://github.com/ejmastnak) 关于使用 NeoVim 编辑 LaTeX 的系列文章，这为我配置 VimTeX 时提供了重要的参考。相关链接如下：
 
-- [Real-time LaTeX Using (Neo)Vim](https://ejmastnak.github.io/tutorials/vim-latex/intro.html)
-- [1. Suggested Prerequisites for Writing LaTeX in Vim](https://ejmastnak.github.io/tutorials/vim-latex/prerequisites.html)
-- [2. An UltiSnips guide for LaTeX workflows](https://ejmastnak.github.io/tutorials/vim-latex/ultisnips.html)
-- [3. Vim’s `ftplugin` system](https://ejmastnak.github.io/tutorials/vim-latex/ftplugin.html)
-- [4. Getting started with the VimTeX plugin](https://ejmastnak.github.io/tutorials/vim-latex/vimtex.html)
-- [5. Compiling LaTeX Documents in a Vim-Based Workflow](https://ejmastnak.github.io/tutorials/vim-latex/compilation.html)
-- [6. Setting Up a PDF Reader for Writing LaTeX with Vim](https://ejmastnak.github.io/tutorials/vim-latex/pdf-reader.html)
-- [7. A Vimscript Primer for Filetype-Specific Workflows](https://ejmastnak.github.io/tutorials/vim-latex/vimscript.html)
+- [Supercharged LaTeX using (Neo)Vim, VimTeX, and snippets](https://www.ejmastnak.com/tutorials/vim-latex/intro/)
+- [1. Suggested Prerequisites for Writing LaTeX in Vim](https://www.ejmastnak.com/tutorials/vim-latex/prerequisites/)
+- [2. An UltiSnips guide for LaTeX workflows](https://www.ejmastnak.com/tutorials/vim-latex/ultisnips/)
+- [2. A LuaSnip guide for LaTeX workflows](https://www.ejmastnak.com/tutorials/vim-latex/luasnip/)
+- [3. Vim’s `ftplugin` system](https://www.ejmastnak.com/tutorials/vim-latex/ftplugin/)
+- [4. Getting started with the VimTeX plugin](https://www.ejmastnak.com/tutorials/vim-latex/vimtex/)
+- [5. Compiling LaTeX Documents in a Vim-Based Workflow](https://www.ejmastnak.com/tutorials/vim-latex/compilation/)
+- [6. Setting Up a PDF Reader for Writing LaTeX with Vim](https://www.ejmastnak.com/tutorials/vim-latex/pdf-reader/)
+- [7. A Vimscript Primer for Filetype-Specific Workflows](https://www.ejmastnak.com/tutorials/vim-latex/vimscript/)
 
 [Dave Lage](https://github.com/rockerBOO) 的 [awesome-neovim](https://github.com/rockerBOO/awesome-neovim) 为本配置使用的插件提供了参考。
 

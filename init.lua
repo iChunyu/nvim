@@ -32,4 +32,4 @@ local ViewConfig = require("lazy.view.config")
 ViewConfig.keys.hover = "<c-k>"
 
 local map = vim.keymap.set
-map('n','<leader>lz','<cmd>Lazy<cr><cmd>set cursorline<cr>',{silent=true})
+map('n', '<leader>lz', '<cmd>Lazy<cr><cmd>set cursorline<cr>', { silent = true })
