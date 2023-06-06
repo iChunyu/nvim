@@ -425,30 +425,18 @@ return {
     ),
 
     -- INFO: math environments
-    s({ trig = "$$", snippetType = "autosnippet" },
-        fmta(
-            [[
-                $$
-                    <>
-                $$
-            ]],
-            { i(1) }
-        ),
-        { condition = line_begin }
-    ),
-
     s({ trig = "equ", snippetType = "autosnippet" },
         fmta(
             [[
                 \begin{equation}
                     <>
                 \end{equation}
+
             ]],
             { i(1) }
         ),
         { condition = line_begin }
     ),
-
 
     s({ trig = "gat", snippetType = "autosnippet" },
         fmta(
@@ -456,6 +444,7 @@ return {
                 \begin{gather}
                     <>
                 \end{gather}
+
             ]],
             { i(1) }
         ),
@@ -468,6 +457,7 @@ return {
                 \begin{align}
                     <>
                 \end{align}
+
             ]],
             { i(1) }
         ),
@@ -486,7 +476,7 @@ return {
         { condition = line_begin }
     ),
 
-    s({ trig = "aligned", snippetType = "autosnippet" },
+    s({ trig = "ald", snippetType = "autosnippet" },
         fmta(
             [[
                 \begin{aligned}
