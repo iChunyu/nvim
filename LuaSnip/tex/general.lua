@@ -27,7 +27,7 @@ local in_mathzone = require("luasnip-helper").in_mathzone
 
 return {
 
-    s({ trig = "href", snippetType = "autosnippet" },
+    s("href",
         fmta(
             [[
                 \href{<>}{<>}
@@ -35,8 +35,7 @@ return {
             {
                 i(1, "URL"), i(2, "Text")
             }
-        ),
-        { condition = line_begin }
+        )
     ),
 
     s({ trig = "env", snippetType = "autosnippet" },
