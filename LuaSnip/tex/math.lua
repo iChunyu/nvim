@@ -365,7 +365,7 @@ return {
         { condition = in_mathzone }
     ),
 
-    s({ trig = "(.+);(.*);(.*);", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+    s({ trig = "([^%s]+);([^%s]*);([^%s]*);", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
         fmta(
             [[
                 <><><>
