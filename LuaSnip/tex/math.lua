@@ -46,9 +46,9 @@ return {
     s({ trig = "lr(", snippetType = "autosnippet" },
         fmta(
             [[
-                \left( <> \right)
+                \left( <><> \right)
             ]],
-            { d(1, get_visual) }
+            { d(1, get_visual), i(2) }
         ),
         { condition = in_mathzone }
     ),
@@ -56,9 +56,9 @@ return {
     s({ trig = "lr[", snippetType = "autosnippet" },
         fmta(
             [[
-                \left[ <> \right]
+                \left[ <><> \right]
             ]],
-            { d(1, get_visual) }
+            { d(1, get_visual), i(2) }
         ),
         { condition = in_mathzone }
     ),
@@ -66,9 +66,9 @@ return {
     s({ trig = "lr{", snippetType = "autosnippet" },
         fmta(
             [[
-                \left\{ <> \right\}
+                \left\{ <><> \right\}
             ]],
-            { d(1, get_visual) }
+            { d(1, get_visual), i(2) }
         ),
         { condition = in_mathzone }
     ),
@@ -76,9 +76,9 @@ return {
     s({ trig = "lr<", snippetType = "autosnippet" },
         fmta(
             [[
-                \left\langle <> \right\rangle
+                \left\langle <><> \right\rangle
             ]],
-            { d(1, get_visual) }
+            { d(1, get_visual), i(2) }
         ),
         { condition = in_mathzone }
     ),
@@ -87,9 +87,9 @@ return {
     s({ trig = "ab|", snippetType = "autosnippet" },
         fmta(
             [[
-                \left\lvert <> \right\rvert
+                \left\lvert <><> \right\rvert
             ]],
-            { d(1, get_visual) }
+            { d(1, get_visual), i(2) }
         ),
         { condition = in_mathzone }
     ),
@@ -98,9 +98,9 @@ return {
     s({ trig = "no|", snippetType = "autosnippet" },
         fmta(
             [[
-                \left\lVert <> \right\rVert
+                \left\lVert <><> \right\rVert
             ]],
-            { d(1, get_visual) }
+            { d(1, get_visual), i(2) }
         ),
         { condition = in_mathzone }
     ),
@@ -109,9 +109,9 @@ return {
     s({ trig = "b(", snippetType = "autosnippet" },
         fmta(
             [[
-                \bigl( <> \bigr)
+                \bigl( <><> \bigr)
             ]],
-            { d(1, get_visual) }
+            { d(1, get_visual), i(2) }
         ),
         { condition = in_mathzone }
     ),
@@ -119,9 +119,9 @@ return {
     s({ trig = "b2(", snippetType = "autosnippet" },
         fmta(
             [[
-                \Bigl( <> \Bigr)
+                \Bigl( <><> \Bigr)
             ]],
-            { d(1, get_visual) }
+            { d(1, get_visual), i(2) }
         ),
         { condition = in_mathzone }
     ),
@@ -129,9 +129,9 @@ return {
     s({ trig = "b3(", snippetType = "autosnippet" },
         fmta(
             [[
-                \biggl( <> \biggr)
+                \biggl( <><> \biggr)
             ]],
-            { d(1, get_visual) }
+            { d(1, get_visual), i(2) }
         ),
         { condition = in_mathzone }
     ),
@@ -139,9 +139,9 @@ return {
     s({ trig = "b4(", snippetType = "autosnippet" },
         fmta(
             [[
-                \Biggl( <> \Biggr)
+                \Biggl( <><> \Biggr)
             ]],
-            { d(1, get_visual) }
+            { d(1, get_visual), i(2) }
         ),
         { condition = in_mathzone }
     ),
@@ -241,6 +241,11 @@ return {
                 f(function(_, snip) return snip.captures[1] end)
             }
         ),
+        { condition = in_mathzone }
+    ),
+
+    s({ trig = "\\cdot", priority = 1001, snippetType = "autosnippet" },
+        t("\\cdot"),
         { condition = in_mathzone }
     ),
 
@@ -507,7 +512,7 @@ return {
             ]],
             { i(1) }
         ),
-        { condition = line_begin }
+        { condition = in_mathzone }
     ),
 
     s({ trig = "bmat", snippetType = "autosnippet" },
@@ -517,7 +522,7 @@ return {
             ]],
             { i(1) }
         ),
-        { condition = line_begin }
+        { condition = in_mathzone }
     ),
 
     s({ trig = "Bmat", snippetType = "autosnippet" },
@@ -527,7 +532,7 @@ return {
             ]],
             { i(1) }
         ),
-        { condition = line_begin }
+        { condition = in_mathzone }
     ),
 
     s({ trig = "vmat", snippetType = "autosnippet" },
@@ -537,7 +542,7 @@ return {
             ]],
             { i(1) }
         ),
-        { condition = line_begin }
+        { condition = in_mathzone }
     ),
 
     s({ trig = "Vmat", snippetType = "autosnippet" },
@@ -547,6 +552,6 @@ return {
             ]],
             { i(1) }
         ),
-        { condition = line_begin }
+        { condition = in_mathzone }
     ),
 }
