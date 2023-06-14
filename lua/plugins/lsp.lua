@@ -37,6 +37,9 @@ return {
                     capabilities = capabilities,
                 }
             end
+            lspconfig['matlab_ls'].setup {
+                path = { './' },        -- set MATLAB rootpath to `./` in case there is no Git repo
+            }
         end
     },
 
