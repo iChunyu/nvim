@@ -51,7 +51,7 @@ return {
         { condition = line_begin }
     ),
 
-    s({ trig = "img", snippetType = "autosnippet" },
+    s({ trig = "dimg", snippetType = "autosnippet" },
         fmta(
             [[
                 <<div align=center>>
@@ -60,6 +60,16 @@ return {
 
             ]],
             { i(1), i(2) }
+        ),
+        { condition = line_begin }
+    ),
+
+    s({ trig = "img", snippetType = "autosnippet" },
+        fmta(
+            [[
+                {{<< image src="<>" caption="<>" width="<>" >>}}
+            ]],
+            { i(1), i(2), i(3) }
         ),
         { condition = line_begin }
     ),
