@@ -41,9 +41,9 @@ return {
     s({ trig = "math", snippetType = "autosnippet" },
         fmta(
             [[
-                {{<< math >>}}
+                {{<< math >>}}$$
                 <>
-                {{<< /math >>}}
+                $${{<< /math >>}}
 
             ]],
             { i(1) }
