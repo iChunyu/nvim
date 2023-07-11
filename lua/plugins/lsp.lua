@@ -31,14 +31,14 @@ return {
             -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
             local lspconfig = require('lspconfig')
-            local servers = { 'ltex', 'texlab', 'pyright', 'lua_ls', 'marksman', 'matlab_ls' }
+            local servers = { 'ltex', 'texlab', 'pyright', 'lua_ls', 'marksman', 'matlab_ls', 'clangd' }
             for _, lsp in ipairs(servers) do
                 lspconfig[lsp].setup {
                     capabilities = capabilities,
                 }
             end
             lspconfig['matlab_ls'].setup {
-                path = { './' },        -- set MATLAB rootpath to `./` in case there is no Git repo
+                path = { './' }, -- set MATLAB rootpath to `./` in case there is no Git repo
             }
         end
     },

@@ -81,7 +81,7 @@ return {
     },
 
     -- Highlight, list and search todo comments
-    { 'folke/todo-comments.nvim', config = true },
+    { 'folke/todo-comments.nvim',  config = true },
 
     -- VS Code-like renaming UI
     {
@@ -92,6 +92,7 @@ return {
     },
 
     -- Decorate scrollbar for Neovim
-    { 'lewis6991/satellite.nvim', config = true }
+    -- { 'lewis6991/satellite.nvim', config = true }
+    { 'petertriho/nvim-scrollbar', config = true }
 
 }
