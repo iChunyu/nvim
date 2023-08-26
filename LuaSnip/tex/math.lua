@@ -249,6 +249,11 @@ return {
         { condition = in_mathzone }
     ),
 
+    s({ trig = "\\vdot", priority = 1002, snippetType = "autosnippet" },
+        t("\\vdot"),
+        { condition = in_mathzone }
+    ),
+
     s({ trig = "([%\\{}%a]+)dot", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
         fmta(
             [[
