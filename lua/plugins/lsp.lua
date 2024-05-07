@@ -42,6 +42,15 @@ return {
                 -- set MATLAB rootpath to `./` in case there is no Git repo
                 root_dir = require('lspconfig/util').root_pattern('./'),
             }
+            lspconfig['arduino_language_server'].setup {
+                cmd = {
+                    'arduino-language-server',
+                    '-cli-config', '~/.arduino15/arduino-cli.yaml', -- run `arduino-cli config init` first
+                    '-fqbn', 'arduino:avr:mega', -- this may be 'arduino:avr:uno'
+                    '-cli', '/usr/bin/arduino-cli',
+                    '-clangd', '/usr/bin/clangd'
+                }
+            }
         end
     },
 
