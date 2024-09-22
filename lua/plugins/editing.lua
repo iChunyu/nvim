@@ -10,11 +10,13 @@ return {
         opts = {
             toggler = {
                 -- Line-comment toggle keymap
-                line = '<c-_>'
+                line = '<c-_>',
+                block = '<a-a>'
             },
             opleader = {
                 -- Line-comment toggle keymap
-                line = '<c-_>'
+                line = '<c-_>',
+                block = '<a-a>'
             }
         }
     },

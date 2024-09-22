@@ -29,3 +29,12 @@ vim.opt.termguicolors = true
 vim.opt.timeoutlen = 500
 
 vim.g['python3_host_prog'] = '/usr/bin/python'
+
+-- automatically remove triling whitespaces
+vim.api.nvim_create_autocmd(
+    { "BufWritePre" },
+    {
+        pattern = { "*" },
+        command = [[%s/\s\+$//e]],
+    }
+)
