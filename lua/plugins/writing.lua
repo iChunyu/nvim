@@ -1,12 +1,11 @@
 local map = vim.keymap.set
 
-
 return {
-
     -- LaTeX support
     {
         'lervag/vimtex',
-        config = function()
+        lazy = false,
+        init = function()
             vim.g['vimtex_view_method'] = 'zathura'
             vim.g['vimtex_quickfix_open_on_warning'] = 0
             vim.g['vimtex_compiler_latexmk_engines'] = {
@@ -24,7 +23,7 @@ return {
     -- Enable `vimtex#syntax#in_mathzone` in markdown
     {
         'preservim/vim-markdown',
-        config = function()
+        init = function()
             vim.g['vim_markdown_math'] = 1
             vim.g['vim_markdown_folding_disabled'] = 1
         end
@@ -33,7 +32,7 @@ return {
     -- Autogenerate table of contents
     {
         'mzlogin/vim-markdown-toc',
-        config = function()
+        init = function()
             vim.g['vmt_list_item_char'] = '-'
             vim.g['vmt_fence_text'] = 'TOC'
             vim.g['vmt_fence_closing_text'] = '/TOC'
@@ -44,14 +43,13 @@ return {
     {
         'iamcco/markdown-preview.nvim',
         cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
-        build = 'cd app && yarn install',
+        build = "cd app && yarn install",
         init = function()
             vim.g.mkdp_filetypes = { 'markdown' }
         end,
         ft = { "markdown" },
-        config = function()
-            map('n', '<leader>mp', '<Plug>MarkdownPreviewToggle', { silent = true })
-        end
+        keys = {
+            {'<leader>mp', '<Plug>MarkdownPreviewToggle', 'n', desc = 'Toggle Markdown Preview', { silent = true }}
+        }
     },
-
 }
