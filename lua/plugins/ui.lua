@@ -15,7 +15,7 @@ return
         dependencies = {
             "MunifTanjim/nui.nvim",
             "rcarriga/nvim-notify",
-            -- "vim-treesitter/nvim-treesitter",
+            "nvim-treesitter/nvim-treesitter",
         }
     },
 
@@ -142,5 +142,17 @@ return
             { "<leader>xL", "<cmd>Trouble loclist toggle<cr>",                            desc = "Location List (Trouble)", },
             { "<leader>xQ", "<cmd>Trouble qflist toggle<cr>",                             desc = "Quickfix List (Trouble)", },
         },
+    },
+
+    -- Treesitter
+    {
+        'nvim-treesitter',
+        opts = {
+            ensure_installed = { "lua", "vim", "vimdoc", "python", "c", "markdown", "markdown_inline" },
+            -- Install parsers synchronously (only applied to `ensure_installed`)
+            sync_install = true,
+            highlight = { enable = true },
+            additional_vim_regex_highlighting = false,
+        }
     }
 }
