@@ -37,7 +37,7 @@ return
         'godlygeek/tabular',
         lazy = false,
         keys = {
-            { '<leader>a', 'v', ':Tabularize /' }
+            { '<leader>a', ':Tabularize /', mode = 'v' }
         }
     },
 
@@ -86,5 +86,13 @@ return
             { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
             { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
         },
+    },
+
+    -- The undo history visualizer
+    {
+        'mbbill/undotree',
+        keys = {
+            {'<leader>u', '<cmd>UndotreeToggle<CR>', 'n'}
+        }
     }
 }

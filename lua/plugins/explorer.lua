@@ -1,13 +1,5 @@
 return
 {
-    -- The undo history visualizer
-    {
-        'mbbill/undotree',
-        keys = {
-            {'<leader>u', '<cmd>UndotreeToggle<CR>', 'n'}
-        }
-    },
-
     -- File explorer
     {
         'nvim-tree/nvim-tree.lua',

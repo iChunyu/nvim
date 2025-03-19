@@ -70,7 +70,7 @@ return
                 mapping = cmp.mapping.preset.insert({
                     ['<C-k>'] = cmp.mapping.scroll_docs(-10),
                     ['<C-j>'] = cmp.mapping.scroll_docs(10),
-                    ['<C-SL3MON4D3/LuaSnippace>'] = cmp.mapping.complete(),
+                    ['<C-Space>'] = cmp.mapping.complete(),
                     ['<C-e>'] = cmp.mapping.abort(),
                     -- Accept currently selected item.
                     -- Set `select` to `false` to only confirm explicitly selected items.
