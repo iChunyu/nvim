@@ -67,6 +67,8 @@ return {
                     path = "~/Notes",
                 },
             },
+            notes_subdir = "misc",
+            new_notes_location = "notes_subdir", -- "current_dir" or "notes_subdir"
             daily_notes = {
                 -- Optional, if you keep daily notes in a separate directory.
                 folder = "DailyNotes",
