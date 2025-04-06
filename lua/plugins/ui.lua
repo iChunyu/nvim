@@ -154,5 +154,18 @@ return
             highlight = { enable = true },
             additional_vim_regex_highlighting = false,
         }
-    }
+    },
+
+    -- Outline
+    {
+        "hedyhli/outline.nvim",
+        keys = { -- Example mapping to toggle outline
+            { "<leader>r", "<cmd>Outline<CR>", desc = "Toggle outline" },
+        },
+        opts = {
+            outline_window = {
+                auto_close = true,
+            },
+        },
+    },
 }
