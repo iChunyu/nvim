@@ -28,5 +28,6 @@ vim.opt.termguicolors = true
 
 vim.opt.timeoutlen = 500
 
-vim.g['python3_host_prog'] = '/usr/bin/python'
+vim.python3_host_prog = '/usr/bin/python3'
 
+vim.diagnostic.config({ virtual_text = true })
