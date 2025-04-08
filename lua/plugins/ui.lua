@@ -61,8 +61,6 @@ return
             }
 
             local hooks = require "ibl.hooks"
-            -- create the highlight groups in the highlight setup hook, so they are reset
-            -- every time the colorscheme changes
             hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
                 vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
                 vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
@@ -72,7 +70,10 @@ return
                 vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
                 vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
             end)
-            require("ibl").setup { indent = { highlight = highlight } }
+            require("ibl").setup {
+                indent = { highlight = highlight },
+                scope = { enabled = false, },
+            }
         end
     },
 
@@ -151,7 +152,6 @@ return
         build = ":TSUpdate",
         opts = {
             ensure_installed = { "lua", "vim", "vimdoc", "python", "c", "markdown", "markdown_inline" },
-            -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = true,
             highlight = {
                 enable = true,
@@ -163,7 +163,7 @@ return
     -- Outline
     {
         "hedyhli/outline.nvim",
-        keys = { -- Example mapping to toggle outline
+        keys = {
             { "<leader>r", "<cmd>Outline<CR>", desc = "Toggle outline" },
         },
         opts = {
