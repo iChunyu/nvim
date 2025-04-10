@@ -21,4 +21,22 @@ return
             {'<leader>fh', '<cmd>Telescope help_tags<cr>'}
         }
     },
+
+    -- Terminal integration
+    {
+        'akinsho/toggleterm.nvim',
+        version = '*',
+        config = function()
+            require('toggleterm').setup({
+                open_mapping = '<F4>',
+                direction = 'float',
+                float_opts = {
+                    border = 'curved'
+                }
+            })
+            vim.keymap.set('t', '<esc>', '<C-\\><C-n>')
+            vim.keymap.set('n', '<leader>t', ':ToggleTermSendCurrentLine<CR>', { silent = true })
+            vim.keymap.set('v', '<leader>t', ':ToggleTermSendVisualSelection<CR>', { silent = true })
+        end
+    },
 }
