@@ -85,7 +85,7 @@ yay -S jre-openjdk          # Neovim 的 LTeX LSP 需要 Java 环境
 | `<c-down>`     | 减小分屏高度                                             |
 | `<c-right>`    | 增大分屏宽度                                             |
 | `<c-left>`     | 减小分屏宽度                                             |
-| **行移动*      |                                                          |
+| **行移动**     |                                                          |
 | `<a-j>`        | 把当前行下移一行                                         |
 | `<a-k>`        | 把当前行上移一行                                         |
 | **其他**       |                                                          |
@@ -212,10 +212,12 @@ yay -S jre-openjdk          # Neovim 的 LTeX LSP 需要 Java 环境
     - `tq`：触发关闭功能，选择标签中红色字符对因的按键即可关闭对应的缓冲区
     - `td`：退出当前的缓冲区
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)：目前主要用到它的高亮功能，也是部分插件的依赖
+- [outline](https://github.com/hedyhli/outline.nvim)：用于显示代码结构，方便跳转
+    - `<leader>r`：打开或关闭代码结构目录
 
 ### Explorer
 
-`explorer.lua` 主要提供了文件交互相关的功能：
+`explorer.lua` 主要提供了文件和系统交互相关的功能：
 
 - [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)：侧边栏文件目录
     - `<leader>e`：打开或关闭文件浏览侧边栏
@@ -224,6 +226,10 @@ yay -S jre-openjdk          # Neovim 的 LTeX LSP 需要 Java 环境
     - `<leader>fg`：根据内容查找文件
     - `<leader>fb`：查找打开的缓冲区
     - `<leader>fh`：查找帮助文档
+- [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)：内置终端功能
+    - `<F4>`：打开或关闭内置终端
+    - `<leader>r`：将当前行或选中的文本发送到终端
+
 
 
 ## 参考资料

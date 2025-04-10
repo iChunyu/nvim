@@ -164,12 +164,12 @@ return
     {
         "hedyhli/outline.nvim",
         keys = {
-            { "<leader>r", "<cmd>Outline<CR>", desc = "Toggle outline" },
+            { "<leader>t", "<cmd>Outline<CR>", desc = "Toggle outline" },
         },
         opts = {
-            outline_window = {
-                auto_close = true,
-            },
+            -- outline_window = {
+            --     auto_close = true,
+            -- },
         },
     },
 }
