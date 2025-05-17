@@ -35,8 +35,8 @@ return
                 }
             })
             vim.keymap.set('t', '<esc>', '<C-\\><C-n>')
-            vim.keymap.set('n', '<leader>t', ':ToggleTermSendCurrentLine<CR>', { silent = true })
-            vim.keymap.set('v', '<leader>t', ':ToggleTermSendVisualSelection<CR>', { silent = true })
+            vim.keymap.set('n', 'H', ':ToggleTermSendCurrentLine<CR>', { silent = true })
+            vim.keymap.set('v', 'H', ':ToggleTermSendVisualSelection<CR>', { silent = true })
         end
     },
 }
