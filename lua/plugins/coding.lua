@@ -1,4 +1,4 @@
-local lsp_servers = { 'lua_ls', 'pyright', 'marksman', 'clangd', 'ltex' }
+local lsp_servers = { 'lua_ls', 'pyright', 'marksman', 'clangd', 'ltex', 'lemminx' }
 
 return
 {
@@ -135,5 +135,10 @@ return
             })
             require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/LuaSnip/" })
         end
+    },
+
+    -- GitHub Copilot
+    {
+        "github/copilot.vim"
     }
 }
