@@ -31,10 +31,10 @@ return
         'neovim/nvim-lspconfig',
         dependencies = { 'hrsh7th/cmp-nvim-lsp' },
         config = function()
-            local lspconfig = require('lspconfig')
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
             for _, lsp in ipairs(lsp_servers) do
-                lspconfig[lsp].setup { capabilities = capabilities }
+                vim.lsp.config(lsp, { capabilities = capabilities })
+                vim.lsp.enable(lsp)
             end
         end
     },

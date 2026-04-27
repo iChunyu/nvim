@@ -147,17 +147,11 @@ return
 
     -- Treesitter
     {
-        'nvim-treesitter',
-        main = 'nvim-treesitter.configs',
-        build = ":TSUpdate",
-        opts = {
-            ensure_installed = { "lua", "vim", "vimdoc", "python", "c", "markdown", "markdown_inline" },
-            sync_install = true,
-            highlight = {
-                enable = true,
-                additional_vim_regex_highlighting = true,
-            },
-        },
+        'nvim-treesitter/nvim-treesitter',
+        branch = 'main',
+        lazy = false,
+        build = ':TSUpdate',
+        opts = {},
     },
 
     -- Outline

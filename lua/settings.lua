@@ -9,10 +9,6 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
-vim.opt.encoding = 'UTF-8'
-
-vim.opt.syntax = 'on'
-
 vim.opt.showmatch = true
 
 vim.opt.hlsearch = true

@@ -3,7 +3,11 @@ return
     -- File explorer
     {
         'nvim-tree/nvim-tree.lua',
-        opts = {},
+        opts = {
+            filters = {
+                dotfiles = true
+            },
+        },
         keys = {
             {'<leader>e', '<cmd>NvimTreeToggle<CR>', '', { silent = true }}
         }
